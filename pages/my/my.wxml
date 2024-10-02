@@ -1,0 +1,11 @@
+<view class="feature">
+<view>联系客服</view>
+<view>企业服务</view>
+<view>反馈建议</view>
+
+<view class="clientele">
+  <button class="btn" open-type="contact">1</button>
+  <image class="pic" src="/static/images/clientele.png"></image>
+  <view class="line"></view>
+</view>
+</view>

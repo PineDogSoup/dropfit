@@ -1,0 +1,64 @@
+<view class="index-container">
+  <view class="slogan-wrapper">
+    <swiper
+    class="slogans"
+    circular
+    autoplay
+    interval="3000"
+    indicator-dots
+    indicator-active-color="#ffffff"
+    >
+    <block wx:for="{{slogans}}" wx:key="id">
+      <swiper-item class="slogan-item">
+        <image class="slogan-image" src="{{item}}" mode="aspectFill"></image>
+      </swiper-item>
+    </block>
+    </swiper>
+  </view>
+
+  <view class="search-wrapper">
+    <view class="search-input">
+      <van-icon name="search" size="20"/>
+      <input 
+      class="cityipt" 
+      type="text" 
+      confirm-type="search" 
+      placeholder="请输入城市"
+      bindinput="onSearchInput"
+      />
+    </view>
+  </view>
+
+    <!-- <view class="city-select">
+      <selector-component
+        show="{{selectorVisible}}"
+        key="LXDBZ-QOCKG-N74QJ-QEDGD-M7EQV-OPB7E"
+        referer="dropfit"
+        bindselect="onSelectCity"
+      >城市选择器</selector-component>
+    </view> -->
+
+
+    <view class="nearby">
+      <view class="title">
+        <view class="fujin">附近场馆</view>
+        <view class="more">查看更多></view>
+      </view>
+      <view wx:for="{{venues}}" wx:key="id">
+        <venue-card detail="{{item}}"></venue-card>
+      </view>
+    </view>
+
+    <view class="recommend">
+      <view class="title">
+        <view class="content">课程推荐</view>
+      </view>
+      <view class="card-content">
+        <view class="body">
+          <view class="box" wx:for="{{3}}" wx:key="id">
+            <course-card></course-card>
+          </view>
+        </view>
+      </view>
+    </view>
+</view>

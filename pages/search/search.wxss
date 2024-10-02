@@ -1,0 +1,47 @@
+/* pages/search/search.wxss */
+.searchbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 0 20rpx;
+  height: 88rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.input {
+  flex: 1;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10rpx;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 15rpx;
+  font-size: 28rpx;
+}
+
+.favorite {
+  display: flex;
+  align-items: center;
+}
+
+.favorite-button {
+  background-color: #007aff;
+  color: #fff;
+  padding: 10rpx 20rpx;
+  border-radius: 20rpx;
+  font-size: 30rpx;
+}
+
+.van-icon {
+  width: 20rpx;
+  height: 20rpx;
+  margin: 10rpx;
+}

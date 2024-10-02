@@ -1,0 +1,135 @@
+.index-container {
+  position: relative;
+  background: #f8f8f8;
+  min-height: 100vh;
+}
+
+.slogan-wrapper {
+  .slogans{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .slogan-item{
+      .slogan-image{
+        width: 100%;
+        height: 100%;
+        border-radius: 20rpx;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.search-wrapper {
+  position: absolute;
+  width: 90%;
+  top: 300rpx;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 50rpx;
+  padding: 20rpx;
+  box-shadow: 0 8rpx 12rpx rgba(144, 197, 253, 0.5);
+  z-index: 10;
+}
+
+.search-input {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  display: flex;
+}
+
+van-icon {
+  size: 20;
+  margin-right: 20rpx;
+}
+
+.search {
+  padding: 3rpx;
+  border: 1px solid;
+  border-radius: 80rpx;
+  margin: 10rpx;
+  display: flex;
+  background-color: #fff;
+  box-shadow: 0 8rpx 12rpx rgba(0, 123, 255, 0.5);
+  .cityipt {
+    padding: 20rpx;
+  }
+  .presearch {
+    padding: 20rpx;
+  }
+  .icon {
+    padding-top: 20rpx;
+  }
+}
+
+.introduction {
+  width: 100%;
+  height: 220rpx;
+  background: #eee;
+  white-space: nowrap;
+  .venuvPic {
+    width: 220rpx;
+    height: 220rpx;
+    background: palegreen;
+    margin-right: 10rpx;
+    display: inline-block;
+  }
+  .venuvPic:last-child {
+    margin-right: 0;
+  }
+}
+
+.nearby {
+  display: inline;
+  margin-top: 600rpx;
+  padding: 20rpx;
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20rpx;
+    .fujin {
+      font-size: 45rpx;
+    }
+    .more {
+      font-size: 25rpx;
+    }
+  }
+}
+
+.recommend {
+  display: inline;
+  padding: 0 10rpx;
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20rpx;
+    .content {
+      font-size: 45rpx;
+    }
+  }
+  .card-content{
+    .body {
+      display: flex;
+      padding: 0 25rpx;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .box {
+        width: 340rpx;
+        // display: flex;
+        // flex-direction: column;
+        align-items: center;
+        word-wrap: break-word;
+        // margin-bottom: 30rpx;
+      }
+    }
+  }
+}
+
+
+
+

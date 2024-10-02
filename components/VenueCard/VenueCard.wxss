@@ -1,0 +1,68 @@
+.card {
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 20rpx;
+  margin: 20rpx 15rpx;
+  box-shadow: 0 4rpx 10rpx rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  /* width: 90%; */
+}
+
+.card .card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20rpx;
+}
+
+.card .card-header .venue-logo {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.card .card-header .info {
+  flex: 1;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.card .card-header .info .venue-name {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.card .card-header .info .venue-location {
+  font-size: 28rpx;
+  color: #888;
+  margin-top: 8rpx;
+}
+
+.card .card-header .distance {
+  text-align: right;
+}
+
+.card .card-header .distance text {
+  font-size: 20rpx;
+  color: #333;
+}
+
+.card .card-header .distance .unit {
+  font-size: 24rpx;
+  color: #888;
+}
+
+.card .card-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card .card-body .venue-photo {
+  width: 30%;
+  height: 200rpx;
+  border-radius: 10rpx;
+  background-color: #f0f0f0;
+}

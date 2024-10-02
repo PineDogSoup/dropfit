@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/search/search",
+    "pages/venue/venue",
+    "pages/my/my",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#ffffff"
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#2c2c2c",
+    "borderStyle":"white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/images/icons/home.png",
+        "selectedIconPath": "static/images/icons/home-fill.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "搜馆",
+        "iconPath": "static/images/icons/shop.png",
+        "selectedIconPath": "static/images/icons/shop-fill.png"
+      },
+      {
+      "pagePath": "pages/my/my",
+      "text": "我的",
+      "iconPath": "static/images/icons/smile.png",
+      "selectedIconPath": "static/images/icons/smile-fill.png"
+      }]
+  },
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "plugins": {
+      "citySelector": {
+           "version": "1.0.2",
+           "provider": "wx63ffb7b7894e99ae"
+       }
+  },
+  "permission": {
+    "scope. userFuzzyLocation": {
+    "desc": "你的位置信息将用于小程序定位"
+    }
+  },
+  "usingComponents": {
+    "venue-card": "/components/VenueCard/VenueCard",
+    "course-card": "/components/CourseCard/CourseCard",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-loading": "@vant/weapp/loading/index",
+    "van-skeleton": "@vant/weapp/skeleton/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index"
+  }
+}

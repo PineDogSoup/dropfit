@@ -1,0 +1,25 @@
+<view class="search-container">
+  <!-- <view class="condition">
+    <van-tabs 
+    color="#0050e0"
+    title-active-color="#0040e0"
+    id="categoryTabs"
+    active="{{ active }}"
+    >
+      <van-tab wx:for="{{categories}}" wx:key="id" title="{{item.class_name}}"></van-tab>
+    </van-tabs>
+  </view> -->
+
+<!-- 在胶囊左边做一个搜索输入框，然后旁边是一个地图按钮，点击之后根据地图获取周围的场馆 -->
+
+  <view class="recommend">
+    <view wx:for="{{venues}}" wx:key="id">
+      <venue-card detail="{{item}}"></venue-card>
+    </view>
+  </view>
+
+  <view class="loadOut">
+    <van-loading size="24px" wx:if="{{loading}}">加载中...</van-loading>
+    <view class="noData" wx:if="{{loadFinished}}">没有更多场馆了～</view>
+  </view>
+</view>

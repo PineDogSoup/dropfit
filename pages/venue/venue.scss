@@ -1,0 +1,279 @@
+.skeleton {
+  padding: 80rpx 30rpx;
+}
+
+.page-container {
+  background-color: #f8f8f8;
+  padding-bottom: 20rpx;
+}
+
+.venue-intro {
+  position: relative;
+  width: 100%;
+  height: 400rpx;
+}
+
+.venue-background {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  filter: blur(5rpx);
+  white-space: nowrap;
+  text-align: center;
+}
+
+.venue-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.venue-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.venue-logo {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin-bottom: 10rpx;
+}
+
+.venue-name {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #f0f0f0;
+  margin-bottom: 10rpx;
+}
+
+.venue-description {
+  font-size: 24rpx;
+  // color: #666;
+  text-align: center;
+  // padding: 0 20rpx;
+  width: 700rpx;
+  color: #f0f0f0;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-line;
+  margin: 2.5rpx 0.5rpx 2.5rpx 0.5rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.address-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  margin: 20rpx;
+  padding: 20rpx;
+  border-radius: 20rpx;
+
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  .address-left {
+    display: flex;
+    align-items: center;
+
+    .address {
+      margin-left: 10rpx;
+      font-size: 30rpx;
+      color: #333;
+    }
+  }
+
+  .address-right {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.booking-section {
+  background-color: #ffffff;
+  margin: 20rpx;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+
+  .booking-header {
+    font-size: 34rpx;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20rpx;
+  }
+
+  .contact-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .option {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 160rpx;
+
+      .option-icon {
+        width: 80rpx;
+        height: 80rpx;
+        margin-bottom: 10rpx;
+      }
+
+      .option-name {
+        font-size: 28rpx;
+        color: #333;
+      }
+    }
+  }
+}
+
+.introduction {
+  white-space: nowrap;
+  display: flex;
+
+  .pic-item {
+    margin: 10px;
+    margin-right: 0px;
+    display: inline-flex;
+  }
+
+  .pic-item-image {
+    border-radius: 15rpx;
+  }
+}
+
+// team 
+.team-section {
+  background-color: #ffffff;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+  margin: 20rpx;
+
+  .team-header {
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20rpx;
+  }
+
+  .team-cards {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    white-space: nowrap;
+
+    .cards {
+      display: inline-block;
+
+      .card {
+        background-color: #ffffff;
+        width: 200rpx;
+        padding: 20rpx;
+        margin-right: 20rpx;
+        margin-bottom: 10rpx;
+        border-radius: 10rpx;
+        box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5rpx);
+        }
+
+        .coach-photo {
+          width: 100rpx;
+          height: 100rpx;
+          border-radius: 50%;
+          margin-bottom: 10rpx;
+          object-fit: cover;
+        }
+
+        .coach-name {
+          font-size: 30rpx;
+          font-weight: bold;
+          color: #333;
+          margin-bottom: 5rpx;
+        }
+
+        .coach-title {
+          font-size: 26rpx;
+          color: #666;
+        }
+      }
+    }
+  }
+
+  .team-cards::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// facility section
+.facility-section {
+  background-color: #ffffff;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+  margin: 20rpx;
+
+  .facility-header {
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20rpx;
+  }
+
+  .facility-cards {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    white-space: nowrap;
+
+    .cards {
+      display: inline-block;
+
+      .facility-card {
+        width: 100rpx;
+        margin: 10rpx;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        .facility-icon {
+          width: 50rpx;
+          height: 50rpx;
+          margin-bottom: 10rpx;
+        }
+
+        .facility-name {
+          font-size: 26rpx;
+        }
+      }
+    }
+  }
+
+  .facility-cards::-webkit-scrollbar {
+    display: none;
+  }
+}
