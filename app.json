@@ -4,7 +4,12 @@
     "pages/search/search",
     "pages/venue/venue",
     "pages/my/my",
-    "pages/logs/logs"
+    "pages/editProfile/editProfile",
+    "pages/login/login",
+    "pages/likes/likes",
+    "pages/logs/logs",
+    "pages/feedback/feedback-content/feedback-content",
+    "pages/feedback/feedback-type/feedback-type"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -43,9 +48,15 @@
            "provider": "wx63ffb7b7894e99ae"
        }
   },
+  "requiredPrivateInfos": [
+    "getLocation"
+  ],
   "permission": {
     "scope. userFuzzyLocation": {
     "desc": "你的位置信息将用于小程序定位"
+    },
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位"
     }
   },
   "usingComponents": {
@@ -55,6 +66,11 @@
     "van-loading": "@vant/weapp/loading/index",
     "van-skeleton": "@vant/weapp/skeleton/index",
     "van-tab": "@vant/weapp/tab/index",
-    "van-tabs": "@vant/weapp/tabs/index"
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-search": "@vant/weapp/search/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-popup": "@vant/weapp/popup/index"
   }
 }

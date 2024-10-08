@@ -10,9 +10,16 @@
     </van-tabs>
   </view> -->
 
-<!-- 在胶囊左边做一个搜索输入框，然后旁边是一个地图按钮，点击之后根据地图获取周围的场馆 -->
+  <view class="top-search-input">
+    <van-search class="search-comp" value="{{ value }}" shape="round" placeholder="请输入搜索关键词" />
+    <image class="show-icon" src="{{searchIconUrl}}" bindtap="setSearchView"></image>
+  </view>
 
-  <view class="recommend">
+  <view class="map-view" wx:if="{{isMap}}">
+    <map class="map-comp" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" show-location="true"></map>
+  </view>
+
+  <view class="recommend" wx:else>
     <view wx:for="{{venues}}" wx:key="id">
       <venue-card detail="{{item}}"></venue-card>
     </view>

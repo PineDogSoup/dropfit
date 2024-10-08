@@ -5,12 +5,13 @@
 }
 
 .slogan-wrapper {
-  .slogans{
+  .slogans {
     display: flex;
     flex-direction: column;
     width: 100%;
-    .slogan-item{
-      .slogan-image{
+
+    .slogan-item {
+      .slogan-image {
         width: 100%;
         height: 100%;
         border-radius: 20rpx;
@@ -20,81 +21,23 @@
   }
 }
 
-.search-wrapper {
-  position: absolute;
-  width: 90%;
-  top: 300rpx;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  border-radius: 50rpx;
-  padding: 20rpx;
-  box-shadow: 0 8rpx 12rpx rgba(144, 197, 253, 0.5);
-  z-index: 10;
-}
-
-.search-input {
-  width: 100%;
-  border: none;
-  background-color: transparent;
-  outline: none;
-  display: flex;
-}
-
-van-icon {
-  size: 20;
-  margin-right: 20rpx;
-}
-
-.search {
-  padding: 3rpx;
-  border: 1px solid;
-  border-radius: 80rpx;
-  margin: 10rpx;
-  display: flex;
-  background-color: #fff;
-  box-shadow: 0 8rpx 12rpx rgba(0, 123, 255, 0.5);
-  .cityipt {
-    padding: 20rpx;
-  }
-  .presearch {
-    padding: 20rpx;
-  }
-  .icon {
-    padding-top: 20rpx;
-  }
-}
-
-.introduction {
-  width: 100%;
-  height: 220rpx;
-  background: #eee;
-  white-space: nowrap;
-  .venuvPic {
-    width: 220rpx;
-    height: 220rpx;
-    background: palegreen;
-    margin-right: 10rpx;
-    display: inline-block;
-  }
-  .venuvPic:last-child {
-    margin-right: 0;
-  }
-}
-
 .nearby {
   display: inline;
   margin-top: 600rpx;
   padding: 20rpx;
-  .title {
+
+  .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 20rpx;
-    .fujin {
-      font-size: 45rpx;
+
+    .title {
+      font-size: 38rpx;
     }
+
     .more {
+      color: #888;
       font-size: 25rpx;
     }
   }
@@ -103,33 +46,179 @@ van-icon {
 .recommend {
   display: inline;
   padding: 0 10rpx;
+
   .title {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 20rpx;
+
     .content {
-      font-size: 45rpx;
+      font-size: 38rpx;
     }
   }
-  .card-content{
+
+  .card-content {
     .body {
       display: flex;
       padding: 0 25rpx;
       justify-content: space-between;
       flex-wrap: wrap;
+
       .box {
         width: 340rpx;
-        // display: flex;
-        // flex-direction: column;
         align-items: center;
         word-wrap: break-word;
-        // margin-bottom: 30rpx;
       }
     }
   }
 }
 
+.search-bar {
+  display: flex;
+  position: absolute;
+  width: 90%;
+  top: 300rpx;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 50rpx;
+  padding: 4rpx;
+  box-shadow: 0 8rpx 12rpx rgba(144, 197, 253, 0.5);
+  z-index: 10;
 
+  .city-select {
+    margin: 16rpx;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    flex-shrink: 0;
 
+    .city {
+      margin: 0 10rpx;
+      font-size: 26rpx;
+      color: #333;
+    }
+  }
 
+  .divider {
+    margin: 16rpx;
+    width: 1rpx;
+    height: 40rpx;
+    background-color: #e0e0e0;
+  }
+
+  .search-icon {
+    margin-left: 15rpx;
+  }
+
+  .search-input {
+    margin: 16rpx 5rpx;
+    flex-grow: 1;
+    font-size: 26rpx;
+  }
+
+  .search-button {
+    display: flex;
+    align-items: center;
+    background-color: #007AFF;
+    border-radius: 50rpx;
+    justify-content: center;
+    padding: 0 34rpx;
+    font-size: 26rpx;
+    color: #fff;
+  }
+}
+
+.city-dropdown {
+  position: absolute;
+  top: 370rpx;
+  left: 10rpx;
+  right: 10rpx;
+  background-color: #fff;
+  box-shadow: 0 8rpx 12rpx rgba(0, 0, 0, 0.1);
+  border-radius: 20rpx;
+  padding: 30rpx;
+  z-index: 1000;
+
+  .dropdown-arrow {
+    position: absolute;
+    top: -20rpx;
+    left: 60rpx;
+    width: 0;
+    height: 0;
+    border-left: 20rpx solid transparent;
+    border-right: 20rpx solid transparent;
+    border-bottom: 20rpx solid #fff;
+  }
+
+  .dropdown-content {
+    display: flex;
+    flex-direction: column;
+
+    .current-location {
+      margin-bottom: 16rpx;
+
+      .title {
+        font-size: 30rpx;
+        margin-bottom: 15rpx;
+      }
+    }
+
+    .city-select-section {
+      margin-bottom: 16rpx;
+
+      .title {
+        font-size: 30rpx;
+        margin-bottom: 15rpx;
+      }
+    }
+  }
+
+  .location-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24rpx;
+
+    .location-detail {
+      color: #888;
+
+      .marker-icon {
+        margin-right: 5rpx;
+      }
+    }
+
+    .switch {
+      color: #007AFF;
+      cursor: pointer;
+    }
+  }
+
+  .city-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16rpx;
+
+    .city-option {
+      text-align: center;
+      padding: 16rpx 0;
+      border-radius: 50rpx;
+      background-color: #f0f0f0;
+      color: #333;
+      cursor: pointer;
+
+      &.active {
+        background-color: #007AFF;
+        color: #fff;
+      }
+    }
+  }
+
+  .more-cities {
+    margin-top: 40rpx;
+    text-align: center;
+    color: #888;
+    font-size: 12px;
+  }
+}

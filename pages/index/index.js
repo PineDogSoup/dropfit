@@ -1,33 +1,26 @@
-import { generateDistance } from "../../utils/common.js"
-import { queryVenuesByPage } from "../../api/venue.js"
-import { getHomeInformation } from "../../api/home.js"
+import {
+  generateDistance,
+  removeCitySuffix
+} from "../../utils/common.js"
+import {
+  queryVenuesByPage
+} from "../../api/venue.js"
+import {
+  getHomeInformation
+} from "../../api/home.js"
+import {
+  getUserAddressInfo
+} from "../../utils/location.js"
 
 Page({
   data: {
-    selectorVisible: false,
-    selectedProvince: null,
-    selectedCity: null,
+    selectedCity: '',
+    showCityDropdown: false,
+    nearestCity: '北京',
+    supportedCities: ['北京', '上海', '广州', '深圳', '长沙', '昆明', '成都'],
     venues: [],
-    slogans: []
-  },
-
-  // 显示组件
-  showSelector() {
-    this.setData({
-      selectorVisible: true,
-    });
-  },
-
-  // 当用户选择了组件中的城市之后的回调函数
-  onSelectCity(e) {
-    const {
-      province,
-      city
-    } = e.detail;
-    this.setData({
-      selectedProvince: province,
-      selectedCity: city,
-    });
+    slogans: [],
+    searchInput: ''
   },
 
   /**
@@ -35,7 +28,8 @@ Page({
    */
   onLoad(options) {
     this.getHomeInfo();
-    this.getVenuesData();
+    this.getUserLocation();
+    this.getVenuesData(this.data.selectedCity);
   },
 
   getHomeInfo() {
@@ -46,12 +40,50 @@ Page({
     })
   },
 
-  getVenuesData() {
+  getUserLocation() {
+    getUserAddressInfo().then(res => {
+      console.log(res);
+      let currentCity = removeCitySuffix(res.city)
+      console.log(currentCity);
+      this.setData({
+        selectedCity: this.data.supportedCities.includes(currentCity) ? currentCity : '北京',
+      });
+    })
+  },
+
+  toggleCityDropdown() {
+    this.setData({
+      showCityDropdown: !this.data.showCityDropdown,
+    });
+  },
+
+  selectCity(e) {
+    const {
+      city
+    } = e.currentTarget.dataset;
+    this.setData({
+      selectedCity: city,
+      showCityDropdown: false,
+    });
+    this.getVenuesData(city);
+  },
+
+  switchToNearestCity() {
+    this.setData({
+      selectedCity: this.data.nearestCity,
+      showCityDropdown: false,
+    });
+    this.getVenuesData(this.data.nearestCity);
+  },
+
+  getVenuesData(city, keyword = '') {
     wx.showLoading({
       title: '加载中...',
       mask: true
     })
     queryVenuesByPage({
+      city,
+      keyword,
       limit: 3
     }).then(res => {
       let oldVenues = this.data.venues;
@@ -72,7 +104,22 @@ Page({
   },
 
   onSearchInput(e) {
-    console.log(e)
+    this.setData({
+      searchInput: e.detail.value
+    })
+  },
+
+  onSearchConfirmed(e) {
+    wx.reLaunch({
+      url: '/pages/search/search?city=' + this.data.selectedCity + '&keyword=' + this.data.searchInput,
+    })
+  },
+
+  switchToVeneuSearch(e) {
+    console.log(e);
+    wx.reLaunch({
+      url: '/pages/search/search?city=' + this.data.selectedCity,
+    })
   },
 
   /**

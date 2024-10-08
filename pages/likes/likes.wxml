@@ -1,0 +1,3 @@
+<van-empty class="custom-image" image="/static/images/yoga.png" description="可以去我们的场馆列表页逛逛哦">
+  <van-button round type="danger" class="bottom-button">去场馆列表看看</van-button>
+</van-empty>

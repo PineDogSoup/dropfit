@@ -3,6 +3,33 @@
   background: #f8f8f8;
   min-height: 100vh;
 
+  .top-search-input {
+    background-color: #fff;
+    width: 750rpx;
+    position: relative;
+    display: flex;
+    margin-top: 75rpx;
+
+    .search-comp {
+      width: 490rpx;
+    }
+
+    .show-icon {
+      align-items: center;
+      margin-top: 35rpx;
+      width: 45rpx;
+      height: 45rpx;
+    }
+  }
+
+  .map-view {
+    .map-comp {
+      width: 750rpx;
+      height: 1275rpx;
+
+    }
+  }
+
   .condition {
     width: 100%;
   }
@@ -15,6 +42,7 @@
   .loadOut {
     text-align: center;
     padding: 30rpx 0;
+
     .noData {
       font-size: 30rpx;
       color: #666;

@@ -53,19 +53,9 @@
         justify-content: space-between;
         margin-top: 8px;
 
-        .location {
-          display: flex;
-          align-items: center;
-
-          .location-icon {
-            width: 10px;
-            height: 10px;
-          }
-
-          .address {
-            font-size: 10px;
-            color: #888;
-          }
+        .address {
+          font-size: 10px;
+          color: #888;
         }
 
         .distance {

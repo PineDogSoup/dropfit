@@ -9,6 +9,48 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pages/editProfile/editProfile",
+          "pathName": "pages/editProfile/editProfile",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/feedback/feedback-content/feedback-content",
+          "pathName": "pages/feedback/feedback-content/feedback-content",
+          "query": "title=产品建议",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/feedback/feedback-type/feedback-type",
+          "pathName": "pages/feedback/feedback-type/feedback-type",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/likes/likes",
+          "pathName": "pages/likes/likes",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/map/map",
+          "pathName": "pages/map/map",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pages/venuv/venuv",
           "pathName": "pages/venue/venue",
           "query": "id=0",

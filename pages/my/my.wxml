@@ -1,11 +1,69 @@
-<view class="feature">
-<view>联系客服</view>
-<view>企业服务</view>
-<view>反馈建议</view>
+<view class="container">
+  <!-- <block wx:if="{{!isLoggedIn}}">
+    <button class="login-button" open-type="getPhoneNumber" bindgetphonenumber="onGetPhoneNumber">手机号一键登录</button>
+    <button class="login-button" bind:tap="onGetMockPhoneNumber">手机号一键登录</button>
+  </block>
+  <block>
+    <view class="user-info">
+      <image class="avatar" src="{{userInfo.avatarUrl}}" />
+      <text class="nickname">{{userInfo.nickName}}</text>
+    </view>
+    <view class="favorites">
+      <text>收藏列表</text>
+      <block wx:for="{{favorites}}" wx:key="id">
+        <view>{{item.name}}</view>
+      </block>
+    </view>
+  </block> -->
 
-<view class="clientele">
-  <button class="btn" open-type="contact">1</button>
-  <image class="pic" src="/static/images/clientele.png"></image>
-  <view class="line"></view>
-</view>
+  <view class="loginCheck" wx:if="{{!isLoggedIn}}">
+    <!-- <button class="login-button" open-type="getPhoneNumber" bindgetphonenumber="onGetPhoneNumber">手机号一键登录</button> -->
+    <button class="login-button" bind:tap="onGetMockPhoneNumber">手机号一键登录</button>
+  </view>
+  <view class="logined" wx:else>
+    <view class="info">
+      <view class="avatar" bind:tap="onLoginClick">
+        <image class="pic" src="{{userInfo.avatarUrl}}" mode="widthFix" wx:if="{{userInfo.avatarUrl}}"></image>
+      </view>
+
+      <view class="loginDesc" wx:if="{{!userInfo.nickName}}">
+        <view>未设置昵称</view>
+      </view>
+      <view class="loginDesc" wx:else>
+        <view>{{userInfo.nickName}}</view>
+      </view>
+    </view>
+
+    <view class="feature-section">
+      <view class="feature-header">常用功能</view>
+      <view class="options">
+        <!-- <view class="option">
+          <van-icon class="option-icon" size="60rpx" name="shop-collect-o" bind:tap="likesClick" />
+          <text class="option-name">我的收藏</text>
+        </view> -->
+
+        <!-- <view class="option">
+          <van-icon class="option-icon" size="60rpx" name="map-marked" />
+          <text class="option-name">场馆收录</text>
+        </view> -->
+
+        <view class="option" bind:tap="onFeedbackClick">
+          <van-icon class="option-icon" size="60rpx" name="question-o" />
+          <text class="option-name">问题反馈</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="footer">
+      <text>©DropFit</text>
+    </view>
+
+    <view class="clientele">
+      <button class="btn" open-type="contact"></button>
+      <image class="pic" src="/static/images/clientele.png"></image>
+      <view class="line"></view>
+    </view>
+  </view>
+
+
 </view>

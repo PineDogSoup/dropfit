@@ -1,3 +1,134 @@
+.container {
+  position: relative;
+  background: #f8f8f8;
+  min-height: 100vh;
+
+  .login-button {
+    width: 80%;
+    height: 100rpx;
+    background-color: #007aff;
+    color: white;
+    text-align: center;
+    line-height: 100rpx;
+    border-radius: 50rpx;
+  }
+
+  .logined {
+    .info {
+      margin: 20rpx;
+      padding-top: 20rpx;
+      display: flex;
+
+      .avatar {
+        width: 100rpx;
+        height: 100rpx;
+        display: flex;
+        flex-direction: column;
+        border-radius: 50%;
+        box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.5);
+
+        .pic {
+          width: 100rpx;
+          height: 100rpx;
+          overflow: hidden;
+          border-radius: 50%;
+        }
+
+        // .btn {
+        //   margin-left: -28rpx;
+        //   display: flex;
+        //   background-color: rgba(0, 0, 0, 0);
+
+        //   .pic {
+        //     width: 100rpx;
+        //     height: 100rpx;
+        //     overflow: hidden;
+        //     border-radius: 50%;
+        //   }
+        // }
+
+        // .btn::after {
+        //   border: none;
+        // }
+      }
+
+      .loginDesc {
+        margin-left: 20rpx;
+        font-size: 30rpx;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+      }
+
+      .user-details {
+        display: flex;
+        align-items: center;
+        margin: 20rpx;
+
+        .user-name {
+          font-weight: bold;
+        }
+
+        .edit-icon,
+        confirm-icon {
+          margin-left: 30rpx;
+        }
+      }
+    }
+
+    .feature-section {
+      background-color: #ffffff;
+      margin: 20rpx;
+      padding: 20rpx;
+      border-radius: 20rpx;
+      box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+
+      .feature-header {
+        font-size: 34rpx;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 20rpx;
+      }
+
+      .options {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .option {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 160rpx;
+          margin: 10rpx 20rpx;
+
+          .option-icon {
+            margin-bottom: 10rpx;
+          }
+
+          .option-name {
+            font-size: 28rpx;
+            color: #333;
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20rpx 0;
+  font-size: 22rpx;
+  margin: 30rpx 0;
+  color: gray;
+}
+
+
+// client tele
 .clientele {
   width: 80rpx;
   height: 80rpx;
@@ -8,6 +139,7 @@
   right: 60rpx;
   border-radius: 50%;
   box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.5);
+
   .btn {
     position: relative;
     z-index: 2;
@@ -16,6 +148,7 @@
     height: 100%;
     opacity: 0;
   }
+
   .pic {
     width: 90%;
     height: 90%;
@@ -25,6 +158,7 @@
     left: 0;
     z-index: 1;
   }
+
   .line {
     width: 100%;
     height: 100%;
@@ -38,8 +172,9 @@
 }
 
 @keyframes emit {
-  0%{}
-  100%{
+  0% {}
+
+  100% {
     border-width: 2px;
     opacity: 0;
     transform: scale(1.3);

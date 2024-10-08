@@ -4,17 +4,14 @@
     <view class="venue-details">
       <view class="venue-name-favorites">
         <view class="venue-name">{{detail.name}}</view>
-        <view class="favorites">
+        <!-- <view class="favorites">
           <image src="/static/images/icons/favorite-icon.png" class="heart-icon" alt="heart icon" />
           <text>10k</text>
-        </view>
+        </view> -->
       </view>
 
       <view class="location-distance">
-        <view class="location">
-          <image class="location-icon" src="/static/images/location.png"/>
-          <text class="address">{{detail.location}}</text>
-        </view>
+        <text class="address">{{detail.addr_info.location}}</text>
         <view class="distance">{{detail.distance}}</view>
       </view>
     </view>

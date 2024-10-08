@@ -1,4 +1,6 @@
-import { getVenueDetail } from "../../api/venue.js"
+import {
+  getVenueDetail
+} from "../../api/venue.js"
 
 let id;
 Page({
@@ -7,7 +9,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    detail: null
+    detail: null,
+    longitude: "116.453371",
+    latitude: "39.912846",
+    markers: [{
+      id: 0,
+      width: 45,
+      height: 45,
+      latitude:  Number("39.912846"),
+      longitude: Number("116.453371"),
+      iconPath: '/static/images/icons/marker_icon.png'
+    }]
   },
 
   /**
@@ -17,12 +29,31 @@ Page({
     // wx.hideHomeButton();
     id = options.id
     this.getDetail();
+    // this.getLocation();
   },
 
-  getDetail(){
+  // getLocation(){
+  //   wx.getLocation({
+  //     type: 'gcj02',
+  //     success(res) {
+  //       var latitude = res.latitude; // 当前位置的纬度
+  //       var longitude = res.longitude; // 当前位置的经度
+  //       console.log(latitude);
+  //       console.log(longitude);
+  //       this.setData({
+  //         latitude: latitude,
+  //         longitude: longitude,
+  //         markers: [{id: 0, latitude: latitude, longitude: longitude, iconPath: '/static/images/icons/marker_icon.png'}]
+  //       })
+  //     }
+  //   });
+  // },
+
+
+  getDetail() {
     getVenueDetail(
       id
-    ).then(res=>{
+    ).then(res => {
       // console.log(res);
       this.setData({
         detail: res.data.venue
@@ -32,9 +63,43 @@ Page({
     })
   },
 
-  clickPhone(){
+  clickLocation(e) {
+    wx.openLocation({
+      longitude: Number("116.453371"),
+      latitude: Number("39.912846"),
+      scale: 18,
+      name: this.data.detail.name,
+      address: this.data.detail.address,
+      fail: function (e) {
+        console.log(e)
+      }
+    })
+  },
+
+  phoneCall(e) {
+    console.log(e);
     wx.makePhoneCall({
       phoneNumber: '13530070813',
+    })
+  },
+
+  wechatCopy(e) {
+    wx.setClipboardData({
+      data: "我被复制了～",
+      success: function (res) {
+        wx.showToast({
+          title: '微信复制成功',
+          icon: 'success',
+          duration: 1500
+        });
+      }
+    });
+  },
+
+  miniProgramJump(e) {
+    console.log(e);
+    wx.navigateToMiniProgram({
+      appId: "wx83db7e2a10723718"
     })
   },
 
@@ -86,14 +151,14 @@ Page({
   onShareAppMessage() {
     return {
       title: this.data.detail.name,
-      path: "/pages/venue/venue?id="+this.data.detail.id
+      path: "/pages/venue/venue?id=" + this.data.detail.id
     }
   },
 
   onShareTimeline() {
     return {
       title: this.data.detail.name,
-      path: "/pages/venue/venue?id="+this.data.detail.id
+      path: "/pages/venue/venue?id=" + this.data.detail.id
     }
   }
 })

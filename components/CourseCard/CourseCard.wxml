@@ -7,7 +7,7 @@
     <view class="course-name">动物流</view>
     <view class="course-location">
       <view class="location">
-        <image class="location-icon" src="../../static/images/location.png"/>
+        <van-icon class="location-icon" name="location-o" />
         <text class="address">嘉里中心</text>
       </view>
       <view class="distance">1000km</view>

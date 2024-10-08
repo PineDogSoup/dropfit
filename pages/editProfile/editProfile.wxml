@@ -1,0 +1,24 @@
+<view class="login-container">
+  <view class="information">
+    <view class="avatar">
+      <text>头像</text>
+      <view>
+        <button class="btn" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+          <image class="pic" src="{{userInfo.avatarUrl}}" mode="widthFix"></image>
+        </button>
+      </view>
+    </view>
+    <view class="nickname">
+      <text>昵称</text>
+      <input form-type="submit" bindblur="getNickName" placeholder="请输入昵称" type="nickname" class="input" wx:if="{{!userInfo.nickName}}"/>
+      <input form-type="submit" bindblur="getNickName" type="nickname" class="input" value="{{userInfo.nickName}}" wx:else/>
+    </view>
+    <view class="remind">
+      昵称限2-32个字符，一个汉字为2个字符
+    </view>
+
+    <view class="bottom">
+      <view class="primary" bind:tap="onConfirm">确认</view>
+    </view>
+  </view>
+</view>

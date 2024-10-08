@@ -1,0 +1,14 @@
+<view class="container">
+  <view class="header">
+    <text>请选择反馈类型</text>
+  </view>
+  <view class="selects" wx:for="{{feedbackTypes}}" wx:key="index" data-index="{{index}}" bind:tap="onFeedbackClick">
+    <view class="content">
+      <view class="detail">
+        <text class="title">{{item.title}}</text>
+        <text class="desc">{{item.desc}}</text>
+      </view>
+      <view class="row">></view>
+    </view>
+  </view>
+</view>

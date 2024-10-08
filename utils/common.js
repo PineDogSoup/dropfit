@@ -11,3 +11,10 @@ export function generateDistance() {
     random + "m" :
     (random / 1000).toFixed(1) + "km"
 }
+
+export function removeCitySuffix(addr) {
+  if (addr.indexOf("市") != -1){
+    addr = addr.substring(0, addr.length - 1)
+    return addr
+  }
+}

@@ -1,5 +1,13 @@
-import { queryVenuesByPage,getCategoryList } from "../../api/venue.js"
-import { generateDistance } from "../../utils/common.js"
+import {
+  queryVenuesByPage,
+  getCategoryList
+} from "../../api/venue.js"
+import {
+  generateDistance
+} from "../../utils/common.js"
+import {
+  getUserLocation
+} from "../../utils/location.js"
 
 Page({
 
@@ -7,9 +15,21 @@ Page({
     active: 0,
     loading: false,
     loadFinished: false,
+    searchIconUrl: "",
+    isMap: true,
     currentOffset: 0,
     venues: [],
-    categories: []
+    categories: [],
+    markers: [{
+      id: 0,
+      width: 45,
+      height: 45,
+      latitude:  Number("39.912846"),
+      longitude: Number("116.453371"),
+      iconPath: '/static/images/icons/marker_icon.png'
+    }],
+    latitude: 0,
+    longitude: 0
   },
 
   /**
@@ -20,20 +40,37 @@ Page({
       title: '加载中...',
       mask: true
     })
-    this.getCategoryList();
-    this.getVenuesData();
+    // this.getCategoryList();
+    getUserLocation().then(res => {
+      console.log(res);
+      this.setData({
+        latitude: res.latitude,
+        longitude: res.longitude
+      })
+    })
+    this.setSearchView();
+    this.getVenuesData(options.city, options.keyword);
   },
 
-  getVenuesData() {
+  setSearchView() {
+    this.setData({
+      searchIconUrl: this.data.isMap ? "/static/images/icons/wan_map.png" : "/static/images/icons/list.png",
+      isMap: !this.data.isMap
+    })
+  },
+
+  getVenuesData(city, keyword = '') {
     this.setData({
       loading: true
     })
     queryVenuesByPage({
+      city,
+      keyword,
       limit: 6,
       offset: this.data.currentOffset
     }).then(res => {
       console.log(res);
-      if(res.data.total==0){
+      if (res.data.total == 0) {
         this.setData({
           loading: false,
           loadFinished: true
@@ -57,14 +94,14 @@ Page({
     wx.hideLoading();
   },
 
-  getCategoryList() {
-    getCategoryList().then(res=>{
-      this.setData({
-        categories: res.data.categories
-      })
-      this.selectComponent("#categoryTabs").resize()
-    })
-  },
+  // getCategoryList() {
+  //   getCategoryList().then(res=>{
+  //     this.setData({
+  //       categories: res.data.categories
+  //     })
+  //     this.selectComponent("#categoryTabs").resize()
+  //   })
+  // },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

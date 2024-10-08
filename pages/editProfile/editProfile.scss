@@ -1,0 +1,78 @@
+.login-container {
+  padding-top: 20rpx;
+  // box-sizing: border-box;
+  background: #f8f8f8;
+
+  .information {
+    height: 100vh;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+
+    .avatar,
+    .nickname {
+      height: 90rpx;
+      display: flex;
+      align-items: center;
+      border-bottom: 1rpx solid lightgray;
+      justify-content: space-between;
+      font-size: 30rpx;
+    }
+
+    .avatar {
+      padding: 0 20rpx;
+
+      .btn {
+        padding: 0;
+        width: 80rpx; 
+        height: 80rpx; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+
+        .pic {
+          width: 80rpx; 
+          height: 80rpx; 
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .nickname {
+      padding: 20rpx;
+
+      .input {
+        text-align: right;
+        // width: 150rpx;
+      }
+    }
+
+    .remind {
+      padding: 20rpx;
+      font-size: 25rpx;
+      color: lightgray;
+    }
+
+    .bottom {
+      height: 200rpx;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .primary {
+        width: 80%;
+        height: 80rpx;
+        padding: 10rpx;
+        margin: 10rpx;
+        border-radius: 50rpx;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #007BFF;
+        color: #fff;
+      }
+    }
+  }
+}

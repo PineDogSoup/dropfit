@@ -16,40 +16,56 @@
     </swiper>
   </view>
 
-  <view class="search-wrapper">
-    <view class="search-input">
-      <van-icon name="search" size="20"/>
-      <input 
-      class="cityipt" 
-      type="text" 
-      confirm-type="search" 
-      placeholder="请输入城市"
-      bindinput="onSearchInput"
-      />
+  <view class="search-bar">
+    <view class="city-select" bindtap="toggleCityDropdown">
+      <view class="city">{{selectedCity}}</view>
+      <van-icon name="arrow-up" size="15" class="arrow" wx:if="{{showCityDropdown}}"/>
+      <van-icon name="arrow-down" size="15" class="arrow" wx:else/>
+    </view>
+    <view class="divider"></view>    
+    <van-icon class="search-icon" name="search" size="15"/>
+    <input class="search-input" placeholder="请输入场馆名称" bindinput="onSearchInput" />
+    <view class="search-button" bind:tap="onSearchConfirmed">搜索
     </view>
   </view>
 
-    <!-- <view class="city-select">
-      <selector-component
-        show="{{selectorVisible}}"
-        key="LXDBZ-QOCKG-N74QJ-QEDGD-M7EQV-OPB7E"
-        referer="dropfit"
-        bindselect="onSelectCity"
-      >城市选择器</selector-component>
-    </view> -->
-
-
-    <view class="nearby">
-      <view class="title">
-        <view class="fujin">附近场馆</view>
-        <view class="more">查看更多></view>
+  <view wx:if="{{showCityDropdown}}" class="city-dropdown">
+    <view class="dropdown-arrow"></view>
+    <view class="dropdown-content">
+      <view class="current-location">
+        <view class="title">当前定位</view>
+        <view class="location-info">
+          <view class="location-detail">
+            <van-icon name="location-o" class="marker-icon" color="#888"/>
+            <text>定位显示您距离{{nearestCity}}更近</text>
+          </view>
+          <view class="switch" bindtap="switchToNearestCity">切换到{{nearestCity}}</view>
+        </view>
       </view>
-      <view wx:for="{{venues}}" wx:key="id">
-        <venue-card detail="{{item}}"></venue-card>
+
+      <view class="city-select-section">
+        <view class="title">选择城市</view>
+        <view class="city-options">
+          <view wx:for="{{supportedCities}}" wx:key="city" bindtap="selectCity" data-city="{{item}}" class="city-option {{selectedCity === item ? 'active' : ''}}">
+            {{item}}
+          </view>
+        </view>
+        <view class="more-cities">更多城市，敬请期待!</view>
       </view>
     </view>
+  </view>
+  
+  <view class="nearby">
+    <view class="header">
+      <view class="title">附近场馆</view>
+      <view class="more" bindtap="switchToVeneuSearch">查看更多></view>
+    </view>
+    <view wx:for="{{venues}}" wx:key="id">
+      <venue-card detail="{{item}}"></venue-card>
+    </view>
+  </view>
 
-    <view class="recommend">
+    <!-- <view class="recommend">
       <view class="title">
         <view class="content">课程推荐</view>
       </view>
@@ -60,5 +76,5 @@
           </view>
         </view>
       </view>
-    </view>
+    </view> -->
 </view>

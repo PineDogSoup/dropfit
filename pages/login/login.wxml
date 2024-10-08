@@ -1,0 +1,3 @@
+<view class="container">
+  <button class="login-button" open-type="getPhoneNumber" bindgetphonenumber="onGetPhoneNumber">手机号一键登录</button>
+</view>

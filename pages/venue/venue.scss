@@ -77,30 +77,36 @@
   -webkit-box-orient: vertical;
 }
 
-.address-section {
+.location {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   background-color: #ffffff;
   margin: 20rpx;
   padding: 20rpx;
   border-radius: 20rpx;
-
   box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
-  .address-left {
-    display: flex;
-    align-items: center;
 
-    .address {
-      margin-left: 10rpx;
-      font-size: 30rpx;
-      color: #333;
+  .header {
+    font-size: 34rpx;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10rpx;
+  }
+
+  .map-view {
+    margin-bottom: 20rpx;
+    border-radius: 20rpx;
+    overflow: hidden;
+
+    .map-comp {
+      width: 100%;
+      height: 200rpx;
     }
   }
 
-  .address-right {
-    display: flex;
-    align-items: center;
+  .address {
+    font-size: 24rpx;
+    color: #888;
   }
 }
 
@@ -128,10 +134,9 @@
       flex-direction: column;
       align-items: center;
       width: 160rpx;
+      margin: 10rpx 20rpx;
 
       .option-icon {
-        width: 80rpx;
-        height: 80rpx;
         margin-bottom: 10rpx;
       }
 
@@ -245,12 +250,12 @@
 
   .facility-cards {
     display: flex;
-    flex-direction: row;
-    overflow-x: scroll;
-    white-space: nowrap;
+    flex-wrap: wrap;
 
     .cards {
-      display: inline-block;
+      display: flex;
+      flex-wrap: wrap;
+      width: 20%;
 
       .facility-card {
         width: 100rpx;
@@ -271,9 +276,5 @@
         }
       }
     }
-  }
-
-  .facility-cards::-webkit-scrollbar {
-    display: none;
   }
 }

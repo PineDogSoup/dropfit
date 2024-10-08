@@ -4,65 +4,48 @@
 
 <view class="page-container" wx:else>
   <view class="venue-intro">
-    <image class="venue-background" src="{{detail.images[0]}}" mode="aspectFill"/>
+    <image class="venue-background" src="{{detail.images[0]}}" mode="aspectFill" />
     <view class="venue-overlay"></view>
     <view class="venue-info">
-      <image class="venue-logo" src="{{detail.logo_url}}"/>
+      <image class="venue-logo" src="{{detail.logo_url}}" />
       <text class="venue-name">{{detail.name}}</text>
       <text class="venue-description">{{detail.description}}</text>
     </view>
   </view>
 
-  <view class="address-section">
-    <view class="address-left">
-      <van-icon name="location-o" />
-      <text class="address">{{detail.location}}</text>
-    </view>
-    <view class="address-right">
-      <van-icon name="phone-o" bind:click="clickPhone"/>
+  <!-- booking -->
+  <view class="booking-section">
+    <!-- <view class="booking-header">去约课</view> -->
+    <view class="contact-options">
+      <view class="option">
+        <van-icon class="option-icon" size="70rpx" name="phone-circle-o" bind:click="phoneCall" />
+        <text class="option-name">电话</text>
+      </view>
+      <view class="option">
+        <van-icon class="option-icon" size="70rpx" name="chat-o" bind:click="wechatCopy" />
+        <text class="option-name">微信</text>
+      </view>
+      <view class="option" bindtap="clickMiniProm">
+        <van-icon class="option-icon" size="70rpx" name="miniprogram-o" bind:tap="miniProgramJump" />
+        <text class="option-name">小程序</text>
+      </view>
+      <view class="option">
+        <van-icon class="option-icon" name="like-o" size="70rpx"/>
+        <text class="option-name">收藏</text>
+      </view>
+      <view class="option">
+        <van-icon class="option-icon" name="share-o" size="70rpx"/>
+        <text class="option-name">转发</text>
+      </view>
     </view>
   </view>
 
   <view class="location">
-    <view class="map">地址地图</view>
-  </view>
-
-  <!-- booking -->
-  <view class="booking-section">
-    <view class="booking-header">去约课</view>
-    <view class="contact-options">
-      <navigator url="">
-        <view class="option">
-          <image class="option-icon" src="../../static/images/icons/curator.png"/>
-          <text class="option-name">馆长微信</text>
-        </view>
-      </navigator>
-      <navigator url="">
-        <view class="option">
-          <image class="option-icon" src="../../static/images/icons/official.png"/>
-          <text class="option-name">公众号</text>
-        </view>
-      </navigator>
-      <navigator url="">
-        <view class="option">
-          <image class="option-icon" src="../../static/images/icons/minipro.png"/>
-          <text class="option-name">微信小程序</text>
-        </view>
-      </navigator>
+    <view class="header">地址</view>
+    <view class="map-view">
+      <map latitude="{{latitude}}" longitude="{{longitude}}" scale="16" enable-zoom="{{false}}" enable-scroll="{{false}}" markers="{{markers}}" class="map-comp" bind:tap="clickLocation"> </map>
     </view>
-  </view>
-
-  <!-- facility -->
-  <view class="facility-section">
-    <view class="facility-header">配备设施</view>
-    <scroll-view class="facility-cards" scroll-x>
-      <view class="cards" wx:for="{{7}}" wx:key="id">
-        <view class="facility-card">
-          <image class="facility-icon" src="/static/images/bathroom.png"></image>
-          <text class="facility-name">洗澡</text>
-        </view>
-      </view>
-    </scroll-view>
+    <view class="address"> {{detail.addr_info.location}} </view>
   </view>
 
   <!-- team -->
@@ -71,7 +54,7 @@
     <scroll-view class="team-cards" scroll-x>
       <view class="cards" wx:for="{{detail.coaches}}" wx:key="id">
         <view class="card">
-          <image class="coach-photo" src="{{item.avatar_url}}" mode="aspectFill"/>
+          <image class="coach-photo" src="{{item.avatar_url}}" mode="aspectFill" />
           <text class="coach-name">{{item.name}}</text>
           <text class="coach-title">{{item.position}}</text>
         </view>
@@ -79,11 +62,23 @@
     </scroll-view>
   </view>
 
+  <!-- facility -->
+  <view class="facility-section">
+    <view class="facility-header">配备设施</view>
+    <view class="facility-cards">
+      <view class="cards" wx:for="{{7}}" wx:key="id">
+        <view class="facility-card">
+          <image class="facility-icon" src="/static/images/bathroom.png"></image>
+          <text class="facility-name">淋浴间</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
   <!-- introduction images-->
   <scroll-view class="introduction" scroll-x>
     <view class="pic-item" wx:for="{{detail.images}}" wx:key="id">
-        <image class="pic-item-image" src="{{item}}" mode="aspectFill" />
+      <image class="pic-item-image" src="{{item}}" mode="aspectFill" />
     </view>
   </scroll-view>
 </view>
-
