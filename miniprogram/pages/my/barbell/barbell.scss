@@ -1,0 +1,39 @@
+.page {
+  padding: 0;
+  background-color: #ffffff;
+}
+
+.category {
+  background-color: #f0f0f0;
+  color: #a8a8a8;
+  padding: 10rpx 0;
+
+  .category-text {
+    font-size: 32rpx;
+    margin-left: 20rpx;
+    margin-bottom: 20rpx;
+  }
+
+  .subcategory {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 18rpx 0;
+    border-bottom: 1rpx solid #e0e0e0;
+
+    .subcategory-text {
+      font-size: 26rpx;
+      margin-left: 20rpx;
+    }
+
+    .record {
+      margin-right: 20rpx;
+    }
+  }
+
+  .subcategory:last-child {
+    border-bottom: none;
+  }
+}

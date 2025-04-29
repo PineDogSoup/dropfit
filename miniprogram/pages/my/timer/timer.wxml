@@ -1,0 +1,13 @@
+<view class="container">
+  <view class="title">
+    <text class="slogan">DROPFIT</text>
+    <text class="timer-title">WOD TIMER</text>
+  </view>
+  <view class="timer-container">
+    <view class="timer-item" bind:tap="onAmrapTap" style="background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);">AMRAP</view>
+    <view class="timer-item" bind:tap="onForTimeTap" style="background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);">FOR TIME</view>
+    <view class="timer-item" bind:tap="onEmomTap" style="background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);">EMOM</view>
+    <view class="timer-item" bind:tap="onTabataTap" style="background-image: linear-gradient(to right, #7028e4 0%, #e5b2ca 100%);">TABATA</view>
+  </view>
+
+</view>

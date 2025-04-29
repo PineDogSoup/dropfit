@@ -1,0 +1,52 @@
+<view class="container">
+  <!-- <view class="timer-type" bindtap="showTimerTypePicker">{{ selectedTimerType }}</view> -->
+  <view class="timer-name">TABATA</view>
+
+  <view class="time-selection">
+    <view class="timer-desc">Set your Tabata Timer</view>
+    <view class="time-box" bindtap="showRoundsPicker">
+      <view class="round-count">
+        {{ selectedRounds }}
+      </view>
+      <view class="unit">
+        Rounds
+      </view>
+    </view>
+    <view class="time-box" bindtap="showTimePicker">
+      <view class="time-count-box">
+        {{ selectedTime }}
+      </view>
+      <view class="unit">
+        Work
+      </view>
+    </view>
+    <view class="time-box" bindtap="showRestPicker">
+      <view class="time-count-box">
+        {{ selectedRest }}
+      </view>
+      <view class="unit">
+        Rest
+      </view>
+    </view>
+  </view>
+
+  <van-button class="start-button" round size="large" type="info" color="#a31ccc" bind:click="startTimer">
+    <view class="title">START TIMER</view>
+    <view class="total">Total time: {{totalTime}}</view>
+  </van-button>
+
+  <!-- 轮次选择器 -->
+  <van-popup show="{{ showRoundsPickerPopup }}" position="bottom" custom-style="height: 50%;">
+    <van-picker show-toolbar columns="{{ roundsColumns }}" bind:confirm="onRoundsConfirm" bind:cancel="onPickerCancel" default-index="{{ 4 }}" />
+  </van-popup>
+
+  <!-- 时间选择器 -->
+  <van-popup show="{{ showTimePickerPopup }}" position="bottom" custom-style="height: 50%;">
+    <van-picker show-toolbar columns="{{ timeColumns }}" bind:confirm="onTimeConfirm" bind:cancel="onPickerCancel" default-index="{{ 35 }}"  />
+  </van-popup>
+
+  <!-- 休息时间选择器 -->
+  <van-popup show="{{ showRestPickerPopup }}" position="bottom" custom-style="height: 50%;">
+    <van-picker show-toolbar columns="{{ restColumns }}" bind:confirm="onRestConfirm" bind:cancel="onPickerCancel" default-index="{{ 20 }}" />
+  </van-popup>
+</view>

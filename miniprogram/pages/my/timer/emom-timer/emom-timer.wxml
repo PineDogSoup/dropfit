@@ -1,0 +1,40 @@
+<view class="container">
+  <view class="timer-name">EMOM</view>
+
+  <view class="time-selection">
+    <view class="timer-desc">{{ timerDesc }}</view>
+    <view class="time-box" bindtap="showTimePicker">
+      <view class="unit">
+        Every
+      </view>
+      <view class="time-count-box">
+        {{ selectedTime }}
+      </view>
+    </view>
+    <view class="time-box" bindtap="showTotalPicker" wx:if="{{!isDeathBy}}">
+      <view class="unit">
+        for
+      </view>
+      <view class="time-count-box">
+        {{ selectedTotal }}
+      </view>
+    </view>
+
+    <view class="death-by-container" bindtap="toggleDeathBy">
+      <image class="death-by-img" src="{{isDeathBy ?'/static/images/death-by-choosed.png':'/static/images/death-by-default.png'}}"></image>
+      <text style="color: {{ isDeathBy ? '#13C38E' : '#6C6C6C' }};">As long as possible("Death By")</text>
+    </view>
+  </view>
+
+  <van-button class="start-button" round size="large" type="info" color="#13C38E" bind:click="startTimer">
+    <view class="title">START TIMER</view>
+  </van-button>
+
+  <van-popup show="{{ showTimePickerPopup }}" position="bottom" custom-style="height: 50%;">
+    <van-picker show-toolbar columns="{{ timeColumns }}" bind:confirm="onTimeConfirm" bind:cancel="onPickerCancel" default-index="{{ 0 }}" />
+  </van-popup>
+
+  <van-popup show="{{ showTotalPickerPopup }}" position="bottom" custom-style="height: 50%;">
+    <van-picker show-toolbar columns="{{ totalColumns }}" bind:confirm="onTotalConfirm" bind:cancel="onPickerCancel" default-index="{{ 0 }}" />
+  </van-popup>
+</view>

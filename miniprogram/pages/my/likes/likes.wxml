@@ -1,0 +1,10 @@
+<view class="favorate">
+  <view class="venues-view" wx:if="{{venues.length>0}}">
+    <view wx:for="{{venues}}" wx:key="id">
+      <venue-card info="{{item}}" liked="true"></venue-card>
+    </view>
+  </view>
+  <van-empty image="search" class="empty" description="暂无场馆收藏记录" wx:else>
+    <button class="bottom-button" bind:tap="switchToHome">去场馆列表逛逛</button>
+  </van-empty>
+</view>

@@ -1,0 +1,12 @@
+<view class="modal" wx:if="{{show}}">
+  <view class="modal-content">
+    <view class="modal-icon">
+      <image src="/static/images/mini_and_phone.png" class="icon" />
+    </view>
+    <view class="modal-message">「DropFit途健」需要获取您的手机号,以便为您提供更好的服务</view>
+    <view class="modal-actions">
+      <button class="login-btn" open-type="getPhoneNumber" bindgetphonenumber="onLogin">授权手机登录</button>
+      <button class="cancel-btn" bindtap="onCancel">随便逛逛</button>
+    </view>
+  </view>
+</view>

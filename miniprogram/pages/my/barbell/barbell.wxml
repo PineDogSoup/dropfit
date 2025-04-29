@@ -1,0 +1,9 @@
+<view class="page">
+  <view class="category" wx:for="{{categories}}" wx:key="id">
+    <text class="category-text">{{item.name}}</text>
+    <view class="subcategory" wx:for="{{item.subcategories}}" wx:key="id" bindtap="navigateToSubcategory" data-id="{{item._id}}" data-name="{{item.name}}">
+      <text class="subcategory-text">{{item.name}}</text>
+      <text class="record" wx:if="{{item.bestRecord}}">{{item.bestRecord}}</text>
+    </view>
+  </view>
+</view>

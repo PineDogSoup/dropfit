@@ -1,0 +1,33 @@
+<view class="feedback-page">
+  <view class="feedback-type">
+    <text>{{title}}</text>
+  </view>
+
+  <view class="input-container">
+    <textarea class="feedback-input" placeholder="请填写10个字以上的问题描述以便于我们提供更好的帮助" maxlength="200" bindinput="onInput"></textarea>
+    <view class="char-count">{{content.length}}/200</view>
+  </view>
+
+  <view class="screenshot-section">
+    <view class="screenshot-header">
+      <text>截图（{{images.length}}/4）</text>
+    </view>
+    <view class="screenshot-container">
+      <block wx:for="{{images}}" wx:key="*this">
+        <image src="{{item.tempFilePath}}" class="screenshot"></image>
+      </block>
+      <block wx:if="{{images.length < 4}}">
+        <view class="screenshot-placeholder" bindtap="chooseImage">
+          <image src="/static/images/icons/add_pic.png" class="plus-icon"></image>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="contact-section">
+    <text class="contact-label">联系方式</text>
+    <input class="contact-input" placeholder="邮箱/手机号" bindinput="onContactInput" />
+  </view>
+
+  <button class="submit-button" bindtap="submitFeedback">提交</button>
+</view>

@@ -1,0 +1,125 @@
+<view class="container">
+  <!-- 第一块视图 -->
+  <form class="form" bindsubmit="onSubmit">
+    <view class="section">
+      <view class="section-title">基本介绍</view>
+      <van-field name="name" label="场馆名称" placeholder="请输入场馆名称" required />
+      <van-field name="description" maxlength="200" label="场馆简介" type="textarea" placeholder="请输入场馆简介" required />
+
+    </view>
+    <view class="section">
+      <view class="section-title">场馆位置</view>
+      <view class="form-item">
+        <view class="location-address">{{address}}</view>
+        <van-button icon="location-o" type="primary" color="#007aff" bind:click="chooseLocation">{{address?'重新选择':'选择位置'}}</van-button>
+      </view>
+    </view>
+    <view class="section">
+      <view class="section-title">宣传图片</view>
+      <view class="form-item">
+        <view class="pic-title">Logo ({{logoImage.length}}/1)</view>
+        <view class="tips">* 建议上传正方形的照片</view>
+        <van-uploader file-list="{{logoImage}}" max-count="1" bind:delete="onDeleteLogoImage" bind:click="chooseLogoImage" deletable bind:after-read="afterReadLogo" style="aspect-ratio: 16 / 9;" />
+      </view>
+      <view class="form-item">
+        <view class="pic-title">场馆图 ({{introImages.length}}/6)</view>
+        <view class="tips">* 建议上传横向的照片</view>
+        <van-uploader file-list="{{introImages}}" max-count="3" bind:delete="onDeleteIntroImage" bind:click="chooseIntroImages" deletable bind:after-read="afterReadIntro" style="aspect-ratio: 16 / 9;" />
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="section-title">联系方式</view>
+      <van-field name="phone" label="电话" placeholder="请输入联系电话" required />
+      <van-field name="wx" label="客服微信" placeholder="请输入客服微信" required />
+      <van-field name="gzh" label="公众号" placeholder="请输入微信公众号" />
+      <van-field name="dzdp" label="大众点评" placeholder="请输入微信大众点评店铺名" />
+      <van-field name="mini" label="微信小程序" placeholder="请输入微信小程序名称" />
+    </view>
+
+    <view class="section">
+      <view class="section-title">课表</view>
+      <van-checkbox-group class="checkbox" value="{{ classes }}" bind:change="onClassChange">
+        <view class="checkbox-item">
+          <van-checkbox name="early">早课</van-checkbox>
+        </view>
+        <view class="checkbox-item">
+          <van-checkbox name="weightlifting">举重</van-checkbox>
+        </view>
+        <view class="checkbox-item">
+          <van-checkbox name="gymnastics">体操</van-checkbox>
+        </view>
+        <view class="checkbox-item">
+          <van-checkbox name="hyrox">HYROX</van-checkbox>
+        </view>
+        <view class="checkbox-item">
+          <van-checkbox name="performance">运动表现</van-checkbox>
+        </view>
+        <view class="checkbox-item">
+          <van-checkbox name="yoga">瑜伽</van-checkbox>
+        </view>
+        <view class="checkbox-item">
+          <van-checkbox name="quanli60">全力60</van-checkbox>
+        </view>
+        <view class="checkbox-item">
+          <van-checkbox name="bootcamp">BootCamp</van-checkbox>
+        </view>
+      </van-checkbox-group>
+    </view>
+
+    <view class="section">
+      <view class="section-title">体验卡</view>
+      <van-field name="cartType" label="卡种" placeholder="卡种类型,例:次卡、2次卡、周卡" />
+      <van-field name="collectionMethod" label="方式" placeholder="请输入购买方式,例:大众点评、小程序等" />
+      <van-field name="originalPrice" label="原价" placeholder="请输入体验卡原始价格" />
+      <van-field name="currentPrice" label="现价" placeholder="请输入体验卡当前价格" />
+    </view>
+
+    <view class="section">
+      <view class="section-title">自媒体</view>
+      <van-field name="xhs" label="小红书" placeholder="请输入小红书名称" />
+      <van-field name="dy" label="抖音" placeholder="请输入抖音名称" />
+      <van-field name="wideo" label="视频号" placeholder="请输入视频号名称" />
+    </view>
+
+    <!-- 第三块视图 -->
+    <view class="section">
+      <view class="section-title">场馆设备</view>
+      <van-checkbox-group class="checkbox" value="{{ result }}" bind:change="onChange">
+        <view class="checkbox-item">
+          <van-checkbox name="shower">淋浴间</van-checkbox>
+        </view>
+        <view class="checkbox-item">
+          <van-checkbox name="cabinet">柜子</van-checkbox>
+        </view>
+        <view class="checkbox-item">
+          <van-checkbox name="water">水</van-checkbox>
+        </view>
+        <view class="checkbox-item">
+          <van-checkbox name="parking">停车场</van-checkbox>
+        </view>
+        <view class="checkbox-item">
+          <van-checkbox name="yogaMat">瑜伽垫</van-checkbox>
+        </view>
+        <view class="checkbox-item">
+          <van-checkbox name="toilet">洗手间</van-checkbox>
+        </view>
+        <view class="checkbox-item">
+          <van-checkbox name="towel">毛巾</van-checkbox>
+        </view>
+        <view class="checkbox-item">
+          <van-checkbox name="coffee">咖啡</van-checkbox>
+        </view>
+      </van-checkbox-group>
+    </view>
+
+    <view class="commit-container">
+      <van-button class="commit-button" size="large" round color="#007aff" form-type="submit">提交</van-button>
+    </view>
+  </form>
+</view>
+
+<!-- 广告 -->
+<view class="ad">
+  <ad-custom unit-id="adunit-e59f0f6a2e8c711a" bindload="adLoad" binderror="adError" bindclose="adClose"></ad-custom>
+</view>

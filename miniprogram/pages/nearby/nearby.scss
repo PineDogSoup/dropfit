@@ -1,0 +1,155 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  .swiper {
+    width: 100%;
+    position: relative;
+
+    .slogans {
+      width: 100%;
+      overflow: hidden;
+      background-image: linear-gradient(to top, #EAF3FF 0%, #007AFF 100%);
+
+      .slogans-container {
+        color: white;
+        display: flex;
+        margin-left: 40rpx;
+        justify-content: start;
+        align-items: flex-end;
+
+        .big-slogan {
+          font-weight: bold;
+        }
+
+        .small-slogan {
+          margin-left: 20rpx;
+        }
+      }
+    }
+  }
+
+  .search-target-container {
+    width: 85%;
+    background-color: #fff;
+    border-radius: 30rpx;
+    padding: 30rpx;
+    margin-top: -40rpx;
+    box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+    z-index: 2;
+
+    .city-selector {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20rpx;
+
+      .selector {
+        display: flex;
+        align-items: center;
+
+        .city-text {
+          margin-right: 10rpx;
+          font-size: 40rpx;
+          font-weight: bold;
+        }
+
+        .city-arrow {
+          color: #b8b0b0;
+        }
+      }
+
+      .locate {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .locate-text {
+          margin-top: 6rpx;
+          font-size: 18rpx;
+        }
+
+        .aim {
+          color: black;
+        }
+      }
+    }
+
+    .keyword-input-container {
+      margin-bottom: 20rpx;
+    }
+
+    .search-btn {
+      width: 100%;
+      border-radius: 40rpx;
+      font-size: 36rpx;
+      background-color: #007AFF;
+      color: #EAF3FF;
+      ;
+    }
+  }
+
+  .recommend-container {
+    width: 85%;
+    background-color: #fff;
+    border-radius: 20rpx;
+    padding: 15rpx 30rpx;
+    margin-top: 20rpx;
+    box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+    display: flex;
+
+    .venue-image {
+      width: 20%;
+      height: 120rpx;
+      object-fit: cover;
+      border-radius: 10rpx;
+    }
+
+    .info {
+      margin-left: 20rpx;
+      width: 76%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .name,
+      .address {
+        // margin: 5rpx;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .name {
+        font-size: 34rpx;
+      }
+
+      .comment {
+        display: flex;
+        align-items: center;
+
+        .star-text {
+          margin: 5rpx;
+          font-size: 26rpx;
+        }
+      }
+
+      .address {
+        font-size: 22rpx;
+        color: #888;
+      }
+    }
+  }
+
+  .loadOut {
+    text-align: center;
+    padding: 40rpx 0;
+
+    .noData {
+      font-size: 24rpx;
+      color: #666;
+    }
+  }
+}

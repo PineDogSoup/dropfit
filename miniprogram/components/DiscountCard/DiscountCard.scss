@@ -1,0 +1,119 @@
+.card {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 10rpx 0;
+
+  .img-container {
+
+    .promo-image {
+      width: 240rpx;
+      height: 240rpx;
+    }
+
+    .promo-text {
+      position: absolute;
+      top: 10rpx;
+      left: 0;
+      background-color: #FF073E;
+      color: white;
+      padding: 5rpx 10rpx;
+      font-size: 20rpx;
+      border-radius: 0 0 10rpx 0;
+    }
+  }
+
+
+  .info {
+    flex: 1;
+    padding-bottom: 10rpx;
+    margin-left: 10rpx;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #F4F5F5;
+
+    .venue-name {
+      font-size: 30rpx;
+      font-weight: bold;
+      margin-bottom: 10rpx;
+    }
+
+    .location {
+      font-size: 22rpx;
+      color: #989898;
+      margin-bottom: 10rpx;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 10rpx;
+
+      .tag {
+        font-size: 20rpx;
+        background-color: #F7F7F7;
+        color: #FF073E;
+        padding: 5rpx 10rpx;
+        border-radius: 5rpx;
+        margin-right: 5rpx;
+        margin-bottom: 5rpx;
+      }
+    }
+
+    .price {
+      margin-top: auto;
+      display: flex;
+      align-items: flex-end;
+
+      .current-price {
+        color: #FF073E;
+        font-size: 30rpx;
+        font-weight: bold;
+      }
+
+      .original-price {
+        margin-left: 10rpx;
+        color: #999;
+        font-size: 20rpx;
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  .like {
+    position: absolute;
+    top: 10rpx;
+    right: 20rpx;
+    display: flex;
+    align-items: center;
+
+    .like-icon {
+      width: 40rpx;
+      height: 40rpx;
+    }
+
+    .like-count {
+      // padding: 5rpx 10rpx;
+      // background-color: black;
+      color: #FF073E;
+      font-weight: bold;
+      // border: 3rpx solid;
+      // border-color: #FFCD32;
+      font-size: 20rpx;
+      margin-left: 5rpx;
+    }
+  }
+
+  .discount {
+    position: absolute;
+    bottom: 20rpx;
+    right: 0;
+    background-color: #FF073E;
+    color: #fff;
+    padding: 10rpx 10rpx 10rpx 30rpx;
+    font-size: 24rpx;
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+  }
+}

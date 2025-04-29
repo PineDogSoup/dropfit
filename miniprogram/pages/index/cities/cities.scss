@@ -1,0 +1,74 @@
+.container {
+  width: 100%;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+
+  .location-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24rpx;
+
+    .location-detail {
+      margin: 20rpx;
+      // color: #888;
+
+      .marker-icon {
+        margin-right: 5rpx;
+      }
+    }
+
+    .switch {
+      margin: 20rpx;
+      color: #007AFF;
+      cursor: pointer;
+    }
+  }
+
+  .city-options {
+    width: 100%;
+
+    .hot-title,
+    .title {
+      padding: 10rpx;
+      font-size: 22rpx;
+      font-weight: bold;
+      color: #888;
+    }
+
+    .hot-title {
+      color: #ff8364;
+    }
+
+    .title {
+      color: #888;
+    }
+
+    .city-list {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+
+      .city-item {
+        background: white;
+        margin: 10rpx 1%;
+        /* 调整左右间距 */
+        width: 23%;
+        text-align: center;
+        border-radius: 10rpx;
+        padding: 10rpx;
+        box-sizing: border-box;
+      }
+    }
+  }
+
+  .cities-container {
+    width: 100%;
+  }
+
+}
+
+.index-bar {
+  margin-top: 30rpx;
+}

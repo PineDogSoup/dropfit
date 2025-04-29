@@ -1,0 +1,290 @@
+{
+  "setting": {
+    "compileHotReLoad": false,
+    "urlCheck": true,
+    "bigPackageSizeSupport": true
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/my/barbell/prDetail/prDetail",
+          "pathName": "pages/my/barbell/prDetail/prDetail",
+          "query": "subcategoryId=026927c7680c6102006ea98565d6f8ce&subcategoryName=背蹲(Back Squat)",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/my/barbell/barbell",
+          "pathName": "pages/my/barbell/barbell",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/my/venueCollect/venueCollect",
+          "pathName": "pages/my/venueCollect/venueCollect",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/my/collectHistory/collectHistory",
+          "pathName": "pages/my/collectHistory/collectHistory",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/venue/venue",
+          "pathName": "pages/venue/venue",
+          "query": "id=b794aea667767e7b0049b16326a32514",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/logbook/planDetail/planDetail",
+          "pathName": "pages/logbook/planDetail/planDetail",
+          "query": "id=7b28bd2a676d09f600346be33c951913&selectedDate=1735031652639",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/logbook/addLog/addLog",
+          "pathName": "pages/logbook/addLog/addLog",
+          "query": "id=14f2714c676d0a020000a63804a1d48d&selectedDate=1735031652639",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/logbook/selectPlan/selectPlan",
+          "pathName": "pages/logbook/selectPlan/selectPlan",
+          "query": "selectedDate=1735031652639",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/my/timer/emom-timer/emom-start/emom-start",
+          "pathName": "pages/my/timer/emom-timer/emom-start/emom-start",
+          "query": "everyTimeMs=15000&totalTimeMs=60000&isDeathBy=true",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/my/timer/fortime-timer/fortime-start/fortime-start",
+          "pathName": "pages/my/timer/fortime-timer/fortime-start/fortime-start",
+          "query": "totalMinutes=0",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/my/timer/amrap-timer/amrap-start/amrap-start",
+          "pathName": "pages/my/timer/amrap-timer/amrap-start/amrap-start",
+          "query": "totalMinutes=27000",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/my/timer/amrap-timer/amrap-start/amrap-start",
+          "pathName": "pages/my/timer/amrap-timer/amrap-start/amrap-start",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/my/timer/emom-timer/emom-timer",
+          "pathName": "pages/my/timer/emom-timer/emom-timer",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/my/timer/fortime-timer/fortime-timer",
+          "pathName": "pages/my/timer/fortime-timer/fortime-timer",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/my/timer/tabata-timer/tabata-timer",
+          "pathName": "pages/my/timer/tabata-timer/tabata-timer",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/my/timer/amrap-timer/amrap-timer",
+          "pathName": "pages/my/timer/amrap-timer/amrap-timer",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/my/timer/timer",
+          "pathName": "pages/my/timer/timer",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/my/prs/prs",
+          "pathName": "pages/my/prs/prs",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/logbook/logbook",
+          "pathName": "pages/logbook/logbook",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/experienceCard/experienceCard",
+          "pathName": "pages/experienceCard/experienceCard",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/games/eventDetails/eventDetails",
+          "pathName": "pages/games/eventDetails/eventDetails",
+          "query": "id=5222d8c8674de8730038f10e12ae6345",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/nearby/searchResult/searchResult",
+          "pathName": "pages/nearby/searchResult/searchResult",
+          "query": "selectedCity=%E6%88%90%E9%83%BD&latitude=30.64242&longitude=104.04311",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/nearby/citySelect/citySelect",
+          "pathName": "pages/nearby/citySelect/citySelect",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/nearby/keywordSearch/keywordSearch",
+          "pathName": "pages/nearby/keywordSearch/keywordSearch",
+          "query": "region='昆明'",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/nearby/nearby",
+          "pathName": "pages/nearby/nearby",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/index/search/search",
+          "pathName": "pages/index/search/search",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/my/dropped/dropped",
+          "pathName": "pages/my/dropped/dropped",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/index/cities/cities",
+          "pathName": "pages/index/cities/cities",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/my/venueCollect/venueCollect",
+          "pathName": "pages/my/venueCollect/venueCollect",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/my/collectHistory/collectHistory",
+          "pathName": "pages/my/collectHistory/collectHistory",
+          "query": "openid=o0nab7QRwko2nQqlZ4DH_JTr_A18",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/games/games",
+          "pathName": "pages/games/games",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/terminology/terminology",
+          "pathName": "pages/terminology/terminology",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/likes/likes",
+          "pathName": "pages/likes/likes",
+          "query": "openid=o0nab7QRwko2nQqlZ4DH_JTr_A18",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/search/search",
+          "pathName": "pages/search/search",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/appview/appview",
+          "pathName": "pages/appview/appview",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/my/my",
+          "pathName": "pages/my/my",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "首页-快速开始",
+          "pathName": "pages/index/index",
+          "query": ""
+        },
+        {
+          "name": "商品列表",
+          "pathName": "pages/goods-list/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "云开发示例",
+          "pathName": "pages/examples/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "个人中心",
+          "pathName": "pages/user-center/index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "projectname": "dropfit-cloud"
+}

@@ -1,0 +1,5 @@
+<view class="capsule-container {{isDarkMode ? 'dark-mode' : ''}}" style="{{capsuleStyle}}">
+  <image src="/static/images/icons/chevron-left.png" bindtap="onBack" class="capsule-icon" style="{{imageStyle}}" wx:if="{{canGoBack}}" />
+  <view class="divider" wx:if="{{canGoBack}}"></view>
+  <image src="/static/images/icons/nav-home.png" bindtap="onHome" class="capsule-icon" style="{{imageStyle}}" />
+</view>

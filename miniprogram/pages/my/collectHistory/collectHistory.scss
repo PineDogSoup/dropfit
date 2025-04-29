@@ -1,0 +1,18 @@
+.container {
+  background-color: #f7f8fa;
+  display: flex;
+
+  .venue-list {
+    width: 100%;
+    margin-bottom: 24rpx;
+  }
+
+  .create-bottom {
+    width: 60%;
+    margin-bottom: 20rpx;
+  }
+}
+
+.ad {
+  margin: 20rpx 15rpx;
+}

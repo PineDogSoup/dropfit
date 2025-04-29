@@ -1,0 +1,13 @@
+<view class="venue-item">
+  <view class="background">
+    <image class="background" src="{{venue.images[0]}}" mode="aspectFill" />
+  </view>
+  <view class="venue-header">
+    <image class="venue-logo" src="{{venue.logo}}" mode="aspectFill" />
+    <view class="venue-info">
+      <view class="venue-name">{{venue.name}}</view>
+      <view class="venue-location">{{venue.address}}</view>
+    </view>
+    <view class="venue-status {{venue.checked ? 'completed' : 'pending'}}">{{venue.checked ? "已收录": "审核中"}}</view>
+  </view>
+</view>

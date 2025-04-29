@@ -1,0 +1,20 @@
+<view class="page-container">
+  <van-search class="search-header" value="{{ value }}" placeholder="请输入地点关键词" show-action bind:search="onKeywordInput" shape="round" bind:cancel="onCancel" />
+  <view wx:if="{{noResult}}">
+    <view class="no-result-tips">没有找到符合条件的结果</view>
+  </view>
+  <view wx:if="{{searchResults.length>0}}">
+    <view class="tips">当前目的地及周边查询结果</view>
+    <scroll-view class="result-list" scroll-y>
+      <block wx:for="{{ searchResults }}" wx:key="id">
+        <view class="result-item" bindtap="onSelectResult" data-result="{{ item }}">
+          <van-icon class="result-icon" name="search" />
+          <view class="result-column">
+            <text class="result-name">{{ item.title }}</text>
+            <text class="result-address">{{ item.addr }}</text>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

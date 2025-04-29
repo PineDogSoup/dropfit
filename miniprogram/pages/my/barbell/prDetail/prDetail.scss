@@ -1,0 +1,118 @@
+.container {
+  .input-container {
+    width: 100%;
+    padding: 30rpx 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .input-content {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      input {
+        padding: 20rpx;
+        width: 200rpx;
+        text-align: center;
+        font-size: 50rpx;
+        font-weight: bold;
+      }
+    }
+
+    .input-title {
+      margin-top: 10rpx;
+      font-size: 36rpx;
+      color: #999;
+    }
+
+    .unit-display {
+      position: absolute;
+      top: 10rpx;
+      right: 10rpx;
+      cursor: pointer;
+
+      .unit-text {
+        font-size: 26rpx;
+        margin-right: 10rpx;
+      }
+    }
+  }
+
+  .sub-title {
+    width: 100%;
+    color: #999;
+    padding: 20rpx;
+    font-size: 24rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 60rpx;
+  }
+
+  .percentages-container {
+    padding: 20rpx 0;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .percentage-item {
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10rpx;
+      // border: 1px solid #e0e0e0;
+      margin-bottom: 10rpx;
+
+      .weight {
+        font-size: 28rpx;
+        font-weight: 700;
+      }
+
+      .percent-100,
+      .percent {
+        font-size: 18rpx;
+        margin-top: 5rpx;
+      }
+
+      .percent-100 {
+        color: #6639A6;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .records-container {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+
+    .records-item {
+      padding: 20rpx;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1rpx solid #e0e0e0;
+
+      .date {
+        font-size: 22rpx;
+      }
+
+      .record {
+        font-size: 26rpx;
+      }
+    }
+
+    .records-item:last-child {
+      border-bottom: none;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+<view class="search-container">
+  <view class="top-nav">
+    <view class="city">
+      <van-icon name="location" size="15" />
+      <text class="city-text">{{ selectedCity }}·场馆</text>
+    </view>
+    <view class="divider"></view>
+    <van-dropdown-menu active-color="#0066F6">
+      <van-dropdown-item id="item" title="筛选课程">
+        <view class="optionList" wx:for="{{classOption}}" wx:key="value">
+          <van-cell title="{{item.text}}" bind:tap="onClassOptionTap" data-value="{{item.value}}">
+            <van-icon slot="right-icon" name="checked" color="#0066F6" wx:if="{{item.selected}}" />
+          </van-cell>
+        </view>
+        <view class="dropdown-button">
+          <van-button class="dropdown-button-item" color="#393e46" plain block bind:click="onMenuClear">清空</van-button>
+          <van-button class="dropdown-button-item" color="#0066F6" block bind:click="onMenuConfirm">完成</van-button>
+        </view>
+      </van-dropdown-item>
+    </van-dropdown-menu>
+    <van-search class="search-comp" value="{{ searchInput }}" shape="round" placeholder="搜索" bind:search="onSearchConfirm" input-align="center" bind:clear="onSearchClear" />
+  </view>
+
+  <view class="map-view" wx:if="{{isMap}}">
+    <map class="map-comp" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" show-location="true" bindmarkertap="onMarkerTap" bindtap="onMapTap" scale="12"></map>
+    <view wx:if="{{showVenueCard}}" class="map-venue">
+      <venue-card info="{{selectedVenue}}"></venue-card>
+    </view>
+  </view>
+
+  <view class="context-container" wx:else>
+    <view class="recommend">
+      <view wx:for="{{venues}}" wx:key="id">
+        <venue-card info="{{item}}"></venue-card>
+      </view>
+    </view>
+
+    <view class="loadOut">
+      <view class="noData" wx:if="{{!hasMore}}">已加载全部</view>
+    </view>
+  </view>
+
+  <view class="switch-btn" bindtap="setSearchView">
+    <image class="show-icon" src="{{searchIconUrl}}" style="width: {{showIconSize}}px; height: {{showIconSize}}px;"></image>
+    <text class="switch-text">{{isMap?'列表模式':'地图模式'}}</text>
+  </view>
+</view>

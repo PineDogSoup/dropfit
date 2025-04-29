@@ -1,0 +1,42 @@
+<view class="container">
+  <view class="top-nav" style="padding-top: {{titleTop}}px;">
+    <view class="title" style="font-size: {{titleSize}}px">
+      <!-- <view class="big-slogan" style="font-size: {{sloganFontSize}}px;">DropFit途健</view>
+      <view class="small-slogan" style="font-size: {{smallSloganFontSize}}px;">出差旅行·训练别停</view> -->
+      综合赛事
+    </view>
+    <view class="ad">
+      <swiper class="slogans" circular autoplay interval="3500" indicator-dots indicator-active-color="#ffffff">
+        <block wx:for="{{['DROPFIT','WOEK HARD, WORK SMART','BE MINDFUL OF OTHERS','PUT YOUR WEIGHT AWAY','IT’S SUPPOSED TO BE HARD','KEEP LEARNING','KEEP GROWING','THE RESULTS WILL COME','ENJOY THE MOMENT']}}" wx:key="id">
+          <swiper-item class="slogan-item">
+            <text class="slogan-text">{{item}}</text>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <view class="dropdown-container">
+      <van-dropdown-menu>
+        <van-dropdown-item value="{{selectedEventType}}" options="{{eventTypes}}" bind:change="onEventTypeChange" />
+      </van-dropdown-menu>
+    </view>
+  </view>
+
+  <view class="events-container">
+    <view class="events-list" wx:if="{{events.length>0}}">
+      <block wx:for="{{events}}" wx:key="id">
+        <event-card data="{{item}}" bindtap="viewEventDetails" />
+      </block>
+    </view>
+
+    <!-- 全部年份显示 -->
+    <view class="events-list" wx:else>
+      <block wx:for="{{groupedEvents}}" wx:key="year">
+        <view class="year">{{item.year}}</view>
+        <block wx:for="{{item.events}}" wx:key="id">
+          <event-card data="{{item}}" />
+        </block>
+      </block>
+    </view>
+  </view>
+</view>

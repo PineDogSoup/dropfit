@@ -1,0 +1,33 @@
+<view class="container">
+  <view class="sub-title">
+    <text>个人最好纪录</text>
+  </view>
+  <view class="input-container">
+    <view class="input-content">
+      <input type="digit" placeholder="--" value="{{repMax}}" bindinput="onRepMaxInput" bind:blur="onRepMaxBlur" placeholder-class="placeholder" />
+    </view>
+    <text class="input-title">1 REP MAX</text>
+    <view class="unit-display" bindtap="showPicker">
+      <text class="unit-text">{{currentUnit}}</text>
+      <van-icon size="12" name="exchange" />
+    </view>
+  </view>
+
+  <van-popup show="{{showPicker}}" position="bottom" bind:close="onPickerClose">
+    <van-picker show-toolbar columns="{{units}}" bind:confirm="onUnitChange" bind:cancel="onPickerClose" />
+  </van-popup>
+
+  <view class="sub-title">
+    <text>百分比重量</text>
+  </view>
+  <!-- 百分比重量显示区域 -->
+  <view class="percentages-container">
+    <block wx:for="{{percentages}}" wx:key="percent">
+      <view class="percentage-item">
+        <text class="weight">{{weights[item] || '--'}}</text>
+        <text class="percent" wx:if="{{item!=100}}">{{item}}%</text>
+        <text class="percent-100" wx:else>{{item}}%</text>
+      </view>
+    </block>
+  </view>
+</view>

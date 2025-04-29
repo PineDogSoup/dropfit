@@ -1,0 +1,113 @@
+.card {
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 20rpx;
+  margin: 20rpx 15rpx;
+  box-shadow: 0 4rpx 10rpx rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+
+  .venue-info {
+    display: flex;
+    margin: 10rpx 20rpx;
+
+    .venue-logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid #eaeaea;
+      object-fit: cover;
+      margin-right: 16px;
+    }
+
+    .venue-details {
+      flex-grow: 1;
+
+      .venue-name-favorites {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .venue-name {
+          font-size: 18px;
+          font-weight: bold;
+          color: #333;
+          word-break: break-all;
+          white-space: pre-line;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          line-clamp: 1;
+          -webkit-box-orient: vertical;
+        }
+
+        .favorites {
+          display: flex;
+          align-items: center;
+          font-size: 14px;
+          color: #000;
+
+          .heart-icon {
+            width: 40rpx;
+            height: 40rpx;
+            margin-right: 4px;
+          }
+        }
+      }
+
+      .location-distance {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8px;
+
+        .address {
+          font-size: 10px;
+          color: #888;
+          word-break: break-all;
+          white-space: pre-line;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          line-clamp: 1;
+          -webkit-box-orient: vertical;
+        }
+
+        .distance {
+          font-size: 10px;
+          color: #000;
+        }
+      }
+    }
+  }
+
+  .tags-content {
+    width: 100%;
+    padding: 0 10rpx;
+    padding-bottom: 10rpx;
+    display: flex;
+    flex-wrap: wrap;
+
+    .venue-tag {
+      margin: 0 6rpx;
+    }
+  }
+
+  .card-body {
+    padding: 4px 8px;
+
+    .image-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .venue-image {
+      width: calc(33.33% - 4px);
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  }
+}

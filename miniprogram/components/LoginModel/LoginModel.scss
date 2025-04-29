@@ -1,0 +1,58 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 20rpx;
+  width: 76%;
+  padding: 40rpx;
+  text-align: center;
+}
+
+.modal-icon {
+  margin-bottom: 30rpx;
+}
+
+.icon {
+  width: 110rpx;
+  height: 110rpx;
+}
+
+.modal-message {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 40rpx;
+}
+
+.modal-actions button {
+  width: 100%;
+  height: 40px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.cancel-btn,
+.login-btn {
+  font-size: 28rpx;
+}
+
+.login-btn {
+  background: #007AFF;
+  color: #fff;
+}
+
+.cancel-btn {
+  background: #f0f0f0;
+  color: #666;
+}

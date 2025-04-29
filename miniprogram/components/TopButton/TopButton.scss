@@ -1,0 +1,18 @@
+.top-button {
+  width: 100rpx;
+  height: 100rpx;
+  z-index: 10;
+  position: fixed;
+  bottom: 200rpx;
+  right: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.5);
+  background-color: white;
+  .back-text{
+    font-size: 18rpx;
+  }
+}

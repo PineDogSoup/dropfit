@@ -1,0 +1,121 @@
+.container {
+  min-height: 100vh;
+  position: relative;
+  background-color: black;
+
+  .top-nav {
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    width: 750rpx;
+
+    .title {
+      margin-left: 20rpx;
+      color: white;
+      display: flex;
+      align-items: flex-end;
+
+      .big-slogan {
+        font-weight: bold;
+      }
+
+      .small-slogan {
+        margin-left: 20rpx;
+      }
+    }
+
+    .ad {
+      width: 750rpx;
+      background-color: white;
+
+      .slogans {
+        height: 150rpx;
+        overflow: hidden;
+
+        .slogan-item {
+          background: black;
+          color: white;
+          font-weight: bold;
+          font-size: 50rpx;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          background: linear-gradient(to right, rgb(27, 27, 27), rgb(0, 0, 0));
+
+          .slogan-text {
+            padding-left: 20rpx;
+          }
+        }
+      }
+    }
+
+    .dropdown-container {
+      display: flex;
+      justify-content: flex-start;
+      border-bottom: 1rpx solid white;
+      background-color: black;
+    }
+
+    .van-dropdown-menu {
+      padding: 0;
+      height: 58rpx;
+      background-color: black;
+    }
+
+    .van-dropdown-menu__title {
+      color: white;
+      font-size: 30rpx;
+    }
+  }
+
+  .events-container {
+    margin-top: 370rpx;
+    background-color: black;
+    width: 100%;
+
+    .events-list {
+      width: 100%;
+
+      .year {
+        color: white;
+        margin-top: 10rpx;
+        margin-left: 20rpx;
+        font-size: 36rpx;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .tabs-container {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .category {
+      padding: 8px;
+      // background: white;
+      box-shadow: -5px 0 10px -5px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eee;
+
+    .popup-title {
+      font-size: 18px;
+    }
+  }
+}

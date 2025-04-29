@@ -1,0 +1,65 @@
+.container {
+  .form {
+    width: 100%;
+    background-color: #f7f8fa;
+
+    .section {
+      margin: 20rpx;
+      padding: 10rpx;
+      background-color: #ffffff;
+      border-radius: 8rpx;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+      .section-title {
+        margin: 20rpx;
+        font-size: 30rpx;
+        font-weight: bold;
+      }
+
+      .form-item {
+        margin-left: 20rpx;
+        margin-bottom: 30rpx;
+
+        .location-address {
+          margin-bottom: 20rpx;
+          font-size: 24rpx;
+          color: #666;
+        }
+
+        .pic-title {
+          margin-bottom: 20rpx;
+        }
+
+        .tips {
+          font-size: 20rpx;
+          color: gray;
+          margin-bottom: 10rpx;
+        }
+      }
+
+      .checkbox {
+        display: flex;
+
+        .checkbox-item {
+          margin: 20rpx;
+          font-size: 25rpx;
+        }
+      }
+    }
+
+    .commit-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 50rpx 0;
+
+      .commit-button {
+        width: 500rpx;
+      }
+    }
+  }
+}
+
+.ad {
+  width: 100%;
+}

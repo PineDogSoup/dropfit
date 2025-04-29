@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="timer-name">FOR TIME</view>
+
+  <view class="time-selection">
+    <view class="timer-desc">As fast as possible for time</view>
+    <view class="time-box" bindtap="showTimePicker">
+      <view class="unit">
+        Time cap:
+      </view>
+      <view class="time-count-box">
+        {{ selectedTime }}
+      </view>
+    </view>
+  </view>
+
+  <van-button class="start-button" round size="large" type="info" color="#546EFF" bind:click="startTimer">
+    <view class="title">START TIMER</view>
+  </van-button>
+
+  <!-- 时间选择器 -->
+  <van-popup show="{{ showTimePickerPopup }}" position="bottom" custom-style="height: 50%;">
+    <van-picker show-toolbar columns="{{ timeColumns }}" bind:confirm="onTimeConfirm" bind:cancel="onPickerCancel" default-index="{{ 9 }}" />
+  </van-popup>
+</view>

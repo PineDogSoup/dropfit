@@ -1,0 +1,31 @@
+<view class="course-card">
+  <view class="course-image">
+    <image src="/static/images/yoga.jpeg" class="image" mode="aspectFill"></image>
+  </view>
+
+  <view class="course-info">
+    <view class="course-name">动物流</view>
+    <view class="course-location">
+      <view class="location">
+        <van-icon class="location-icon" name="location-o" />
+        <text class="address">嘉里中心</text>
+      </view>
+      <view class="distance">1000km</view>
+    </view>
+
+    <view class="course-venue">
+      <image src="/static/images/course-card-logo.jpeg" class="venue-logo"/>
+      <view class="venue-name">Jane's Bond</view>
+    </view>
+    <!-- <view class="course-venue">
+      <view class="venue-details">
+        <image src="/static/images/course-card-logo.jpeg" class="venue-logo"/>
+        <view class="venue-name">Jane's Bond</view>
+      </view>
+      <view class="favorites">
+        <image src="/static/images/icons/favorite-icon.png" class="favorite-icon"/>
+        <view class="favorites-times">10k</view>
+      </view>
+    </view> -->
+  </view>
+</view>

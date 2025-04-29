@@ -1,0 +1,59 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .map-comp {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+  }
+
+  .user-info {
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 200rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #007AFF, transparent);
+
+    .avatar {
+      width: 100rpx;
+      height: 100rpx;
+      border-radius: 50%;
+      margin: 10rpx;
+    }
+
+    .user-stats {
+      text-align: left;
+      color: #fff;
+      margin: 20rpx;
+      border-radius: 5rpx;
+      flex-direction: column;
+
+      .record {
+        display: flex;
+        margin-top: 10rpx;
+
+        .gp {
+          width: 30rpx;
+          height: 30rpx;
+          border-radius: 50%;
+          border: 5rpx solid white;
+        }
+
+        .count {
+          margin: 0 8rpx;
+          color: yellow;
+          // font-size: 35rpx;
+        }
+
+        .content {
+          // font-size: 30rpx;
+        }
+      }
+    }
+  }
+}

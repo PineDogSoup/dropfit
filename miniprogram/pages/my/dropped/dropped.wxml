@@ -1,0 +1,20 @@
+<view class="container">    
+  <back-capsule />
+  <map class="map-comp" longitude="104.195397" latitude="35.86166" scale="4" markers="{{markers}}" bindregionchange="onRegionChange" bindtap="onMapTap"></map>
+  <view class="user-info" style="height: {{capsuleCenterY}}px;">
+    <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+    <view class="user-stats">
+      <view>你已经打卡了</view>
+
+      <view class="record">
+        <image class="gp" src="/static/images/gq.png" />
+        <view class="count">1</view>
+        <view class="content">个国家</view>
+        <view class="count">{{cities}}</view>
+        <view class="content">个城市</view>
+        <view class="count">{{venueCount}}</view>
+        <view class="content">个场馆</view>
+      </view>
+    </view>
+  </view>
+</view>

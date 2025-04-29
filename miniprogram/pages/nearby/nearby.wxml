@@ -1,0 +1,49 @@
+<view class="page-container">
+  <!-- 广告栏 -->
+  <view class="swiper">
+    <view class="slogans" style="height: {{sloganHeight}}px">
+      <view class="slogans-container" style="margin-top: {{sloganTextTop}}px;">
+        <view class="big-slogan" style="font-size: {{sloganFontSize}}px;">DropFit途健</view>
+        <view class="small-slogan" style="font-size: {{smallSloganFontSize}}px;">出差旅行·训练别停</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="search-target-container" style="margin-top: {{searchTargetTop}}px;">
+    <view class="city-selector">
+      <view class="selector" bindtap="onCitySelect">
+        <text class="city-text">{{selectedCity}}</text>
+        <van-icon class="city-arrow" name="arrow" size="15" />
+      </view>
+      <view class="locate" bindtap="onLocateSelect">
+        <van-icon class="aim" name="aim" />
+        <text class="locate-text">我的位置</text>
+      </view>
+    </view>
+    <!-- 关键字输入框 -->
+    <view class="keyword-input-container" bindtap="onKeywordSearch">
+      <van-cell-group>
+        <van-field value="{{ keyword }}" placeholder="位置/酒店/场馆" border="{{ false }}" readonly />
+      </van-cell-group>
+    </view>
+
+    <!-- 搜索按钮 -->
+    <button class="search-btn" bindtap="onSearchTap">搜 索</button>
+  </view>
+
+  <view class="recommend-container" wx:for="{{venues}}" wx:key="id" bindtap="navigateToVenue" data-id="{{item._id}}">
+    <image src="{{item.detail[0].images[0]}}" class="venue-image" mode="aspectFill" />
+    <view class="info">
+      <text class="name">{{item.detail[0].name}}</text>
+      <view class="comment">
+        <van-icon name="star" color="#FF9B2A" />
+        <text class="star-text">5.0</text>
+      </view>
+      <text class="address">{{item.detail[0].address}}</text>
+    </view>
+  </view>
+
+  <view class="loadOut">
+    <view class="noData" wx:if="{{!hasMore}}">已加载全部</view>
+  </view>
+</view>

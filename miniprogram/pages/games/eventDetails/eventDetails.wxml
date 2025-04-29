@@ -1,0 +1,44 @@
+<view class="container">
+  <back-capsule />
+  <image class="promo-image" src="{{image}}" mode="aspectFill"></image>
+  <view class="details">
+    <view class="details-container">
+      <view class="title">{{title}}</view>
+
+      <view class="official-info" bindtap="navigateToOfficial">
+        <image class="official-logo" src="{{official.logo}}" mode="aspectFill"></image>
+        <text class="official-name">{{official.name}}</text>
+      </view>
+
+      <view class="event-description">{{detail.description}}</view>
+
+      <view class="countdown" wx:if="{{time!=0}}">
+        <text class="countdown-text">开赛倒计时:</text>
+        <van-count-down class="count-down-item" time="{{ time }}" format="DDd : HHh : mmm : sss" />
+      </view>
+
+      <view class="event-info-text">
+        <text>赛事详情</text>
+      </view>
+      <view class="event-details">
+        <view class="event-row">
+          <text class="event-title">赛事地址:</text>
+          <text class="event-content">{{ detail.address }}</text>
+        </view>
+        <view class="event-row">
+          <text class="event-title">报名时间:</text>
+          <text class="event-content">{{ registryTime }}</text>
+        </view>
+        <view class="event-row">
+          <text class="event-title">开赛时间:</text>
+          <text class="event-content">{{ eventTime }}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="button-container">
+    <button class="register-button" bindtap="handleRegister">{{detail.status=='已结束'?'已结束':'去报名'}}</button>
+    <button class="share-button" bindtap="handleShare" open-type="share">分享</button>
+  </view>
+</view>

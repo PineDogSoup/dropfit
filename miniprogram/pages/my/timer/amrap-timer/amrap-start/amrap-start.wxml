@@ -1,0 +1,26 @@
+<view class="container">
+  <image class="sound-switch" src="{{soundEnabled?' /static/images/icons/volume-btn.png':'/static/images/icons/mute-btn.png'}}" bind:tap="toggleSound"></image>
+  <view class="rounds-display">{{formattedTotalTime}}</view>
+  <view class="progress-container">
+    <van-circle size="280" layer-color="#1E1E1E" color="#ff9a00" value="{{ value }}" speed="1000" stroke-width="12" />
+
+    <view class="circle-content">
+      <view class="total-time" wx:if="{{ showTotalTime }}" bind:tap="pauseTimer" style="font-size:{{isRunning?'140rpx':'40rpx'}};">{{ currentTimeLeft }}</view>
+      <image class="start-button" wx:if="{{ !isRunning }}" src="/static/images/icons/{{buttonIcon}}" bind:tap="toggleTimer"></image>
+      <view class="countdown" wx:if="{{ showCountdown }}">{{ countdown }}</view>
+      <view class="go-text" wx:if="{{ showGo }}">GO</view>
+      <view class="tap-to-start">{{ tapText }}</view>
+    </view>
+  </view>
+
+  <view class="ad-container">
+    <ad-custom unit-id="adunit-c9c737cce376703b" bindload="adLoad" binderror="adError" bindclose="adClose"></ad-custom>
+  </view>
+
+  <view class="increment-container" bind:tap="incrementCount">
+    <view class="increment-circle">
+      <van-icon name="plus" wx:if="{{ incrementCount === 0 }}" color="#ff9a00" size="38" />
+      <view wx:else>{{ incrementCount }}</view>
+    </view>
+  </view>
+</view>

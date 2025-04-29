@@ -1,0 +1,151 @@
+<view class="page-container">
+  <back-capsule />
+
+  <view class="large-image-container">
+    <image src="{{currentImage}}" class="large-image" mode="aspectFill" />
+    <view class="gradient-overlay"></view>
+    <scroll-view class="thumbnails" scroll-x="true">
+      <block wx:for="{{images}}" wx:key="index">
+        <image src="{{item}}" class="thumbnail {{currentIndex === index ? 'selected' : ''}}" bindtap="onImageTap" data-index="{{index}}" mode="aspectFill" />
+      </block>
+    </scroll-view>
+  </view>
+
+  <view class="description">
+    <view class="top-section">
+      <view class="text-content">
+        <view class="title">
+          <image class="logo" src="{{detail.logo}}" />
+          <view class="venue-name">{{detail.name}}</view>
+        </view>
+        <view class="venue-tags">
+          <view wx:for="{{tags}}" wx:key="index" class="tag">{{item}}</view>
+        </view>
+      </view>
+      <view class="recommend-section" bind:tap="onRecommendTap">
+        <view class="recommend-top">
+          <image class="thumb-icon" src="/static/images/icons/white_thumb.png" />
+          <text class="recommend-text">推荐此馆</text>
+        </view>
+        <view class="recommend-bottom">
+          <text class="recommend-count">{{recommendCount}}人推荐</text>
+        </view>
+      </view>
+    </view>
+    <view class="bottom-section">
+      {{detail.description}}
+    </view>
+  </view>
+
+  <!-- <view class="venue-intro">
+    <image class="venue-background" src="{{detail.images[0]}}" mode="aspectFill" />
+    <view class="venue-overlay"></view>
+    <view class="venue-info">
+      <image class="venue-logo" src="{{detail.logo}}" />
+      <text class="venue-name">{{detail.name}}</text>
+      <text class="venue-description">{{detail.description}}</text>
+    </view>
+  </view> -->
+
+  <view class="location">
+    <view class="header">地址</view>
+    <view class="map-view">
+      <map latitude="{{markers[0].latitude}}" longitude="{{markers[0].longitude}}" scale="16" enable-zoom="{{false}}" enable-scroll="{{false}}" markers="{{markers}}" class="map-comp" bind:tap="clickLocation"> </map>
+    </view>
+    <view class="address"> {{detail.address}} </view>
+  </view>
+
+  <!-- booking -->
+  <view class="booking-section">
+    <view class="booking-header">联系场馆</view>
+    <view class="contact-options">
+      <view class="option" bind:tap="clickPhone">
+        <image class="option-icon" src="/static/images/icons/venue_phone.png"></image>
+        <text class="option-name">电话</text>
+      </view>
+      <view class="option" bind:tap="clickSubscribe">
+        <image class="option-icon" src="/static/images/icons/venue_subscribe.png"></image>
+        <text class="option-name">公众号</text>
+      </view>
+      <view class="option" bind:tap="clickService">
+        <image class="option-icon" src="/static/images/icons/venue_service.png"></image>
+        <text class="option-name">客服</text>
+      </view>
+      <view class="option" bind:tap="clickDzdp">
+        <image class="option-icon" src="/static/images/icons/dzdp.png"></image>
+        <text class="option-name">大众点评</text>
+      </view>
+      <view class="option" bind:tap="clickApp">
+        <image class="option-icon" src="/static/images/icons/venue_app.png"></image>
+        <text class="option-name">小程序</text>
+      </view>
+    </view>
+    <view class="explanation">
+      <text>由于官方不支持小程序以外的跳转,您可以通过点击按钮复制</text>
+      <text class="highlight">公众号</text>
+      <text>或</text>
+      <text class="highlight">客服</text>
+      <text>微信,分别在微信搜索栏和添加好友页面粘贴并搜索,以联系场馆</text>
+    </view>
+    <view class="explanation">
+      <text>如果小程序跳转后显示缓存过的场馆,可点击左上角按钮手动切换</text>
+    </view>
+  </view>
+
+  <view class="media-section">
+    <view class="media-header">自媒体</view>
+    <view class="media-options">
+      <view class="media-item" bind:tap="clickXhs">
+        <image class="media-icon" src="/static/images/icons/xhs.png" />
+        <text class="media-name">小红书</text>
+      </view>
+      <view class="media-item" bind:tap="clickDy">
+        <image class="media-icon" src="/static/images/icons/tiktok.png" />
+        <text class="media-name">抖音</text>
+      </view>
+      <view class="media-item" bind:tap="clickWideo">
+        <image class="media-icon" src="/static/images/icons/wideo.png" />
+        <text class="media-name">视频号</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="facility-section">
+    <view class="facility-header">配备设施</view>
+    <view class="facility-cards">
+      <view class="cards" wx:for="{{facilityList}}" wx:key="key">
+        <view class="facility-card">
+          <image class="facility-icon" src="{{item.icon}}" />
+          <text class="facility-name">{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- <scroll-view class="introduction" scroll-x>
+    <view class="pic-item" wx:for="{{detail.images}}" wx:key="id">
+      <image class="pic-item-image" src="{{item}}" mode="aspectFill" />
+    </view>
+  </scroll-view> -->
+
+  <view class="foot-nav">
+    <view class="foot-btn">
+      <image class="btn-image" src="{{isDropped ? '/static/images/greenflag.png' : '/static/images/flag.png'}}" bindtap="toggleDropped"></image>
+      <text class="option-name">{{isDropped?"已打卡":"打卡"}}</text>
+    </view>
+    <view class="foot-btn">
+      <image class="btn-image" src="/static/images/comment.png" bindtap="toggleComment"></image>
+      <text class="option-name">写评价</text>
+    </view>
+    <view class="foot-btn">
+      <image class="btn-image" src="{{isFavorite ? '/static/images/favorite-filling.png' : '/static/images/favorite.png'}}" bindtap="toggleFavorite"></image>
+      <text class="option-name">{{isFavorite?"已收藏":"收藏"}}</text>
+    </view>
+    <button class="foot-btn share-btn" hover-class="none" open-type="share">
+      <image class="btn-image" src="/static/images/share.png" bindtap="toggleFavorite"></image>
+      <text class="option-name">分享</text>
+    </button>
+  </view>
+</view>
+
+<login-model show="{{showLoginPopup}}" message="登录后可查看更多场馆信息" bind:login="handleLogin" bind:cancel="handleCancel"></login-model>

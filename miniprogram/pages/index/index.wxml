@@ -1,0 +1,64 @@
+<view class="index-container">
+  <view class="slogan-wrapper">
+    <image class="slogan" src="/static/images/slogan.jpg" mode="aspectFill"></image>
+    <view class="gradient-overlay"></view>
+  </view>
+
+  <view class="search-bar">
+    <view class="city-select" bindtap="toggleCitySelect">
+      <van-icon name="location-o" size="15" class="arrow" />
+      <view class="city">{{selectedCity}}</view>
+    </view>
+    <view class="divider"></view>
+    <van-icon class="search-icon" name="search" size="15" />
+    <input class="search-input" placeholder="请输入场馆名称" bindinput="onSearchInput" />
+    <view class="search-button" bind:tap="onSearchConfirmed">搜索
+    </view>
+  </view>
+
+  <!-- 功能导航栏 -->
+  <view class="nav-bar">
+    <view class="nav-item">
+      <view class="nav-left" bind:tap="onLocationSearchTap">
+        <text class="nav-title">搜馆</text>
+        <text class="nav-desc">定位查找场馆
+        </text>
+      </view>
+      <view class="nav-right">
+        <image src="/static/images/icons/search.png" class="nav-image" />
+      </view>
+    </view>
+    <view class="nav-item">
+      <view class="nav-left" bind:tap="onEventCalendarTap">
+        <text class="nav-title">赛事日历</text>
+        <text class="nav-desc">近期赛事安排</text>
+      </view>
+      <view class="nav-right">
+        <image src="/static/images/icons/calendar.png" class="nav-image" />
+      </view>
+    </view>
+    <view class="nav-item">
+      <view class="nav-left" bind:tap="onExperienceCardTap">
+        <text class="nav-title">体验卡</text>
+        <text class="nav-desc">DropIn体验卡</text>
+      </view>
+      <view class="nav-right">
+        <image src="/static/images/icons/gift.png" class="nav-image" />
+      </view>
+    </view>
+  </view>
+
+  <view class="nearby">
+    <view class="header">
+      <view class="title">附近场馆</view>
+      <view class="more" bindtap="switchToVeneuSearch">查看更多></view>
+    </view>
+    <view wx:for="{{venues}}" wx:key="id">
+      <venue-card info="{{item}}"></venue-card>
+    </view>
+  </view>
+
+  <view class="tips">
+    默认最多只展示最近的三个场馆
+  </view>
+</view>

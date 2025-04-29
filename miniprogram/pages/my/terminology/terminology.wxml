@@ -1,0 +1,38 @@
+<view class="container">
+  <view class="explanation">
+    <view class="expl-item">
+      <image class="expl-icon" src="/static/images/icons/basic.png"></image>
+      <text>基础</text>
+    </view>
+    <view class="expl-item">
+      <image class="expl-icon" src="/static/images/icons/wl.png"></image>
+      <text>举重</text>
+    </view>
+    <view class="expl-item">
+      <image class="expl-icon" src="/static/images/icons/dh.png"></image>
+      <text>体操</text>
+    </view>
+    <view class="expl-item">
+      <image class="expl-icon" src="/static/images/icons/bike.png"></image>
+      <text>有氧</text>
+    </view>
+  </view>
+  <view class="terms-container">
+    <van-index-bar index-list="{{alphabet}}" highlight-color="#007AFF">
+      <view wx:for="{{filteredTerms}}" wx:key="firstLetter">
+        <van-index-anchor index="{{item.firstLetter}}">
+          {{item.firstLetter}}
+        </van-index-anchor>
+        <view wx:for="{{item.list}}" wx:key="term">
+          <van-cell class="term-cell">
+            <view class="term-header">
+              <text class="term-fullname">{{item.abbreviation}} ({{item.fullName}})</text>
+              <image class="term-icon" src="{{item.icon}}" wx:if="{{item.icon}}" />
+            </view>
+            <view class="term-description">{{item.description}}</view>
+          </van-cell>
+        </view>
+      </view>
+    </van-index-bar>
+  </view>
+</view>

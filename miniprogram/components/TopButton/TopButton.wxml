@@ -1,0 +1,7 @@
+<view class="top-button" bindtap="scrollToTop">
+  <van-icon name="back-top" size="40rpx" />
+  <text class="back-text">回顶部</text>
+  <!-- <image class="top-img" src="/static/images/icons/arrow-to-top.png"/> -->
+</view>
+
+<!-- <van-button round class="top-button" icon="/static/images/icons/arrow-to-top.png"/> -->

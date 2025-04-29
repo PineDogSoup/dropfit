@@ -1,0 +1,83 @@
+<view class="container">
+  <view class="loginCheck" wx:if="{{!isLoggedIn}}">
+  <!-- <view class="loginCheck" wx:if="{{true}}"> -->
+    <button class="login-button" open-type="getPhoneNumber" bindgetphonenumber="onGetPhoneNumber">手机号一键登录</button>
+    <!-- <button class="login-button" bind:tap="onGetMockPhoneNumber">手机号一键登录</button> -->
+  </view>
+  <view class="logined" wx:else>
+    <view class="info">
+      <view class="avatar" bind:tap="onEditProfileClick">
+        <image class="pic" src="{{userInfo.avatarUrl}}" mode="widthFix" wx:if="{{userInfo.avatarUrl}}"></image>
+      </view>
+
+      <view class="loginDesc" wx:if="{{!userInfo.nickName}}">
+        <view>未设置昵称</view>
+      </view>
+      <view class="loginDesc" wx:else>
+        <view>{{userInfo.nickName}}</view>
+        <view class="phoneNum">{{userInfo.phoneNumber}}</view>
+      </view>
+    </view>
+
+    <view class="feature-section">
+      <view class="feature-header">常用功能</view>
+      <view class="options">
+        <view class="option" bind:tap="likesClick">
+          <van-icon class="option-icon" size="60rpx" name="shop-collect-o" color="#FF0033" />
+          <text class="option-name">我的收藏</text>
+        </view>
+        <view class="option" bind:tap="onDroppedClick">
+          <van-icon class="option-icon" size="60rpx" name="flag-o" color="#99CC33" />
+          <text class="option-name">DropInMap</text>
+        </view>
+        <view class="option" bind:tap="onCollectClick">
+          <van-icon class="option-icon" size="60rpx" name="completed-o" color="#0066CC" />
+          <text class="option-name">场馆收录</text>
+        </view>
+        <view class="option" bind:tap="onFeedbackClick">
+          <van-icon class="option-icon" size="60rpx" name="question-o" color="#FF9966" />
+          <text class="option-name">问题反馈</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="feature-section">
+      <view class="feature-header">小工具</view>
+      <view class="options">
+        <view class="option" bind:tap="onDictClick">
+          <image class="option-icon" src="/static/images/dictionary.png" style="height: 60rpx; width: 60rpx;"></image>
+          <text class="option-name">黑话本</text>
+        </view>
+        <view class="option" bind:tap="onTimerClick">
+          <image class="option-icon" src="/static/images/timer.png" style="height: 60rpx; width: 60rpx;"></image>
+          <text class="option-name">计时器</text>
+        </view>
+        <view class="option" bind:tap="onPRsClick">
+          <image class="option-icon" src="/static/images/calculator.png" style="height: 70rpx; width: 70rpx;"></image>
+          <text class="option-name">PRs</text>
+        </view>
+        <!-- <view class="option" bind:tap="onBarbellClick">
+          <image class="option-icon" src="/static/images/barbell.png" style="height: 70rpx; width: 70rpx;"></image>
+          <text class="option-name">Barbell</text>
+        </view> -->
+      </view>
+    </view>
+
+    <!-- <view class="feature-section">
+      <ad-custom unit-id="adunit-c9c737cce376703b" bindload="adLoad" binderror="adError" bindclose="adClose"></ad-custom>
+    </view> -->
+
+    <view class="footer">
+      <text>免责声明</text>
+      <text>本小程序结果仅供参考</text>
+      <text>不提供数据完整性和准确性服务</text>
+      <text>Copyright © DropFit</text>
+    </view>
+
+    <view class="clientele">
+      <button class="btn" open-type="contact"></button>
+      <image class="pic" src="/static/images/clientele.png"></image>
+      <view class="line"></view>
+    </view>
+  </view>
+</view>

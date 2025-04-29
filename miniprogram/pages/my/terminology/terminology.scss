@@ -1,0 +1,59 @@
+.container {
+  .explanation {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    height: 50rpx;
+    width: 100%;
+    background: white;
+    display: flex;
+    font-size: 28;
+    justify-content: space-between;
+
+    .expl-item {
+      margin: 0 20rpx;
+      .expl-icon {
+        margin-right: 10rpx;
+        width: 35rpx;
+        height: 35rpx;
+      }
+    }
+  }
+
+  .terms-container {
+    position: relative;
+    top: 50rpx;
+    width: 100%;
+
+    .term-cell {
+      .term-header {
+        display: flex;
+        justify-content: space-between;
+        font-size: 32rpx;
+        font-weight: bold;
+        color: #333;
+
+        .term-abbreviation {
+          color: #F34C00;
+        }
+
+        .term-fullname {
+          color: #666;
+        }
+
+        .term-icon {
+          margin-right: 10rpx;
+          width: 35rpx;
+          height: 35rpx;
+        }
+      }
+
+      .term-description {
+        text-align: left;
+        margin-top: 8rpx;
+        font-size: 28rpx;
+        color: #999;
+      }
+    }
+  }
+}

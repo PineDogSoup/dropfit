@@ -1,0 +1,180 @@
+.container {
+  background: #f8f8f8;
+  min-height: 100vh;
+
+  .loginCheck {
+    position: absolute;
+    bottom: 300rpx;
+    width: 100%;
+
+    .login-button {
+      width: 80%;
+      height: 100rpx;
+      background-color: #007aff;
+      color: white;
+      text-align: center;
+      line-height: 100rpx;
+      border-radius: 50rpx;
+    }
+  }
+
+  .logined {
+    width: 100%;
+
+    .info {
+      margin: 0 20rpx;
+      padding-top: 20rpx;
+      display: flex;
+
+      .avatar {
+        width: 120rpx;
+        height: 120rpx;
+        display: flex;
+        flex-direction: column;
+        border-radius: 50%;
+        box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.5);
+
+        .pic {
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          border-radius: 50%;
+        }
+      }
+
+      .loginDesc {
+        margin-left: 20rpx;
+        font-size: 32rpx;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .phoneNum {
+          font-size: 24rpx;
+          color: #cccccc;
+        }
+      }
+
+      .user-details {
+        display: flex;
+        align-items: center;
+        margin: 20rpx;
+
+        .user-name {
+          font-weight: bold;
+        }
+
+        .edit-icon,
+        confirm-icon {
+          margin-left: 30rpx;
+        }
+      }
+    }
+
+    .feature-section {
+      background-color: #ffffff;
+      margin: 20rpx;
+      padding: 20rpx;
+      border-radius: 20rpx;
+      box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+
+      .feature-header {
+        font-size: 34rpx;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 20rpx;
+      }
+
+      .options {
+        display: flex;
+        // justify-content: space-between;
+        align-items: center;
+
+        .option {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 160rpx;
+          margin: 10rpx 20rpx;
+
+          .option-icon {
+            margin-bottom: 10rpx;
+          }
+
+          .option-name {
+            font-size: 24rpx;
+            color: #333;
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20rpx 0;
+  font-size: 22rpx;
+  margin: 30rpx 0;
+  color: gray;
+}
+
+
+// client tele
+.clientele {
+  width: 80rpx;
+  height: 80rpx;
+  z-index: 10;
+  position: fixed;
+  bottom: 100rpx;
+  right: 60rpx;
+  border-radius: 50%;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.5);
+
+  .btn {
+    position: relative;
+    z-index: 2;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+
+  .pic {
+    width: 90%;
+    height: 90%;
+    margin: 5%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .line {
+    width: 100%;
+    height: 100%;
+    border: 3rpx solid rgb(200, 200, 200);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    animation: emit 2s infinite;
+    box-sizing: border-box; // 确保边框宽度不会影响元素大小
+  }
+}
+
+@keyframes emit {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    border-width: 4rpx;
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}

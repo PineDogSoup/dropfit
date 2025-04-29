@@ -1,0 +1,28 @@
+<view class="card">
+  <view class="img-container">
+    <image class="promo-image" src="{{data.promoImage}}" mode="aspectFill"></image>
+    <text class="promo-text">{{data.cardType}}</text>
+  </view>
+
+  <view class="info">
+    <view class="venue-name">{{data.venueName}}</view>
+    <view class="location">{{data.location}}</view>
+    <view class="tags">
+      <block wx:for="{{data.tags}}" wx:key="*this">
+        <view class="tag">{{item}}</view>
+      </block>
+    </view>
+    <view class="price">
+      <text class="current-price">¥{{data.currentPrice}}</text>
+      <text class="original-price" wx:if="{{data.originalPrice}}">¥{{data.originalPrice}}</text>
+    </view>
+  </view>
+
+  <view class="like" wx:if="{{data.venueInfo.length>0&&data.venueInfo[0].recommendCount>0}}">
+    <image class="like-icon" src="/static/images/icons/good.png"></image>
+    <text class="like-count">{{data.venueInfo[0].recommendCount}}</text>
+    <!-- <text class="like-count">100</text> -->
+  </view>
+
+  <view class="discount" wx:if="{{data.originalPrice}}">{{discount}}</view>
+</view>

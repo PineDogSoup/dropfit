@@ -1,0 +1,32 @@
+<navigator url="/pages/venue/venue?id={{venueId}}" class="card">
+  <view class="venue-info">
+    <image src="{{detail.logo}}" class="venue-logo" />
+    <view class="venue-details">
+      <view class="venue-name-favorites">
+        <view class="venue-name">{{detail.name}}</view>
+        <view class="favorites" wx:if="{{liked}}">
+          <image src="/static/images/icons/heart.png" class="heart-icon" alt="heart icon" />
+        </view>
+      </view>
+
+      <view class="location-distance">
+        <text class="address">{{detail.address}}</text>
+        <view class="distance">{{distance}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="tags-content">
+    <view class="venue-tag" wx:for="{{tags}}" wx:key="key">
+      <van-tag color="#eeeeee" text-color="#393e46">{{item}}</van-tag>
+    </view>
+  </view>
+
+  <view class="card-body">
+    <view class="image-container">
+      <block wx:for="{{processedImages}}" wx:key="index">
+        <image src="{{item}}" class="venue-image" mode="aspectFill" />
+      </block>
+    </view>
+  </view>
+</navigator>

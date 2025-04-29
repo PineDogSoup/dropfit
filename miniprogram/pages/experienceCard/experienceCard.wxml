@@ -1,0 +1,92 @@
+<view class="container">
+  <view class="top-nav">
+    <!-- <van-notice-bar class="notice-bar" scrollable left-icon="volume-o" text="卡片上的标签为体验卡购买或领取渠道" /> -->
+    <swiper class="swiper" autoplay="true" interval="7000" duration="500">
+      <block wx:for="{{adList}}" wx:key="index">
+        <swiper-item data-value="{{item}}" bind:tap="onSwiperTap">
+          <image class="swiper-image" src="{{item.imgUrl}}" mode="aspectFill"></image>
+          <view class="watermark-right" wx:if="{{item.venueId}}">
+            <!-- <image class="watermark-img" src="/static/images/mini_white.png" mode="aspectFill"></image> -->
+            <text>点击查看</text>
+            <van-icon name="arrow" size="10" />
+          </view>
+        </swiper-item>
+        <!-- <swiper-item wx:if="{{item.type === 'ad'}}">
+          <ad-custom unit-id="adunit-c9c737cce376703b" bindload="adLoad" binderror="adError" bindclose="adClose"></ad-custom>
+        </swiper-item> -->
+      </block>
+    </swiper>
+
+    <view class="nav-container">
+      <view wx:for="{{tabs}}" wx:key="id" bindtap="selectNavItem" data-id="{{item.id}}" class="{{currentTab === item.id ? 'nav-item-active' : 'nav-item'}}">
+        {{item.name}}
+      </view>
+    </view>
+
+    <view class="dropdown-container">
+      <van-dropdown-menu active-color="#FF073E" class="dropdown-menu">
+        <!-- 卡种 -->
+        <van-dropdown-item value="{{selectedCardType}}" title="{{selectedCardType || '卡种'}}" options="{{cardTypeOptions}}" bind:change="onCardTypeChange" />
+
+        <!-- 城市 -->
+        <van-dropdown-item value="{{selectedCity}}" title="{{selectedCity || '城市'}}" options="{{cityList}}" bind:change="onSelectCityChange" />
+
+        <!-- 价格 -->
+        <van-dropdown-item value="{{sliderValue}}" title="价格" options="{{priceOptions}}" bind:change="onPriceChange" class="{{priceRangeText ? 'active' : ''}}" />
+
+        <!-- 大级别筛选条件 -->
+        <van-dropdown-item id="dropdown-item" title="筛选">
+          <view class="filter-dropdown">
+            <view class="section">
+              <view class="title">
+                <text>价格区间</text>
+                <text class="price-range">¥{{sliderValue[0]}}-¥{{sliderValue[1]}}</text>
+              </view>
+              <view class="price-slider-container">
+                <van-slider class="price-slider" min="0" max="800" range bind:change="onSliderChange" bind:drag="onSliderDrag" value="{{sliderValue}}" active-color="#FF073E" />
+              </view>
+              <view class="slider-values">
+                <text>¥0</text>
+                <text>¥800</text>
+              </view>
+            </view>
+
+            <view class="section">
+              <view class="title">体验卡种类</view>
+              <view class="option-group">
+                <view wx:for="{{cardTypeOptions}}" wx:key="index" class="option-item {{selectedCardType === item.value ? 'selected' : ''}}" bind:tap="onSelectCardType" data-value="{{item.value}}"> {{item.text}} </view>
+              </view>
+            </view>
+
+            <view class="section">
+              <view class="title">城市</view>
+              <view class="option-group">
+                <view wx:for="{{cityList}}" wx:key="index" class="option-item {{selectedCity === item.value ? 'selected' : ''}}" bind:tap="onSelectCity" data-city="{{item.value}}">
+                  {{item.text}}
+                </view>
+              </view>
+            </view>
+
+          </view>
+
+          <view class="bottom-buttons">
+            <van-button class="bottom-button" type="default" bind:tap="onClear">清空</van-button>
+            <van-button type="default" color="#FF073E" plain class="bottom-button" bind:tap="onComplete">完成</van-button>
+          </view>
+        </van-dropdown-item>
+      </van-dropdown-menu>
+    </view>
+  </view>
+
+  <view class="list-container">
+    <block wx:for="{{discounts}}" wx:key="index">
+      <discount-card data="{{item}}" bind:tap="onDiscountCardTap" data-id="{{item.venueId}}"></discount-card>
+    </block>
+  </view>
+
+  <view class="loadOut">
+    <view class="noData" wx:if="{{!hasMore}}">已加载全部</view>
+  </view>
+
+  <top-button />
+</view>

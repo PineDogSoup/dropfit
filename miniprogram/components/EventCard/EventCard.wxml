@@ -1,0 +1,22 @@
+<navigator url="/pages/games/eventDetails/eventDetails?id={{data._id}}" class="event-card" bind:tap="handleClick">
+  <!-- <view url="/pages/games/eventDetails/eventDetails?id={{data._id}}" class="event-card" bind:tap="handleClick"> -->
+  <view class="event-card-left">
+    <image class="event-card-image" src="{{data.image}}" mode="aspectFill"></image>
+    <view class="event-card-overlay">
+      <view class="event-card-date" wx:if="{{day}}">
+        <text class="date-day">{{day}}</text>
+        <view class="date-separator"></view>
+        <text class="date-month">{{month}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="event-card-right">
+    <van-tag color="{{statusColor}}" text-color="#ffffff">{{data.status}}</van-tag>
+    <view class="title">
+      <image class="logo" src="{{data.officialInfo[0].logo}}"></image>
+      <view class="name">{{data.officialInfo[0].name}}</view>
+    </view>
+    <view class="description">{{data.title}}</view>
+  </view>
+</navigator>

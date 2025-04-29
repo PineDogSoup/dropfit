@@ -1,0 +1,45 @@
+<view class="container">
+  <view class="city-options">
+    <view class="location-title">当前定位</view>
+    <view class="city-list">
+      <view class="location-item" data-city="{{currentCity}}" bindtap="onCitySelect">
+        <van-icon name="location-o" />
+        <text class="location-text">{{currentCity}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="city-options" wx:if="{{historyCities.length>0}}">
+    <view class="history-title">
+      <view class="title-text">历史记录</view>
+      <van-icon name="delete-o" size="15" bind:click="onHistoryDelete" />
+    </view>
+    <view class="city-list">
+      <block wx:for="{{historyCities}}" wx:key="name">
+        <view class="city-item" bindtap="onCitySelect" data-city="{{item}}">{{item}}</view>
+      </block>
+    </view>
+  </view>
+
+  <view class="city-options">
+    <view class="hot-title">热门城市</view>
+    <view class="city-list">
+      <block wx:for="{{hotCities}}" wx:key="name">
+        <view class="city-item" bindtap="onCitySelect" data-city="{{item}}">{{item}}</view>
+      </block>
+    </view>
+  </view>
+
+  <view class="cities-container">
+    <van-index-bar index-list="{{alphabet}}" highlight-color="#007AFF">
+      <view wx:for="{{allCities}}" wx:key="initial">
+        <van-index-anchor index="{{item.initial}}">
+          {{item.initial}}
+        </van-index-anchor>
+        <view wx:for="{{item.cities}}" wx:key="city">
+          <van-cell title="{{item}}" bindtap="onCitySelect" data-city="{{item}}" />
+        </view>
+      </view>
+    </van-index-bar>
+  </view>
+</view>

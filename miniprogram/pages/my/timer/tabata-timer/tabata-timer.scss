@@ -1,0 +1,82 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  background-color: #000000;
+
+  .timer-name {
+    margin: 20rpx;
+    width: 100%;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80rpx;
+    font-weight: 400;
+  }
+
+  .time-selection {
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .timer-desc {
+      display: flex;
+      height: 75rpx;
+      width: 100%;
+      color: #ffffff;
+      font-size: 40rpx;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20rpx;
+    }
+
+    .time-box {
+      margin: 20rpx;
+      color: #ffffff;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      font-size: 80rpx;
+      font-weight: 400;
+
+      .round-count {
+        width: 160rpx;
+      }
+
+      .time-count-box {
+        width: 320rpx;
+      }
+
+      .round-count,
+      .time-count-box {
+        padding: 20rpx 0;
+        display: flex;
+        justify-content: center;
+        margin-right: 20rpx;
+        border: 5rpx solid #a31ccc;
+        border-radius: 20rpx;
+      }
+    }
+  }
+
+  .start-button {
+    height: 100rpx;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .title {
+      font-size: 35rpx;
+      font-weight: 500;
+    }
+
+    .total {
+      font-size: 20rpx;
+    }
+  }
+}
