@@ -93,7 +93,6 @@ Page({
   },
   onPRsClick() {
     wx.navigateTo({
-      // url: '/pages/my/prs/prs',
       url: '/pages/my/barbell/barbell'
     })
   },

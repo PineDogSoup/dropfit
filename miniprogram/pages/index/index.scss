@@ -272,3 +272,11 @@
     color: #666;
   }
 }
+
+.venue-loading-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200rpx;
+  width: 100%;
+}

@@ -20,7 +20,8 @@ Page({
     sloganTitleStyle: '',
     searchInput: '',
     location: null,
-    isDataLoaded: false
+    isDataLoaded: false,
+    loadingVenues: true
   },
 
   /**
@@ -31,18 +32,20 @@ Page({
       title: '加载中...',
       mask: true
     })
-    // this.getSloganImages()
-    this.getCitiesInfo();
-  },
-
-  getCitiesInfo() {
-    getSupportedCities().then(res => {
-      const supportedCities = res.map(obj => obj.zh);
+    this.setData({
+      loadingVenues: true
+    });
+    // 并行加载 supportedCities 和 location/city
+    Promise.all([
+      getSupportedCities(),
+      getUserLocationAndCity()
+    ]).then(([supportedCitiesRes, userLocationRes]) => {
+      const supportedCities = supportedCitiesRes.map(obj => obj.zh);
       this.setData({
         supportedCities
-      })
-      this.loadUserLocationAndCity();
-    })
+      });
+      this.updateCityAndFetchVenues(userLocationRes.city, userLocationRes.location);
+    });
   },
 
   getSloganImages() {
@@ -74,13 +77,10 @@ Page({
     }
   },
 
-  loadUserLocationAndCity() {
-    getUserLocationAndCity().then(res => {
-      this.updateCityAndFetchVenues(res.city, res.location)
-    });
-  },
-
   updateCityAndFetchVenues(city, location) {
+    this.setData({
+      loadingVenues: true
+    });
     var selectedCity = wx.getStorageSync('selectedCity')
     // console.log('city', city);
     if (!selectedCity) {
@@ -99,7 +99,8 @@ Page({
       this.setData({
         selectedCity,
         venues: res,
-        isDataLoaded: true
+        isDataLoaded: true,
+        loadingVenues: false
       });
       wx.hideLoading();
     })
@@ -134,9 +135,10 @@ Page({
       url: '/pages/nearby/nearby',
     })
   },
-  onEventCalendarTap() {
-    wx.switchTab({
-      url: '/pages/games/games'
+
+  onCalculateTap() {
+    wx.navigateTo({
+      url: '/pages/my/barbell/barbell'
     })
   },
 
@@ -148,8 +150,19 @@ Page({
 
   onShow() {
     if (this.data.isDataLoaded) {
-      console.log('index onshow');
-      this.getCitiesInfo();
+      this.setData({
+        loadingVenues: true
+      });
+      Promise.all([
+        getSupportedCities(),
+        getUserLocationAndCity()
+      ]).then(([supportedCitiesRes, userLocationRes]) => {
+        const supportedCities = supportedCitiesRes.map(obj => obj.zh);
+        this.setData({
+          supportedCities
+        });
+        this.updateCityAndFetchVenues(userLocationRes.city, userLocationRes.location);
+      });
     }
   },
 

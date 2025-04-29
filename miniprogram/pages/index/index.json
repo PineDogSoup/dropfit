@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "selector-component": "plugin://citySelector/selector-component"
+    "selector-component": "plugin://citySelector/selector-component",
+    "van-loading": "/miniprogram_npm/@vant/weapp/loading/index"
   },
   "navigationStyle": "custom",
   "onReachBottomDistance": 200

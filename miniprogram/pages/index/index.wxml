@@ -29,21 +29,21 @@
       </view>
     </view>
     <view class="nav-item">
-      <view class="nav-left" bind:tap="onEventCalendarTap">
-        <text class="nav-title">赛事日历</text>
-        <text class="nav-desc">近期赛事安排</text>
-      </view>
-      <view class="nav-right">
-        <image src="/static/images/icons/calendar.png" class="nav-image" />
-      </view>
-    </view>
-    <view class="nav-item">
       <view class="nav-left" bind:tap="onExperienceCardTap">
         <text class="nav-title">体验卡</text>
         <text class="nav-desc">DropIn体验卡</text>
       </view>
       <view class="nav-right">
         <image src="/static/images/icons/gift.png" class="nav-image" />
+      </view>
+    </view>
+    <view class="nav-item">
+      <view class="nav-left" bind:tap="onCalculateTap">
+        <text class="nav-title">计算器</text>
+        <text class="nav-desc">PR计算器</text>
+      </view>
+      <view class="nav-right">
+        <image src="/static/images/icons/calculate.png" class="nav-image" />
       </view>
     </view>
   </view>
@@ -53,9 +53,16 @@
       <view class="title">附近场馆</view>
       <view class="more" bindtap="switchToVeneuSearch">查看更多></view>
     </view>
-    <view wx:for="{{venues}}" wx:key="id">
-      <venue-card info="{{item}}"></venue-card>
-    </view>
+    <block wx:if="{{loadingVenues}}">
+      <view class="venue-loading-center">
+        <van-loading size="24px" color="#1989fa" vertical>加载中...</van-loading>
+      </view>
+    </block>
+    <block wx:else>
+      <view wx:for="{{venues}}" wx:key="id">
+        <venue-card info="{{item}}"></venue-card>
+      </view>
+    </block>
   </view>
 
   <view class="tips">
