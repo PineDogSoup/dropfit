@@ -87,25 +87,26 @@
 
       .options {
         display: flex;
-        // justify-content: space-between;
         align-items: center;
+        gap: 0 20rpx;
+      }
 
-        .option {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          width: 160rpx;
-          margin: 10rpx 20rpx;
+      .option {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        min-width: 0;
+        margin: 0;
+      }
 
-          .option-icon {
-            margin-bottom: 10rpx;
-          }
+      .option-icon {
+        margin-bottom: 10rpx;
+      }
 
-          .option-name {
-            font-size: 24rpx;
-            color: #333;
-          }
-        }
+      .option-name {
+        font-size: 24rpx;
+        color: #333;
       }
     }
   }

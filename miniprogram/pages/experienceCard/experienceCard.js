@@ -28,10 +28,12 @@ Page({
   },
 
   onLoad() {
-    this.setFilterMenu();
-    this.loadDiscounts();
-    this.loadDiscountAds();
-    this.fetchSupportCities();
+    Promise.all([
+      new Promise(resolve => { this.setFilterMenu(); resolve(); }),
+      new Promise(resolve => { this.loadDiscounts(); resolve(); }),
+      new Promise(resolve => { this.loadDiscountAds(); resolve(); }),
+      new Promise(resolve => { this.fetchSupportCities(); resolve(); })
+    ]);
   },
 
   // 加载折扣数据

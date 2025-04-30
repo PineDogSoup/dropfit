@@ -2,11 +2,11 @@
   <back-capsule />
 
   <view class="large-image-container">
-    <image src="{{currentImage}}" class="large-image" mode="aspectFill" />
+    <image src="{{currentImage}}" class="large-image" mode="aspectFill" lazy-load="true" />
     <view class="gradient-overlay"></view>
     <scroll-view class="thumbnails" scroll-x="true">
       <block wx:for="{{images}}" wx:key="index">
-        <image src="{{item}}" class="thumbnail {{currentIndex === index ? 'selected' : ''}}" bindtap="onImageTap" data-index="{{index}}" mode="aspectFill" />
+        <image src="{{item}}" class="thumbnail {{currentIndex === index ? 'selected' : ''}}" bindtap="onImageTap" data-index="{{index}}" mode="aspectFill" lazy-load="true" />
       </block>
     </scroll-view>
   </view>
@@ -15,7 +15,7 @@
     <view class="top-section">
       <view class="text-content">
         <view class="title">
-          <image class="logo" src="{{detail.logo}}" />
+          <image class="logo" src="{{detail.logo}}" lazy-load="true" />
           <view class="venue-name">{{detail.name}}</view>
         </view>
         <view class="venue-tags">
@@ -24,7 +24,7 @@
       </view>
       <view class="recommend-section" bind:tap="onRecommendTap">
         <view class="recommend-top">
-          <image class="thumb-icon" src="/static/images/icons/white_thumb.png" />
+          <image class="thumb-icon" src="/static/images/icons/white_thumb.png" lazy-load="true" />
           <text class="recommend-text">推荐此馆</text>
         </view>
         <view class="recommend-bottom">
@@ -60,23 +60,23 @@
     <view class="booking-header">联系场馆</view>
     <view class="contact-options">
       <view class="option" bind:tap="clickPhone">
-        <image class="option-icon" src="/static/images/icons/venue_phone.png"></image>
+        <image class="option-icon" src="/static/images/icons/venue_phone.png" lazy-load="true"></image>
         <text class="option-name">电话</text>
       </view>
       <view class="option" bind:tap="clickSubscribe">
-        <image class="option-icon" src="/static/images/icons/venue_subscribe.png"></image>
+        <image class="option-icon" src="/static/images/icons/venue_subscribe.png" lazy-load="true"></image>
         <text class="option-name">公众号</text>
       </view>
       <view class="option" bind:tap="clickService">
-        <image class="option-icon" src="/static/images/icons/venue_service.png"></image>
+        <image class="option-icon" src="/static/images/icons/venue_service.png" lazy-load="true"></image>
         <text class="option-name">客服</text>
       </view>
       <view class="option" bind:tap="clickDzdp">
-        <image class="option-icon" src="/static/images/icons/dzdp.png"></image>
+        <image class="option-icon" src="/static/images/icons/dzdp.png" lazy-load="true"></image>
         <text class="option-name">大众点评</text>
       </view>
       <view class="option" bind:tap="clickApp">
-        <image class="option-icon" src="/static/images/icons/venue_app.png"></image>
+        <image class="option-icon" src="/static/images/icons/venue_app.png" lazy-load="true"></image>
         <text class="option-name">小程序</text>
       </view>
     </view>
@@ -96,15 +96,15 @@
     <view class="media-header">自媒体</view>
     <view class="media-options">
       <view class="media-item" bind:tap="clickXhs">
-        <image class="media-icon" src="/static/images/icons/xhs.png" />
+        <image class="media-icon" src="/static/images/icons/xhs.png" lazy-load="true" />
         <text class="media-name">小红书</text>
       </view>
       <view class="media-item" bind:tap="clickDy">
-        <image class="media-icon" src="/static/images/icons/tiktok.png" />
+        <image class="media-icon" src="/static/images/icons/tiktok.png" lazy-load="true" />
         <text class="media-name">抖音</text>
       </view>
       <view class="media-item" bind:tap="clickWideo">
-        <image class="media-icon" src="/static/images/icons/wideo.png" />
+        <image class="media-icon" src="/static/images/icons/wideo.png" lazy-load="true" />
         <text class="media-name">视频号</text>
       </view>
     </view>
@@ -115,7 +115,7 @@
     <view class="facility-cards">
       <view class="cards" wx:for="{{facilityList}}" wx:key="key">
         <view class="facility-card">
-          <image class="facility-icon" src="{{item.icon}}" />
+          <image class="facility-icon" src="{{item.icon}}" lazy-load="true" />
           <text class="facility-name">{{item.name}}</text>
         </view>
       </view>
@@ -130,19 +130,19 @@
 
   <view class="foot-nav">
     <view class="foot-btn">
-      <image class="btn-image" src="{{isDropped ? '/static/images/greenflag.png' : '/static/images/flag.png'}}" bindtap="toggleDropped"></image>
+      <image class="btn-image" src="{{isDropped ? '/static/images/greenflag.png' : '/static/images/flag.png'}}" bindtap="toggleDropped" lazy-load="true"></image>
       <text class="option-name">{{isDropped?"已打卡":"打卡"}}</text>
     </view>
     <view class="foot-btn">
-      <image class="btn-image" src="/static/images/comment.png" bindtap="toggleComment"></image>
+      <image class="btn-image" src="/static/images/comment.png" bindtap="toggleComment" lazy-load="true"></image>
       <text class="option-name">写评价</text>
     </view>
     <view class="foot-btn">
-      <image class="btn-image" src="{{isFavorite ? '/static/images/favorite-filling.png' : '/static/images/favorite.png'}}" bindtap="toggleFavorite"></image>
+      <image class="btn-image" src="{{isFavorite ? '/static/images/favorite-filling.png' : '/static/images/favorite.png'}}" bindtap="toggleFavorite" lazy-load="true"></image>
       <text class="option-name">{{isFavorite?"已收藏":"收藏"}}</text>
     </view>
     <button class="foot-btn share-btn" hover-class="none" open-type="share">
-      <image class="btn-image" src="/static/images/share.png" bindtap="toggleFavorite"></image>
+      <image class="btn-image" src="/static/images/share.png" bindtap="toggleFavorite" lazy-load="true"></image>
       <text class="option-name">分享</text>
     </button>
   </view>

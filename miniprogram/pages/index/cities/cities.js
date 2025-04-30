@@ -7,6 +7,7 @@ import {
   getCachedLocation,
   getSupportedCities
 } from "../../../utils/location.js"
+import { CITY_LOCATIONS } from '../../../utils/city-locations.js'
 
 Page({
   data: {
@@ -72,11 +73,30 @@ Page({
       location
     });
     reverseGeocode(location).then(city => {
-      console.log('city', city);
       const currentCity = removeCitySuffix(city)
-      this.setData({
-        nearestCity: this.data.supportedCities.includes(currentCity) ? currentCity : '北京'
-      })
+      if (this.data.supportedCities.includes(currentCity)) {
+        this.setData({
+          nearestCity: currentCity
+        })
+      } else {
+        // 计算最近的支持城市
+        const userLat = location.latitude;
+        const userLng = location.longitude;
+        // 只在支持城市范围内查找
+        const supportedCityObjs = CITY_LOCATIONS.filter(c => this.data.supportedCities.includes(c.zh));
+        let minDist = Infinity;
+        let nearest = '北京';
+        supportedCityObjs.forEach(cityObj => {
+          const dist = getDistance(userLat, userLng, cityObj.latitude, cityObj.longitude);
+          if (dist < minDist) {
+            minDist = dist;
+            nearest = cityObj.zh;
+          }
+        });
+        this.setData({
+          nearestCity: nearest
+        })
+      }
     });
   },
 
@@ -132,3 +152,16 @@ Page({
     });
   },
 });
+
+// Haversine距离计算函数
+function getDistance(lat1, lng1, lat2, lng2) {
+  const toRad = d => d * Math.PI / 180;
+  const R = 6371; // 地球半径，单位km
+  const dLat = toRad(lat2 - lat1);
+  const dLng = toRad(lng2 - lng1);
+  const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+    Math.sin(dLng / 2) * Math.sin(dLng / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c;
+}

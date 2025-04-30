@@ -25,13 +25,10 @@
     "pages/my/timer/emom-timer/emom-start/emom-start",
     "pages/my/dropped/dropped",
     "pages/my/terminology/terminology",
-    "pages/my/prs/prs",
     "pages/my/barbell/barbell",
     "pages/my/barbell/prDetail/prDetail",
     "pages/venue/venue",
     "pages/logs/logs",
-    "pages/games/games",
-    "pages/games/eventDetails/eventDetails",
     "pages/experienceCard/experienceCard"
   ],
   "window": {
@@ -54,12 +51,6 @@
         "text": "搜馆",
         "iconPath": "static/images/icons/shop.png",
         "selectedIconPath": "static/images/icons/shop-fill.png"
-      },
-      {
-        "pagePath": "pages/games/games",
-        "text": "赛事",
-        "iconPath": "static/images/icons/trophy.png",
-        "selectedIconPath": "static/images/icons/trophy-fill.png"
       },
       {
         "pagePath": "pages/my/my",

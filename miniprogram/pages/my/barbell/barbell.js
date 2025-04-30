@@ -1,3 +1,5 @@
+const { categories, subcategories } = require('../../../utils/barbellData.js');
+
 // 小程序页面逻辑
 Page({
   data: {
@@ -9,20 +11,12 @@ Page({
   },
 
   async loadCategories() {
-    try {
-      const res = await wx.cloud.callFunction({
-        name: 'getCategoriesAndSubcategories',
-        data: {}
-      });
-      if (res.result.success) {
-        // console.log(res.result.data);
-        this.setData({
-          categories: res.result.data
-        });
-      }
-    } catch (e) {
-      console.error(e);
-    }
+    // 本地组装categories结构
+    const categoriesWithSubs = categories.map(category => ({
+      ...category,
+      subcategories: subcategories.filter(sub => sub.categoryId === category._id)
+    }));
+    this.setData({ categories: categoriesWithSubs });
   },
   navigateToSubcategory(event) {
     const subcategoryId = event.currentTarget.dataset.id;
@@ -30,5 +24,11 @@ Page({
     wx.navigateTo({
       url: `/pages/my/barbell/prDetail/prDetail?subcategoryId=${subcategoryId}&subcategoryName=${subcategoryName}`
     });
+  },
+  onShareAppMessage() {
+    return {
+      title: '杠铃PR计算器',
+      path: '/pages/my/barbell/barbell'
+    };
   }
 });

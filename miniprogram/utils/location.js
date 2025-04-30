@@ -1,3 +1,4 @@
+import { CITY_LOCATIONS } from './city-locations.js'
 const QQMapWX = require('./qqmap-wx-jssdk.js');
 const qqmapsdk = new QQMapWX({
   key: 'H4GBZ-FUDKZ-EVUXD-TQBNU-MWJYV-LXFWY'
@@ -67,7 +68,7 @@ export function reverseGeocode(location) {
     qqmapsdk.reverseGeocoder({
       location,
       success: (res) => {
-        console.log('reverseGeocode', res);
+        // console.log('reverseGeocode', res);
         const city = res.result.ad_info.city
         cacheCity(city);
         resolve(city)
@@ -149,33 +150,7 @@ export function cacheSupportedCities(supportedCities) {
 };
 
 export function getSupportedCities() {
-  return new Promise((resolve, reject) => {
-    const supportedCities = getCachedSupportedCities()
-    if (supportedCities != null) {
-      console.log('use cached supported city');
-      resolve(supportedCities)
-    } else {
-      console.log('ready to get new supported city');
-      wx.cloud.callFunction({
-        name: 'getCities',
-        success: (res) => {
-          if (res.result.success) {
-            wx.setStorageSync('cities', res.result.data)
-            cacheSupportedCities(res.result.data)
-            resolve(res.result.data)
-          } else {
-            wx.showToast({
-              title: '检索失败',
-              icon: 'none'
-            });
-          }
-        },
-        fail: (e) => {
-          console.log(e);
-        }
-      });
-    }
-  })
+  return Promise.resolve(CITY_LOCATIONS);
 }
 
 export function getAddressInfo() {

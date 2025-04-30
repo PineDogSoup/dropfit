@@ -34,16 +34,17 @@ Page({
       title: '加载中...',
       mask: true
     })
-
-    this.setSearchInputStyle();
-    this.setSearchView();
-    this.setMenu();
-    this.setData({
-      latitude: parseFloat(options.latitude),
-      longitude: parseFloat(options.longitude),
-      selectedCity: options.selectedCity
-    })
-    this.loadVenues();
+    Promise.all([
+      new Promise(resolve => { this.setSearchInputStyle(); resolve(); }),
+      new Promise(resolve => { this.setSearchView(); resolve(); }),
+      new Promise(resolve => { this.setMenu(); resolve(); }),
+      new Promise(resolve => { this.setData({
+        latitude: parseFloat(options.latitude),
+        longitude: parseFloat(options.longitude),
+        selectedCity: options.selectedCity
+      }); resolve(); }),
+      new Promise(resolve => { this.loadVenues(); resolve(); })
+    ]);
   },
 
   setSearchInputStyle() {

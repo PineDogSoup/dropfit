@@ -48,9 +48,13 @@ Page({
         this.setData({
           venueId: options.id
         })
-        this.getVenueDetail(options.id)
-        this.checkIfFavorite(options.id)
-        this.checkIfDropped(options.id)
+        Promise.all([
+          new Promise(resolve => this.getVenueDetail(options.id, resolve)),
+          new Promise(resolve => this.checkIfFavorite(options.id, resolve)),
+          new Promise(resolve => this.checkIfDropped(options.id, resolve))
+        ]).then(() => {
+          wx.hideLoading();
+        });
       } else {
         wx.hideLoading()
         this.setData({
@@ -91,7 +95,7 @@ Page({
     });
   },
 
-  getVenueDetail(venueId) {
+  getVenueDetail(venueId, resolve) {
     wx.cloud.callFunction({
       name: 'getVenueDetail',
       data: {
@@ -99,21 +103,17 @@ Page({
       },
       success: (res) => {
         if (res.result.success) {
-          // console.log('res.result.data', res.result.data);
-          const tags = res.result.data.tags ? generateTagList(res.result.data.tags[0]) : []
           const detail = res.result.data
           const location = detail.location
-          const mediaInfo = detail.mediaInfo[0] ? detail.mediaInfo[0] : {
-            'xhs': '',
-            'wideo': ''
-          }
-          const facilityList = generateFacilityList(detail.facilityInfo[0])
+          // 首屏只set主图、名称、地址、主marker
           this.setData({
-            detail,
-            facilityList,
-            mediaInfo,
-            tags,
-            bookingInfo: detail.bookingInfo[0],
+            detail: {
+              name: detail.name,
+              address: detail.address,
+              logo: detail.logo,
+              description: detail.description
+            },
+            currentImage: detail.images[0],
             markers: [{
               id: 0,
               width: 45,
@@ -122,20 +122,34 @@ Page({
               longitude: location.coordinates[0],
               iconPath: '/static/images/icons/marker_icon.png'
             }],
-            currentImage: detail.images[0],
-            images: this.fillImages(detail.images),
-            recommendCount: detail.recommendCount || 0
-          })
-          wx.hideLoading();
+          }, () => {
+            // 其余数据异步setData
+            setTimeout(() => {
+              const tags = detail.tags ? generateTagList(detail.tags[0]) : []
+              const mediaInfo = detail.mediaInfo[0] ? detail.mediaInfo[0] : { 'xhs': '', 'wideo': '' }
+              const facilityList = generateFacilityList(detail.facilityInfo[0])
+              this.setData({
+                facilityList,
+                mediaInfo,
+                tags,
+                bookingInfo: detail.bookingInfo[0],
+                images: this.fillImages(detail.images),
+                recommendCount: detail.recommendCount || 0
+              });
+            }, 0);
+            if (resolve) resolve();
+          });
         } else {
           wx.showToast({
             title: '检索失败',
             icon: 'none'
           });
+          if (resolve) resolve();
         }
       },
       fail: (e) => {
         console.log(e);
+        if (resolve) resolve();
       }
     });
   },
@@ -292,7 +306,7 @@ Page({
   },
 
   // Favorite
-  checkIfFavorite(venueId) {
+  checkIfFavorite(venueId, resolve) {
     const openid = wx.getStorageSync('openid');
     wx.cloud.callFunction({
       name: 'getUserFavorites',
@@ -304,9 +318,10 @@ Page({
       const isFavorite = favorites.some(fav => fav._id === venueId);
       this.setData({
         isFavorite
-      });
+      }, () => { if (resolve) resolve(); });
     }).catch(err => {
       console.error('检查收藏状态失败', err);
+      if (resolve) resolve();
     });
   },
 
@@ -355,7 +370,7 @@ Page({
   },
 
   // Dropped
-  checkIfDropped(venueId) {
+  checkIfDropped(venueId, resolve) {
     const openid = wx.getStorageSync('openid');
     wx.cloud.callFunction({
       name: 'getUserDropped',
@@ -367,9 +382,10 @@ Page({
       const isDropped = droplist.some(dr => dr._id === venueId);
       this.setData({
         isDropped
-      });
+      }, () => { if (resolve) resolve(); });
     }).catch(err => {
       console.error('检查Drop-In状态失败', err);
+      if (resolve) resolve();
     });
   },
 
