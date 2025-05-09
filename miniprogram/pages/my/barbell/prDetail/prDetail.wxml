@@ -23,7 +23,7 @@
   <!-- 百分比重量显示区域 -->
   <view class="percentages-container">
     <block wx:for="{{percentages}}" wx:key="percent">
-      <view class="percentage-item">
+      <view class="percentage-item" bindtap="onPercentTap" data-percent="{{item}}">
         <text class="weight">{{weights[item] || '--'}}</text>
         <text class="percent" wx:if="{{item!=100}}">{{item}}%</text>
         <text class="percent-100" wx:else>{{item}}%</text>
@@ -39,6 +39,37 @@
       <text class="date">{{historyPR.date}}</text>
       <text class="record">{{historyPR.repMax}}{{historyPR.unit}}</text>
     </view>
+  </view>
+
+  <!-- 选中百分比显示区标题和内容，仅在有选中项时显示 -->
+  <view class="sub-title" wx:if="{{selectedPercents.length}}">
+    <text>已选百分比</text>
+  </view>
+  <view class="bar-type-toggle" bindtap="onBarTypeToggle" wx:if="{{selectedPercents.length}}">
+    <text class="bar-type-text">{{barType === 'male' ? '男杠' : '女杠'}}</text>
+    <text class="bar-type-text-notes">(男杠:20kg / 女杠:15kg, 杠铃片计算时采用四舍五入)</text>
+  </view>
+
+  <view class="vertical-percents-container" wx:if="{{selectedPercents.length}}">
+    <block wx:for="{{selectedPercents}}" wx:key="percent">
+      <view class="vertical-percent-item">
+        <text>{{item}}% {{weights[item] || '--'}}</text>
+        <block wx:if="{{platesMap[item]}}">
+          <view class="plates-row">
+            <text wx:if="{{platesMap[item][25] > 0}}" class="plate-bg-25">25kg × {{platesMap[item][25]}}</text>
+            <text wx:if="{{platesMap[item][20] > 0}}" class="plate-bg-20">20kg × {{platesMap[item][20]}}</text>
+            <text wx:if="{{platesMap[item][15] > 0}}" class="plate-bg-15">15kg × {{platesMap[item][15]}}</text>
+            <text wx:if="{{platesMap[item][10] > 0}}" class="plate-bg-10">10kg × {{platesMap[item][10]}}</text>
+            <text wx:if="{{platesMap[item][5] > 0}}" class="plate-bg-5">5kg × {{platesMap[item][5]}}</text>
+            <text wx:if="{{platesMap[item][2.5] > 0}}" class="plate-bg-2_5">2.5kg × {{platesMap[item][2.5]}}</text>
+            <text wx:if="{{platesMap[item][2] > 0}}" class="plate-bg-2">2kg × {{platesMap[item][2]}}</text>
+            <text wx:if="{{platesMap[item][1.5] > 0}}" class="plate-bg-1_5">1.5kg × {{platesMap[item][1.5]}}</text>
+            <text wx:if="{{platesMap[item][1] > 0}}" class="plate-bg-1">1kg × {{platesMap[item][1]}}</text>
+            <text wx:if="{{platesMap[item][0.5] > 0}}" class="plate-bg-0_5">0.5kg × {{platesMap[item][0.5]}}</text>
+          </view>
+        </block>
+      </view>
+    </block>
   </view>
 
 </view>

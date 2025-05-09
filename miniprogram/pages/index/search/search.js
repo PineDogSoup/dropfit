@@ -7,6 +7,7 @@ import {
 import {
   generateMenu
 } from "../../../utils/menu.js"
+import { CITY_LOCATIONS } from '../../../utils/city-locations.js'
 
 Page({
   data: {
@@ -188,11 +189,27 @@ Page({
       };
     })
 
-    let mapOrigin = this.data.location
-    if (markers.length > 0) {
-      mapOrigin = {
-        latitude: markers[0].latitude,
-        longitude: markers[0].longitude
+    // 优先用城市中心
+    let mapOrigin = null;
+    const { selectedCity, location } = this.data;
+    if (selectedCity) {
+      const city = CITY_LOCATIONS.find(c => c.zh === selectedCity);
+      if (city) {
+        mapOrigin = {
+          latitude: city.latitude,
+          longitude: city.longitude
+        };
+      }
+    }
+    // 若未找到城市中心，则用原有逻辑
+    if (!mapOrigin) {
+      if (markers.length > 0) {
+        mapOrigin = {
+          latitude: markers[0].latitude,
+          longitude: markers[0].longitude
+        };
+      } else if (location) {
+        mapOrigin = location;
       }
     }
 

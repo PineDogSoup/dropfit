@@ -1,0 +1,205 @@
+.container .input-container {
+  width: 100%;
+  padding: 30rpx 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.container .input-container .input-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .input-container .input-content input {
+  padding: 20rpx;
+  width: 200rpx;
+  text-align: center;
+  font-size: 50rpx;
+  font-weight: bold;
+}
+
+.container .input-container .input-title {
+  margin-top: 10rpx;
+  font-size: 36rpx;
+  color: #999;
+}
+
+.container .input-container .unit-display {
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  cursor: pointer;
+}
+
+.container .input-container .unit-display .unit-text {
+  font-size: 26rpx;
+  margin-right: 10rpx;
+}
+
+.container .sub-title {
+  width: 100%;
+  color: #999;
+  padding: 20rpx;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 60rpx;
+}
+
+.container .percentages-container {
+  padding: 20rpx 0;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.container .percentages-container .percentage-item {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.container .percentages-container .percentage-item .weight {
+  font-size: 28rpx;
+  font-weight: 700;
+}
+
+.container .percentages-container .percentage-item .percent-100,
+.container .percentages-container .percentage-item .percent {
+  font-size: 18rpx;
+  margin-top: 5rpx;
+}
+
+.container .percentages-container .percentage-item .percent-100 {
+  color: #6639A6;
+  font-weight: bold;
+}
+
+.container .records-container {
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.container .records-container .records-item {
+  padding: 20rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #e0e0e0;
+}
+
+.container .records-container .records-item .date {
+  font-size: 22rpx;
+}
+
+.container .records-container .records-item .record {
+  font-size: 26rpx;
+}
+
+.container .records-container .records-item:last-child {
+  border-bottom: none;
+}
+
+.container .bar-type-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.container .bar-type-toggle .bar-type-text {
+  background: #6639A6;
+  color: #F6F3FB;
+  font-weight: bold;
+  font-size: 24rpx;
+  padding: 4rpx 18rpx;
+  border-radius: 10rpx;
+  margin-left: 12rpx;
+}
+
+.container .bar-type-toggle .bar-type-text-notes {
+  font-size: 20rpx;
+  color: gray;
+  margin-left: 10rpx;
+}
+
+.container .vertical-percents-container {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10rpx 0 10rpx 30rpx;
+  margin: 10rpx;
+}
+
+.container .vertical-percents-container .vertical-percent-item {
+  font-size: 32rpx;
+  font-weight: bold;
+  padding: 10rpx 0;
+  margin-bottom: 4rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.container .vertical-percents-container .vertical-percent-item .plates-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 6rpx;
+  gap: 12rpx;
+}
+
+.container .vertical-percents-container .vertical-percent-item .plates-row .plate-bg-25,
+.container .vertical-percents-container .vertical-percent-item .plates-row .plate-bg-2_5 {
+  background: #D6291D;
+  color: #fff;
+}
+
+.container .vertical-percents-container .vertical-percent-item .plates-row .plate-bg-20,
+.container .vertical-percents-container .vertical-percent-item .plates-row .plate-bg-2 {
+  background: #3F7DC4;
+  color: #fff;
+}
+
+.container .vertical-percents-container .vertical-percent-item .plates-row .plate-bg-15,
+.container .vertical-percents-container .vertical-percent-item .plates-row .plate-bg-1_5 {
+  background: #FDE674;
+  color: #ad6800;
+}
+
+.container .vertical-percents-container .vertical-percent-item .plates-row .plate-bg-10,
+.container .vertical-percents-container .vertical-percent-item .plates-row .plate-bg-1 {
+  background: #008261;
+  color: #fff;
+}
+
+.container .vertical-percents-container .vertical-percent-item .plates-row .plate-bg-5 {
+  background: #222;
+  color: #fff;
+}
+
+.container .vertical-percents-container .vertical-percent-item .plates-row .plate-bg-0_5 {
+  background: #fff;
+  color: #222;
+  border: 1rpx solid #eee;
+}
+
+.container .vertical-percents-container .vertical-percent-item .plates-row text {
+  font-size: 22rpx;
+  border-radius: 6rpx;
+  padding: 2rpx 10rpx;
+}

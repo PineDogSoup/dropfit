@@ -3,6 +3,9 @@ description: dropfit-flow
 globs: 
 alwaysApply: false
 ---
+# 代码规范
+样式不要使用css,使用scss就行
+
 # system
 
 文件都是从根目录算

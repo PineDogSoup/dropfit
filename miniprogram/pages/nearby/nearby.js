@@ -23,7 +23,8 @@ Page({
     limit: 10,
     hasMore: true,
     venues: [],
-    isDataLoaded: false
+    isDataLoaded: false,
+    loadingVenues: true
   },
 
   onLoad(options) {
@@ -52,14 +53,15 @@ Page({
       limit,
       offset,
     } = this.data;
-
+    this.setData({ loadingVenues: true });
     searchVenuesByCity(latitude, longitude, selectedCity, limit, offset).then(res => {
       // console.log('loadVenues', res);
       const totalVeneus = this.data.venues.concat(res)
       this.setData({
         venues: totalVeneus,
         offset: this.data.offset + res.length,
-        hasMore: res.length === limit
+        hasMore: res.length === limit,
+        loadingVenues: false
       });
     })
   },

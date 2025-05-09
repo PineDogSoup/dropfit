@@ -1,8 +1,0 @@
----
-description: code-style
-globs: 
-alwaysApply: false
----
-# code style
-不要使用css,而是使用scss
-组件名使用驼峰形式,而不是‘-’连接

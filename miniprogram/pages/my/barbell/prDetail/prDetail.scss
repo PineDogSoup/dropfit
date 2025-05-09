@@ -115,4 +115,94 @@
       border-bottom: none;
     }
   }
+
+  .bar-type-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    .bar-type-text {
+      background: #6639A6;
+      color: #F6F3FB;
+      font-weight: bold;
+      font-size: 24rpx;
+      padding: 4rpx 18rpx;
+      border-radius: 10rpx;
+      margin-left: 12rpx;
+    }
+
+    .bar-type-text-notes {
+      font-size: 20rpx;
+      color: gray;
+      margin-left: 10rpx;
+    }
+  }
+
+  .vertical-percents-container {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10rpx 0 10rpx 30rpx;
+    margin: 10rpx;
+
+    .vertical-percent-item {
+      font-size: 32rpx;
+      font-weight: bold;
+      padding: 10rpx 0;
+      margin-bottom: 4rpx;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .plates-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 6rpx;
+        gap: 12rpx;
+
+        .plate-bg-25,
+        .plate-bg-2_5 {
+          background: #D6291D;
+          color: #fff;
+        }
+
+        .plate-bg-20,
+        .plate-bg-2 {
+          background: #3F7DC4;
+          color: #fff;
+        }
+
+        .plate-bg-15,
+        .plate-bg-1_5 {
+          background: #FDE674;
+          color: #ad6800;
+        }
+
+        .plate-bg-10,
+        .plate-bg-1 {
+          background: #008261;
+          color: #fff;
+        }
+
+        .plate-bg-5 {
+          background: #222;
+          color: #fff;
+        }
+
+        .plate-bg-0_5 {
+          background: #fff;
+          color: #222;
+          border: 1rpx solid #eee;
+        }
+      }
+
+      .plates-row text {
+        font-size: 22rpx;
+        border-radius: 6rpx;
+        padding: 2rpx 10rpx;
+      }
+    }
+  }
 }

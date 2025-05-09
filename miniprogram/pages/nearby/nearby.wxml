@@ -31,17 +31,25 @@
     <button class="search-btn" bindtap="onSearchTap">搜 索</button>
   </view>
 
-  <view class="recommend-container" wx:for="{{venues}}" wx:key="id" bindtap="navigateToVenue" data-id="{{item._id}}">
-    <image src="{{item.detail[0].images[0]}}" class="venue-image" mode="aspectFill" />
-    <view class="info">
-      <text class="name">{{item.detail[0].name}}</text>
-      <view class="comment">
-        <van-icon name="star" color="#FF9B2A" />
-        <text class="star-text">5.0</text>
-      </view>
-      <text class="address">{{item.detail[0].address}}</text>
+  <!-- 加载中效果 -->
+  <block wx:if="{{loadingVenues}}">
+    <view class="venue-loading-center">
+      <van-loading size="24px" color="#1989fa" vertical>加载中...</van-loading>
     </view>
-  </view>
+  </block>
+  <block wx:else>
+    <view class="recommend-container" wx:for="{{venues}}" wx:key="id" bindtap="navigateToVenue" data-id="{{item._id}}">
+      <image src="{{item.detail[0].images[0]}}" class="venue-image" mode="aspectFill" />
+      <view class="info">
+        <text class="name">{{item.detail[0].name}}</text>
+        <view class="comment">
+          <van-icon name="star" color="#FF9B2A" />
+          <text class="star-text">5.0</text>
+        </view>
+        <text class="address">{{item.detail[0].address}}</text>
+      </view>
+    </view>
+  </block>
 
   <view class="loadOut">
     <view class="noData" wx:if="{{!hasMore}}">已加载全部</view>

@@ -14,7 +14,14 @@ Page({
     // 本地组装categories结构
     const categoriesWithSubs = categories.map(category => ({
       ...category,
-      subcategories: subcategories.filter(sub => sub.categoryId === category._id)
+      subcategories: subcategories.filter(sub => sub.categoryId === category._id).map(sub => {
+        const cacheKey = `subcategory-${sub._id}`;
+        const cachePr = wx.getStorageSync(cacheKey);
+        if (cachePr && cachePr.repMax) {
+          return { ...sub, bestRecord: `${cachePr.repMax}${cachePr.unit || ''}` };
+        }
+        return { ...sub };
+      })
     }));
     this.setData({ categories: categoriesWithSubs });
   },
