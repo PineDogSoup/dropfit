@@ -1,0 +1,40 @@
+{
+  "city": "xiamen",
+  "venues": [
+    {
+      "id": "e4dd7c226735504c002c298f458ed021",
+      "name": "超鹿运动帝豪店",
+      "address": "思明区厦禾路820号帝豪大厦4层",
+      "description": "欢迎来到超鹿的CF小班课！这里是一个温馨的社区，在这里，大家互相支持携手进步。我们的教练经验丰富，耐心十足，确保每位会员都能得到个性化指导，安全地提高运动水平。无论您是初学者还是资深健身爱好者，我们都期待着和您一起挑战极限，收获成果！",
+      "location": {
+        "coordinates": [
+          118.10492706298828,
+          24.465953826904297
+        ],
+        "type": "Point"
+      },
+      "city": "xiamen",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    },
+    {
+      "id": "710be24d674874190026a19d1f8fcf86",
+      "name": "CFRM FITNESS",
+      "address": "思明区会展南里133号",
+      "description": "CrossFit RocketMan超能火箭混合体能健身",
+      "location": {
+        "coordinates": [
+          118.180786,
+          24.462211
+        ],
+        "type": "Point"
+      },
+      "city": "xiamen",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    }
+  ],
+  "total": 2
+}

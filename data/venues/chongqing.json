@@ -1,0 +1,23 @@
+{
+  "city": "chongqing",
+  "venues": [
+    {
+      "id": "e4dd7c226731db81001cc9804a522f75",
+      "name": "STUD CQ CROSSFIT",
+      "address": "江北区五里店街道天澜大道11号27栋1楼",
+      "description": "Stud CQ CrossFit以更注重运动表现的训练模式为主,此外每天都会经历不同的训练计划和丰富的动作,每次训练都充满新鲜感、期待感、趣味感",
+      "location": {
+        "coordinates": [
+          106.571151,
+          29.588269
+        ],
+        "type": "Point"
+      },
+      "city": "chongqing",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    }
+  ],
+  "total": 1
+}

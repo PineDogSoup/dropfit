@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DropFit - CrossFit场馆查找</title>
+    <meta name="description" content="查找您身边的CrossFit场馆，覆盖北京、上海、广州、深圳、长沙、昆明、成都等城市">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- 顶部横幅 -->
+    <div class="w-full overflow-hidden">
+        <img src="./data/images/slogan.jpg" alt="DropFit Slogan" class="w-full h-auto object-cover object-center" style="height: 200px; object-position: 0 85%;">
+    </div>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- 搜索区域 -->
+        <section class="search-section mb-8 -mt-12">
+            <!-- 搜索框 -->
+            <div class="mb-4">
+                <div class="relative">
+                    <button 
+                        id="cityBtn"
+                        class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-700 flex items-center gap-2 z-10"
+                    >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <span id="currentCityName" class="text-base">北京</span>
+                    </button>
+                    <div class="absolute left-20 top-1/2 transform -translate-y-1/2 text-gray-300 text-lg">|</div>
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="输入场馆名称"
+                        class="w-full pl-32 pr-20 py-3 border-0 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base bg-white"
+                        style="box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);"
+                    >
+                    <div class="absolute left-24 top-1/2 transform -translate-y-1/2 text-gray-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                    <button 
+                        id="searchBtn"
+                        class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors text-base"
+                    >
+                        搜索
+                    </button>
+                </div>
+            </div>
+
+            <!-- 地图容器 -->
+            <div class="mb-4">
+                    <div class="relative">
+                        <div id="mapLoading" class="absolute inset-0 bg-gray-100 rounded-lg flex items-center justify-center z-10">
+                            <div class="text-center">
+                                <div class="animate-spin w-8 h-9 border-4 border-blue-600 border-t-transparent rounded-full mx-auto mb-2"></div>
+                                <p class="text-gray-600 text-sm">地图加载中...</p>
+                            </div>
+                        </div>
+                        <div id="mapContainer" class="w-full h-100 bg-gray-200 rounded-lg overflow-hidden"></div>
+                    </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-white py-3 mt-2">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 关于我们 -->
+                <div>
+                    <h3 class="text-lg font-bold mb-1">关于 DropFit</h3>
+                    <p class="text-gray-300 text-sm mb-1">
+                        为爱发电自发整理，为国内体能爱好者提供最全面的场馆信息。
+                    </p>
+                    <p class="text-gray-300 text-sm mb-2">
+                        如果信息有误或者需要信息补充，请微信联系我（wx:Tacenee）
+                    </p>
+                </div>
+
+                <!-- 合作伙伴 -->
+                <!-- <div>
+                    <h3 class="text-lg font-bold mb-4">合作伙伴</h3>
+                    <div class="bg-gray-700 rounded p-3 text-center text-sm text-gray-300">
+                        CrossFit HQ
+                    </div>
+                </div> -->
+            </div>
+
+            <!-- 版权信息 -->
+            <div class="border-t border-gray-700 mt-4 pt-3 text-center">
+                <p class="text-gray-400 text-sm">
+                    ©2026 DropFit - 专注体能场馆信息 | All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/performance.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

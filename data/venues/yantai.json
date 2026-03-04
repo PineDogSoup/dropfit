@@ -1,0 +1,23 @@
+{
+  "city": "yantai",
+  "venues": [
+    {
+      "id": "ebe773e1674b18fd002ff6d03e8bdce0",
+      "name": "CrossFit闹海",
+      "address": "芝罘区通姜路与通洋路交叉口东北100米",
+      "description": "CrossFit闹海——烟台首家CrossFit官方认证Box,位于芝罘区胜利路2号.在闹海,体验专业高效有趣的训练和美式社区的锻炼氛围,让运动回归实用生活.",
+      "location": {
+        "coordinates": [
+          121.369222,
+          37.463918
+        ],
+        "type": "Point"
+      },
+      "city": "yantai",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    }
+  ],
+  "total": 1
+}

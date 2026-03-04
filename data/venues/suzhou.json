@@ -1,0 +1,40 @@
+{
+  "city": "suzhou",
+  "venues": [
+    {
+      "id": "458dc8cc6713362e016d02fb6962bdf6",
+      "name": "CrossFit SuZhou",
+      "address": "虎丘区南岸水地公寓b座",
+      "description": "年轻化，积极向上有爱的运动社群，共同爱好兴趣为基础，运动之余可以开展吃喝玩乐等社群娱乐周边活动",
+      "location": {
+        "coordinates": [
+          120.674104,
+          31.332918
+        ],
+        "type": "Point"
+      },
+      "city": "suzhou",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    },
+    {
+      "id": "ebe773e1674d2046003528ec337991f0",
+      "name": "COLOR•CROSSFIT ",
+      "address": "吴中区苏州大道东275号",
+      "description": "COLOR•CrossFit 是卡乐健身旗下一个健身版块，拥有220平独立的空间，全套 XP器械，强大师资，明亮场地，我们汇聚了一群热爱运动的人群，以运动生活为理念，享受运动带来的快乐！",
+      "location": {
+        "coordinates": [
+          120.73469791260901,
+          31.323476510112005
+        ],
+        "type": "Point"
+      },
+      "city": "suzhou",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    }
+  ],
+  "total": 2
+}

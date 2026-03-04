@@ -1,0 +1,323 @@
+// 场馆详情页 JavaScript
+class VenueDetail {
+    constructor() {
+        this.venue = null;
+        this.currentCity = '';
+        this.venueId = '';
+        this.map = null;
+        this.currentImageIndex = 0;
+        
+        this.init();
+    }
+
+    async init() {
+        this.parseUrlParams();
+        this.bindEvents();
+        await this.loadVenueData();
+        if (this.venue) {
+            this.renderVenueDetail();
+        }
+    }
+
+    // 解析URL参数
+    parseUrlParams() {
+        const params = Utils.getUrlParams();
+        this.venueId = params.id || '';
+        this.currentCity = params.city || '';
+    }
+
+    // 绑定事件
+    bindEvents() {
+        // 返回按钮
+        document.getElementById('backBtn').addEventListener('click', () => {
+            this.goBack();
+        });
+
+        // 返回搜索按钮
+        document.getElementById('backToSearch')?.addEventListener('click', () => {
+            window.location.href = `search.html?city=${this.currentCity}`;
+        });
+
+        // 图片轮播
+        document.getElementById('prevImage')?.addEventListener('click', () => {
+            this.prevImage();
+        });
+
+        document.getElementById('nextImage')?.addEventListener('click', () => {
+            this.nextImage();
+        });
+
+        // 键盘事件
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                this.prevImage();
+            } else if (e.key === 'ArrowRight') {
+                this.nextImage();
+            }
+        });
+    }
+
+    // 加载场馆数据
+    async loadVenueData() {
+        try {
+            this.showLoading(true);
+            
+            if (!this.venueId || !this.currentCity) {
+                this.showVenueNotFound();
+                return;
+            }
+
+            const response = await fetch(`data/venues/${this.currentCity}.json`);
+            if (!response.ok) {
+                throw new Error('加载场馆数据失败');
+            }
+
+            const data = await response.json();
+            const venues = data.venues || data; // 兼容两种数据格式
+            this.venue = venues.find(v => v.id === this.venueId);
+
+            if (!this.venue) {
+                this.showVenueNotFound();
+            }
+
+            this.showLoading(false);
+        } catch (error) {
+            console.error('加载场馆数据失败:', error);
+            this.showVenueNotFound();
+            this.showLoading(false);
+        }
+    }
+
+    // 渲染场馆详情
+    renderVenueDetail() {
+        if (!this.venue) return;
+
+        // 基本信息
+        document.getElementById('venueName').textContent = this.venue.name;
+        document.getElementById('venueDescription').textContent = this.venue.description;
+
+        // 渲染场馆特色
+        this.renderVenueFeatures();
+
+        // 显示详情区域
+        document.getElementById('venueDetail').classList.remove('hidden');
+    }
+
+    // 渲染场馆特色
+    renderVenueFeatures() {
+        const featuresContainer = document.getElementById('venueFeatures');
+        
+        // 默认特色标签和对应图标
+        const defaultFeatures = [
+            { name: '专业教练', icon: 'icons/basic.png' },
+            { name: '器械齐全', icon: 'icons/barbell.png' },
+            { name: '团体课程', icon: 'icons/calendar.png' },
+            { name: '私教服务', icon: 'icons/gift.png' },
+            { name: '淋浴设施', icon: 'icons/shower.png' },
+            { name: '停车场', icon: 'icons/parking.png' },
+            { name: 'WiFi', icon: 'icons/wan_map.png' }
+        ];
+
+        // 如果场馆有自定义特色，使用自定义的
+        const features = this.venue.features || defaultFeatures;
+
+        featuresContainer.innerHTML = '';
+        features.forEach(feature => {
+            const featureEl = document.createElement('div');
+            featureEl.className = 'flex items-center space-x-2 px-3 py-2 bg-gray-100 rounded-lg text-sm';
+            featureEl.innerHTML = `
+                <img src="data/images/${feature.icon}" alt="${feature.name}" class="w-4 h-4">
+                <span class="text-gray-700">${feature.name}</span>
+            `;
+            featuresContainer.appendChild(featureEl);
+        });
+    }
+
+    // 初始化地图
+    initMap() {
+        if (!this.venue) {
+            console.error('场馆数据不存在');
+            return;
+        }
+
+        // 获取坐标
+        let lat, lng;
+        if (this.venue.location && this.venue.location.coordinates) {
+            lng = this.venue.location.coordinates[0];
+            lat = this.venue.location.coordinates[1];
+        } else if (this.venue.latitude && this.venue.longitude) {
+            lat = this.venue.latitude;
+            lng = this.venue.longitude;
+        } else {
+            console.error('场馆坐标数据不存在');
+            return;
+        }
+
+        // 初始化Leaflet地图
+        const map = L.map('venueMap').setView([lat, lng], 15);
+
+        // 使用更适合中国的地图瓦片
+        L.tileLayer('https://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineCommunity/MapServer/tile/{z}/{y}/{x}.png', {
+            attribution: 'Tiles &copy; Esri',
+            maxZoom: 18
+        }).addTo(map);
+
+        // 添加场馆标记
+        const marker = L.marker([lat, lng]).addTo(map);
+        
+        // 添加弹出窗口
+        if (this.venue.name) {
+            marker.bindPopup(`<b>${this.venue.name}</b><br>${this.venue.address || ''}`).openPopup();
+        }
+
+        this.map = map;
+    }
+
+    // 图片轮播控制
+    prevImage() {
+        if (!this.venue.images || this.venue.images.length <= 1) return;
+        
+        this.currentImageIndex = (this.currentImageIndex - 1 + this.venue.images.length) % this.venue.images.length;
+        this.updateImageDisplay();
+    }
+
+    nextImage() {
+        if (!this.venue.images || this.venue.images.length <= 1) return;
+        
+        this.currentImageIndex = (this.currentImageIndex + 1) % this.venue.images.length;
+        this.updateImageDisplay();
+    }
+
+    goToImage(index) {
+        this.currentImageIndex = index;
+        this.updateImageDisplay();
+    }
+
+    updateImageDisplay() {
+        const images = document.querySelectorAll('.carousel-image');
+        const indicators = document.querySelectorAll('.image-indicator');
+
+        images.forEach((img, index) => {
+            img.classList.toggle('active', index === this.currentImageIndex);
+        });
+
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === this.currentImageIndex);
+        });
+    }
+
+    // 联系场馆
+    callVenue() {
+        if (!this.venue.phone) {
+            this.showMessage('该场馆暂无联系电话');
+            return;
+        }
+
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location.href = `tel:${this.venue.phone}`;
+        } else {
+            this.showMessage(`联系电话: ${this.venue.phone}`);
+        }
+    }
+
+    // 打开导航
+    openNavigation() {
+        if (!this.venue) return;
+
+        const url = `https://uri.amap.com/navigation?to=${this.venue.longitude},${this.venue.latitude},${this.venue.name}&mode=car`;
+        window.open(url, '_blank');
+    }
+
+    // 切换收藏
+    toggleFavorite() {
+        const favoriteBtn = document.getElementById('favoriteBtn');
+        const favorites = Utils.getFromLocalStorage('favorites') || [];
+        const index = favorites.indexOf(this.venueId);
+
+        if (index > -1) {
+            // 取消收藏
+            favorites.splice(index, 1);
+            favoriteBtn.classList.remove('text-red-500');
+            favoriteBtn.classList.add('text-gray-400');
+            this.showMessage('已取消收藏');
+        } else {
+            // 添加收藏
+            favorites.push(this.venueId);
+            favoriteBtn.classList.remove('text-gray-400');
+            favoriteBtn.classList.add('text-red-500');
+            this.showMessage('已添加收藏');
+        }
+
+        Utils.saveToLocalStorage('favorites', favorites);
+    }
+
+    // 分享场馆
+    shareVenue() {
+        if (!this.venue) return;
+
+        const shareData = {
+            title: this.venue.name,
+            text: `${this.venue.name} - ${this.venue.address}`,
+            url: window.location.href
+        };
+
+        if (navigator.share) {
+            navigator.share(shareData).catch(err => console.log('分享失败', err));
+        } else {
+            // 复制链接到剪贴板
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                this.showMessage('链接已复制到剪贴板');
+            }).catch(() => {
+                this.showMessage('分享功能不可用');
+            });
+        }
+    }
+
+    // 返回上一页
+    goBack() {
+        if (document.referrer && document.referrer.includes(window.location.hostname)) {
+            window.history.back();
+        } else {
+            window.location.href = `search.html?city=${this.currentCity}`;
+        }
+    }
+
+    // 显示加载状态
+    showLoading(show) {
+        const loadingState = document.getElementById('loadingState');
+        const venueDetail = document.getElementById('venueDetail');
+        const venueNotFound = document.getElementById('venueNotFound');
+        
+        if (show) {
+            loadingState.classList.remove('hidden');
+            venueDetail.classList.add('hidden');
+            venueNotFound.classList.add('hidden');
+        } else {
+            loadingState.classList.add('hidden');
+        }
+    }
+
+    // 显示场馆不存在
+    showVenueNotFound() {
+        const venueNotFound = document.getElementById('venueNotFound');
+        const venueDetail = document.getElementById('venueDetail');
+        
+        venueNotFound.classList.remove('hidden');
+        venueDetail.classList.add('hidden');
+    }
+
+    // 显示消息
+    showMessage(message) {
+        const messageEl = document.createElement('div');
+        messageEl.className = 'fixed top-20 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-6 py-3 rounded-lg shadow-lg z-50 fade-in';
+        messageEl.textContent = message;
+        
+        document.body.appendChild(messageEl);
+        setTimeout(() => messageEl.remove(), 3000);
+    }
+}
+
+// 页面加载完成后初始化
+document.addEventListener('DOMContentLoaded', () => {
+    new VenueDetail();
+});

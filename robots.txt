@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://chentang.github.io/web-dropfit/sitemap.xml
+
+# Disallow specific files if needed
+# Disallow: /private/
+# Disallow: /admin/

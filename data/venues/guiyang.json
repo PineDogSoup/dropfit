@@ -1,0 +1,23 @@
+{
+  "city": "guiyang",
+  "venues": [
+    {
+      "id": "1b60144767304d6400168d62222d83c2",
+      "name": "City Fitters陽综合体能训练馆",
+      "address": "云岩区北京路208号",
+      "description": "原CrossFit Apolline sun训练馆/8年情怀老店一对多小团课教学/一对一专项训练综合体能训练/举重/自由搏击氛围好/无销售/无套路",
+      "location": {
+        "coordinates": [
+          106.702522,
+          26.590779
+        ],
+        "type": "Point"
+      },
+      "city": "guiyang",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    }
+  ],
+  "total": 1
+}

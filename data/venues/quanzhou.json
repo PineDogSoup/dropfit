@@ -1,0 +1,23 @@
+{
+  "city": "quanzhou",
+  "venues": [
+    {
+      "id": "af4c72fe67452cbb0017855d685cef4c",
+      "name": "0595运动训练馆",
+      "address": "泉州市石狮市九二东路与长银路交叉口东南80米",
+      "description": "0595运动训练馆",
+      "location": {
+        "coordinates": [
+          118.645101,
+          24.735638
+        ],
+        "type": "Point"
+      },
+      "city": "quanzhou",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    }
+  ],
+  "total": 1
+}

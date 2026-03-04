@@ -1,0 +1,23 @@
+{
+  "city": "xining",
+  "venues": [
+    {
+      "id": "0b732e7f67483dbb002544513b4917ca",
+      "name": "KoruCrossFit综合体能训练馆",
+      "address": "城西区新华联国际中心b栋",
+      "description": "我们提供世界级的教练,训练计划和客户服务",
+      "location": {
+        "coordinates": [
+          101.722726,
+          36.643015
+        ],
+        "type": "Point"
+      },
+      "city": "xining",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    }
+  ],
+  "total": 1
+}

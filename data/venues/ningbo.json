@@ -1,0 +1,23 @@
+{
+  "city": "ningbo",
+  "venues": [
+    {
+      "id": "07bd6b956737ef8c000b5bf122111993",
+      "name": "CrossFit燃综合体能训练馆",
+      "address": "鄞州区首南街道天高巷258号107室",
+      "description": "如果你渴望获得身体素质的提升,如果你憧憬一个家一般的训练氛围,那么燃box一定不会让你失望",
+      "location": {
+        "coordinates": [
+          121.545763,
+          29.805898
+        ],
+        "type": "Point"
+      },
+      "city": "ningbo",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    }
+  ],
+  "total": 1
+}

@@ -1,0 +1,57 @@
+{
+  "city": "wuhan",
+  "venues": [
+    {
+      "id": "983e93c467133842016d792d57d17d5f",
+      "name": "CrossFit HYPE",
+      "address": "江岸区汉黄路32号良友红坊文化艺术社区B1栋5-2室",
+      "description": "CrossFit HYPE",
+      "location": {
+        "coordinates": [
+          114.329186,
+          30.667884
+        ],
+        "type": "Point"
+      },
+      "city": "wuhan",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    },
+    {
+      "id": "07bd6b95673a105b0013ebba09e14c46",
+      "name": "CrossFit XINBA",
+      "address": "江汉区新华路体育中心12号门",
+      "description": "No WOD No life",
+      "location": {
+        "coordinates": [
+          114.27456,
+          30.586168
+        ],
+        "type": "Point"
+      },
+      "city": "wuhan",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    },
+    {
+      "id": "a00247e96748820e00270de856fc9e88",
+      "name": "CrossFit Fearless",
+      "address": "洪山区金禾中心B1层",
+      "description": "无畏体能运动社区,以综合体能团课为主,辅以一对一私教,运动,社群,赛事",
+      "location": {
+        "coordinates": [
+          114.364032,
+          30.577204
+        ],
+        "type": "Point"
+      },
+      "city": "wuhan",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    }
+  ],
+  "total": 3
+}

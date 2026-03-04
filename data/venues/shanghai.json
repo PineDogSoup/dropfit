@@ -1,0 +1,244 @@
+{
+  "city": "shanghai",
+  "venues": [
+    {
+      "id": "1b30f213670f9a34015daebe033a0ea0",
+      "name": "CrossFit MeWellness",
+      "address": "静安区昌化路667号1层S2座(近安远路)",
+      "description": "CrossFit不仅是锻炼，而且是我们生活的一部分！",
+      "location": {
+        "coordinates": [
+          121.44737,
+          31.24142
+        ],
+        "type": "Point"
+      },
+      "city": "shanghai",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    },
+    {
+      "id": "af813b1067133a1c016d3c224f1fc165",
+      "name": "复FuFitness综合体能",
+      "address": "杨浦区黄兴路221号C座1195幢C3104室",
+      "description": "复FuFitness(CrossFit复)成立于 2018年，希望大家通过日复一日的运动，逐渐找到自己想要的生活状态",
+      "location": {
+        "coordinates": [
+          121.528582,
+          31.273508
+        ],
+        "type": "Point"
+      },
+      "city": "shanghai",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    },
+    {
+      "id": "1b30f213671361db016cb519410c8628",
+      "name": "No One CrossFit",
+      "address": "闵行区程家桥支路201号智地大厦B03室",
+      "description": "No One CrossFit",
+      "location": {
+        "coordinates": [
+          121.384065,
+          31.184768
+        ],
+        "type": "Point"
+      },
+      "city": "shanghai",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    },
+    {
+      "id": "af813b10671da49c01946db714479625",
+      "name": "Best Body综合训练馆",
+      "address": "公平路与海平路交叉口东140米",
+      "description": "BestBody CrossFit完美体魄",
+      "location": {
+        "coordinates": [
+          121.508453,
+          31.250263
+        ],
+        "type": "Point"
+      },
+      "city": "shanghai",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    },
+    {
+      "id": "060407c0671da5240193f1263a1d6025",
+      "name": "BestBody CrossFit完美体魄",
+      "address": "共和新路辅路与江场路交叉口北160米",
+      "description": "BestBody CrossFit完美体魄",
+      "location": {
+        "coordinates": [
+          121.450018,
+          31.299919
+        ],
+        "type": "Point"
+      },
+      "city": "shanghai",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    },
+    {
+      "id": "686e8c6b671da580019485f968e80c3e",
+      "name": "CrossFit MATICS",
+      "address": "汶水路40号13幢1层129-131室",
+      "description": "CrossFit MATICS",
+      "location": {
+        "coordinates": [
+          121.457818,
+          31.293806
+        ],
+        "type": "Point"
+      },
+      "city": "shanghai",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    },
+    {
+      "id": "1b30f213671da5b001937ee824586561",
+      "name": "TT CROSSFIT",
+      "address": "潍坊路162号晨空间潍坊园502",
+      "description": "TT CROSSFIT",
+      "location": {
+        "coordinates": [
+          121.527328,
+          31.225951
+        ],
+        "type": "Point"
+      },
+      "city": "shanghai",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    },
+    {
+      "id": "af813b10671da5e80194730f3cdb6ded",
+      "name": "CrossFit ITF 综合体能及专项体能",
+      "address": "政立路150号江湾体育场3号门环廊1号看台121-122号靠近西司令台",
+      "description": "CrossFit ITF 综合体能及专项体能",
+      "location": {
+        "coordinates": [
+          121.514547,
+          31.306389
+        ],
+        "type": "Point"
+      },
+      "city": "shanghai",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    },
+    {
+      "id": "983e93c4671e5b05019873e8569c5332",
+      "name": "国金综合体能训练中心",
+      "address": "绥宁路820号虹桥体育公园B1层",
+      "description": "国金综合体能训练中心",
+      "location": {
+        "coordinates": [
+          121.344932,
+          31.221953
+        ],
+        "type": "Point"
+      },
+      "city": "shanghai",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    },
+    {
+      "id": "af813b10671e5b290197fa58191b451b",
+      "name": "T Gym综合体能训练馆",
+      "address": "中山街道袜子弄32号56栋",
+      "description": "T Gym综合体能训练馆",
+      "location": {
+        "coordinates": [
+          121.244178,
+          31.013556
+        ],
+        "type": "Point"
+      },
+      "city": "shanghai",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    },
+    {
+      "id": "96663e296731a7f7001b855e4821d9ef",
+      "name": "Fittribe飞踹运动(江湾体育场店)",
+      "address": "杨浦区国庠路121号",
+      "description": "乐刻旗下综合训练馆，明星教练万佳丽、黄仕国等坐镇",
+      "location": {
+        "coordinates": [
+          121.51613,
+          31.305128
+        ],
+        "type": "Point"
+      },
+      "city": "shanghai",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    },
+    {
+      "id": "07bd6b95673a95190014990d5f15cd9f",
+      "name": "AMRAP Performance",
+      "address": "浦东新区锦延路140号",
+      "description": "独立运动品牌AMRAP Performance",
+      "location": {
+        "coordinates": [
+          121.538803,
+          31.216567
+        ],
+        "type": "Point"
+      },
+      "city": "shanghai",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    },
+    {
+      "id": "710be24d6743fed400125f64403184de",
+      "name": "君CrossFit",
+      "address": "徐汇区虹梅路与宜山路交叉口南220米",
+      "description": "JunCrossFit",
+      "location": {
+        "coordinates": [
+          121.397946,
+          31.168649
+        ],
+        "type": "Point"
+      },
+      "city": "shanghai",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    },
+    {
+      "id": "710be24d6748223b0024d1294e498200",
+      "name": "VesselGarageFitness",
+      "address": "银城路119号尚悦西街S10栋1层E室",
+      "description": "Start your ENGINE.Here is your second HOME",
+      "location": {
+        "coordinates": [
+          121.511159,
+          31.243423
+        ],
+        "type": "Point"
+      },
+      "city": "shanghai",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    }
+  ],
+  "total": 14
+}

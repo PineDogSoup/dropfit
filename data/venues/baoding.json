@@ -1,0 +1,23 @@
+{
+  "city": "baoding",
+  "venues": [
+    {
+      "id": "5222d8c8674d1a820034dfb300a43d64",
+      "name": "山谷综合体能训练馆",
+      "address": "高新区云杉路渼澜湾小区对面",
+      "description": "山谷since2018,一城两店,举重、体能训练、力量训练、跑步、运动康复",
+      "location": {
+        "coordinates": [
+          115.472137,
+          38.893672
+        ],
+        "type": "Point"
+      },
+      "city": "baoding",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    }
+  ],
+  "total": 1
+}

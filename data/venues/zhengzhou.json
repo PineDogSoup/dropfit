@@ -1,0 +1,40 @@
+{
+  "city": "zhengzhou",
+  "venues": [
+    {
+      "id": "a00247e9674818040024ecb939a61347",
+      "name": "SUAT综合训练馆",
+      "address": "金水区农业路东16号省汇中心B座F2层",
+      "description": "体能力量|拳击格斗|减脂塑形|青少年体能|运动康复|运动表现",
+      "location": {
+        "coordinates": [
+          113.687759,
+          34.786969
+        ],
+        "type": "Point"
+      },
+      "city": "zhengzhou",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    },
+    {
+      "id": "5222d8c867487fc10026b5c7223383e7",
+      "name": "UGCrossFit(东站店)",
+      "address": "管城回族区榆林北路19号",
+      "description": "UG CrossFit是河南唯一一家官方授权的CrossFit场馆",
+      "location": {
+        "coordinates": [
+          113.763146,
+          34.756217
+        ],
+        "type": "Point"
+      },
+      "city": "zhengzhou",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    }
+  ],
+  "total": 2
+}

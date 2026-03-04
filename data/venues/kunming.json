@@ -1,0 +1,40 @@
+{
+  "city": "kunming",
+  "venues": [
+    {
+      "id": "060407c0670cc72e0150fa31475cb8ba",
+      "name": "Ark综合体能训练馆",
+      "address": "盘龙区穿金路721号煤机厂内(大院里)艺术空间B区",
+      "description": "Ark综合体能训练馆提供体能、力量、心肺等多种训练方向的专业课程，让各类人群都能再次找到适合自己的运动方式",
+      "location": {
+        "coordinates": [
+          102.744096,
+          25.068388
+        ],
+        "type": "Point"
+      },
+      "city": "kunming",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    },
+    {
+      "id": "686e8c6b670cc8fa0151c3bf1e6bae77",
+      "name": "Crack CrossFit综合体能训练馆",
+      "address": "盘龙区万宏路113号广瑞中心底商",
+      "description": "Make Your Impact! 做最好的自己！",
+      "location": {
+        "coordinates": [
+          102.730326,
+          25.064653
+        ],
+        "type": "Point"
+      },
+      "city": "kunming",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    }
+  ],
+  "total": 2
+}

@@ -1,0 +1,23 @@
+{
+  "city": "huhehaote",
+  "venues": [
+    {
+      "id": "710be24d674842d6002586941a0ae9ef",
+      "name": "CrossFit元",
+      "address": "展览馆东路融桥海鲜市场斜对面",
+      "description": "CrossFit元成立于2015年是呼市首家CrossFit训练馆",
+      "location": {
+        "coordinates": [
+          111.725802,
+          40.820698
+        ],
+        "type": "Point"
+      },
+      "city": "huhehaote",
+      "checked": true,
+      "images": [],
+      "logo": ""
+    }
+  ],
+  "total": 1
+}
