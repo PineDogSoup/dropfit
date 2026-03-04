@@ -128,10 +128,12 @@ class DropFitMain {
     // 销毁地图实例
     destroyMap() {
         if (this.map) {
-            this.map.remove();
+            this.map.destroy();
             this.map = null;
             console.log('旧地图实例已销毁');
         }
+        // 清除标记图层引用
+        this.markerLayer = null;
     }
 
     // 更新城市名称显示
@@ -183,6 +185,15 @@ class DropFitMain {
         const mapLoading = document.getElementById('mapLoading');
         if (!mapContainer) return;
 
+        // 检查腾讯地图 API 是否加载成功
+        if (typeof TMap === 'undefined') {
+            console.error('腾讯地图 API 未加载，请检查 Key 是否正确或网络连接');
+            if (mapLoading) {
+                mapLoading.innerHTML = '<div class="text-center"><p class="text-red-600">地图加载失败</p><p class="text-gray-500 text-sm">请检查网络连接或 API Key 配置</p></div>';
+            }
+            return;
+        }
+
         // 显示加载状态
         if (mapLoading) {
             mapLoading.style.display = 'flex';
@@ -191,95 +202,154 @@ class DropFitMain {
         // 获取当前城市的中心坐标
         const cityCenter = this.getCityCenter(this.currentCity);
         console.log(`初始化地图 - 城市: ${this.currentCity}, 中心坐标: ${cityCenter}`);
-        
-        // 使用 Leaflet 开源地图
-        this.map = L.map(mapContainer).setView(cityCenter, 12);
 
-        // 添加 OpenStreetMap 瓦片图层，带备用服务
-        const tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors',
-            maxZoom: 18,
-            errorTileUrl: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=='
-        }).addTo(this.map);
+        try {
+            // 使用腾讯地图 API GL
+            const center = new TMap.LatLng(cityCenter[0], cityCenter[1]);
+            console.log('创建地图实例...');
+            this.map = new TMap.Map(mapContainer, {
+                center: center,
+                zoom: 10
+            });
+            console.log('地图实例创建成功');
 
-        // 检测瓦片加载错误，尝试备用服务
-        tileLayer.on('tileerror', (e) => {
-            console.warn('OpenStreetMap瓦片加载失败，尝试备用服务');
-            // 备用地图服务
-            L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap contributors, Tiles style by Humanitarian OpenStreetMap Team',
-                maxZoom: 18
-            }).addTo(this.map);
-        });
+            // 地图加载完成后隐藏加载状态
+            this.map.on('tilesloaded', () => {
+                console.log('地图瓦片加载完成');
+                if (mapLoading) {
+                    mapLoading.style.display = 'none';
+                }
+            });
 
-        // 监听地图加载完成
-        this.map.whenReady(() => {
-            if (mapLoading) {
-                mapLoading.style.display = 'none';
-            }
-            console.log('地图加载完成');
-            
+            // 添加超时机制
+            setTimeout(() => {
+                if (mapLoading && mapLoading.style.display === 'flex') {
+                    console.warn('地图加载超时，强制隐藏加载状态');
+                    mapLoading.style.display = 'none';
+                }
+            }, 8000);
+
             // 添加场馆标记
-            this.addVenueMarkers();
-        });
-
-        // 添加超时机制，防止地图加载卡住
-        setTimeout(() => {
-            if (mapLoading && mapLoading.style.display === 'flex') {
-                console.warn('地图加载超时，强制隐藏加载状态');
-                mapLoading.style.display = 'none';
-                // 尝试添加场馆标记
+            setTimeout(() => {
                 this.addVenueMarkers();
+            }, 500);
+
+        } catch (error) {
+            console.error('地图初始化失败:', error);
+            if (mapLoading) {
+                mapLoading.innerHTML = `<div class="text-center"><p class="text-red-600">地图初始化失败</p><p class="text-gray-500 text-sm">${error.message}</p></div>`;
             }
-        }, 5000); // 5秒超时
+            this.showMessage('地图加载失败: ' + error.message);
+        }
     }
 
     // 添加场馆标记
     addVenueMarkers() {
-        if (!this.map || !this.venues) return;
-        
-        let markerCount = 0;
-        const markers = []; // 收集所有标记用于后续处理
-        
-        this.venues.forEach(venue => {
-            let coordinates;
-            if (venue.location && venue.location.coordinates && 
-                Array.isArray(venue.location.coordinates) && 
-                venue.location.coordinates.length >= 2) {
-                coordinates = [venue.location.coordinates[1], venue.location.coordinates[0]]; // Leaflet 使用 [lat, lng] 格式
-            } else if (venue.coordinates && 
-                       Array.isArray(venue.coordinates) && 
-                       venue.coordinates.length >= 2) {
-                coordinates = [venue.coordinates[1], venue.coordinates[0]];
+        if (!this.map || !this.venues || this.venues.length === 0) return;
+
+        try {
+            // 准备标记数据
+            const geometries = [];
+            const bounds = []; // 用于存储所有标记的坐标，以便调整视野
+
+            this.venues.forEach((venue, index) => {
+                let coordinates;
+                if (venue.location && venue.location.coordinates &&
+                    Array.isArray(venue.location.coordinates) &&
+                    venue.location.coordinates.length >= 2) {
+                    // 数据库存储的是 [lng, lat]，腾讯地图需要 LatLng(lat, lng)
+                    coordinates = [venue.location.coordinates[1], venue.location.coordinates[0]];
+                } else if (venue.coordinates &&
+                           Array.isArray(venue.coordinates) &&
+                           venue.coordinates.length >= 2) {
+                    coordinates = [venue.coordinates[1], venue.coordinates[0]];
+                }
+
+                if (coordinates && coordinates[0] && coordinates[1]) {
+                    const latLng = new TMap.LatLng(coordinates[0], coordinates[1]);
+                    bounds.push(latLng);
+                    geometries.push({
+                        id: `marker-${index}`,
+                        position: latLng,
+                        properties: {
+                            title: venue.name,
+                            address: venue.address
+                        }
+                    });
+                } else {
+                    console.warn('场馆坐标数据不完整:', venue.name, venue);
+                }
+            });
+
+            console.log(`添加了 ${geometries.length} 个场馆标记`);
+
+            // 如果已有标记图层，先销毁
+            if (this.markerLayer) {
+                this.markerLayer.destroy();
             }
-            
-            if (coordinates && coordinates[0] && coordinates[1]) {
-                markerCount++;
-                const marker = L.marker(coordinates).addTo(this.map);
-                marker.bindPopup(`
-                    <div class="p-2">
-                        <h4 class="font-bold text-lg">${venue.name}</h4>
-                    </div>
-                `);
-                markers.push(marker); // 添加到标记数组
-            } else {
-                console.warn('场馆坐标数据不完整:', venue.name, venue);
+
+            // 创建多标记图层
+            if (geometries.length > 0) {
+                this.markerLayer = new TMap.MultiMarker({
+                    map: this.map,
+                    styles: {
+                        'default': new TMap.MarkerStyle({
+                            width: 25,
+                            height: 35,
+                            anchor: { x: 12, y: 35 },
+                            color: '#0066cc'
+                        })
+                    },
+                    geometries: geometries
+                });
+
+                // 记录当前打开的标记ID
+                this.currentOpenMarkerId = null;
+
+                // 添加点击事件，显示场馆名称
+                this.markerLayer.on('click', (e) => {
+                    const geometry = e.geometry;
+                    if (geometry && geometry.properties) {
+                        const clickedId = geometry.id;
+                        
+                        // 如果点击的是同一个标记，则关闭信息窗体
+                        if (this.currentOpenMarkerId === clickedId && this.infoWindow) {
+                            this.infoWindow.close();
+                            this.infoWindow = null;
+                            this.currentOpenMarkerId = null;
+                            return;
+                        }
+                        
+                        // 记录当前打开的标记ID
+                        this.currentOpenMarkerId = clickedId;
+                        
+                        // 创建信息窗体
+                        if (this.infoWindow) {
+                            this.infoWindow.close();
+                        }
+                        this.infoWindow = new TMap.InfoWindow({
+                            map: this.map,
+                            position: geometry.position,
+                            enableCustom: true,
+                            content: `<div class="map-venue-name-bubble">${geometry.properties.title}</div>`,
+                            offset: { x: 0, y: -30 }
+                        });
+                    }
+                });
+
+                // 自动调整地图视野以包含所有标记
+                if (bounds.length > 0) {
+                    const latitudes = bounds.map((point) => point.lat);
+                    const longitudes = bounds.map((point) => point.lng);
+                    const southWest = new TMap.LatLng(Math.min(...latitudes), Math.min(...longitudes));
+                    const northEast = new TMap.LatLng(Math.max(...latitudes), Math.max(...longitudes));
+                    const latLngBounds = new TMap.LatLngBounds(southWest, northEast);
+
+                    this.map.fitBounds(latLngBounds, { padding: 20 });
+                }
             }
-        });
-        
-        console.log(`添加了 ${markerCount} 个场馆标记`);
-        
-        // 如果有场馆，自动调整地图视野以包含所有标记
-        if (markerCount > 0 && markers.length > 0) {
-            try {
-                const group = new L.featureGroup(markers);
-                this.map.fitBounds(group.getBounds().pad(0.1));
-            } catch (error) {
-                console.warn('自动调整地图视野失败:', error);
-                // 如果自动调整失败，使用默认视野
-                const cityCenter = this.getCityCenter(this.currentCity);
-                this.map.setView(cityCenter, 12);
-            }
+        } catch (error) {
+            console.error('添加场馆标记失败:', error);
         }
     }
 

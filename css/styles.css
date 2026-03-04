@@ -160,6 +160,23 @@ footer {
     margin-top: -41px;
 }
 
+/* 首页地图场馆名气泡（腾讯地图自定义信息窗体） */
+.map-venue-name-bubble {
+    display: inline-block;
+    max-width: 220px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #111827;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-shadow: 0 4px 12px rgba(17, 24, 39, 0.16);
+}
+
 /* 修复弹窗层级问题 */
 .modal {
     position: fixed !important;
