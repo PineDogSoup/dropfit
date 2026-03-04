@@ -5,7 +5,6 @@
       "id": "af813b1067051451013291cc40fa9ae7",
       "name": "ProActive Fitness",
       "address": "朝阳区光华路SOHO一期B126",
-      "description": "Be active, train like a pro",
       "location": {
         "coordinates": [
           116.451716,
@@ -14,16 +13,22 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["crossfit"]
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "gymnastics",
+        "group"
+      ],
+      "phone": "010-12345678",
+      "official_account": "ProActive健身官方",
+      "xiaohongshu": "@ProActive健身"
     },
     {
       "id": "458dc8cc67053e320133a1fc490253bf",
       "name": "CrossFit MET综合体能训练馆",
       "address": "朝阳区定福庄24H齿轮场10号楼",
-      "description": "CrossFit MET综合体能训练馆(朝阳路店)",
       "location": {
         "coordinates": [
           116.549374,
@@ -32,16 +37,19 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["crossfit"]
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "weightlifting",
+        "morning"
+      ]
     },
     {
       "id": "983e93c46705467f01343a3866f9d8c4",
       "name": "佐佑同行运动馆ZOYO CrossFit",
       "address": "朝阳区湖光中街9号院内(布丁酒店旁)",
-      "description": "佐佑同行运动馆ZOYO CrossFit",
       "location": {
         "coordinates": [
           116.466458,
@@ -50,16 +58,20 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["crossfit", "hyrox"]
+      "types": [
+        "crossfit",
+        "hyrox"
+      ],
+      "courses": [
+        "hyrox",
+        "gymnastics"
+      ]
     },
     {
       "id": "test-hydrox-only",
       "name": "Hyrox Training Center",
       "address": "朝阳区测试地址",
-      "description": "专业的Hyrox训练中心",
       "location": {
         "coordinates": [
           116.4074,
@@ -68,16 +80,18 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["hyrox"]
+      "types": [
+        "hyrox"
+      ],
+      "courses": [
+        "hyrox"
+      ]
     },
     {
       "id": "1b30f21367135cf1016ca24915b2a683",
       "name": "CrossFit Squaircle方圆训练",
       "address": "东城区东总部胡同58号天润财富中心102-103a",
-      "description": "CrossFit方圆成立于2021年，位于北京市东城区，是一家CrossFit官方认证场馆",
       "location": {
         "coordinates": [
           116.428245,
@@ -86,16 +100,19 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["crossfit"]
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "group",
+        "weightlifting"
+      ]
     },
     {
       "id": "1b30f2136713603d016caf652971c160",
       "name": "ShiFu综合体能训练馆",
       "address": "朝阳区国贸万达广场7号楼地下一层",
-      "description": "ShiFu综合体能训练馆",
       "location": {
         "coordinates": [
           116.459374,
@@ -104,16 +121,19 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["crossfit"]
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "morning",
+        "gymnastics"
+      ]
     },
     {
       "id": "af813b1067060b39013291cc40fa9ae7",
       "name": "UPPER LIMIT综合体能训练",
       "address": "朝阳区三里屯太古里南区S4-32",
-      "description": "UPPER LIMIT综合体能训练",
       "location": {
         "coordinates": [
           116.447374,
@@ -122,16 +142,20 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["crossfit", "hyrox"]
+      "types": [
+        "crossfit",
+        "hyrox"
+      ],
+      "courses": [
+        "hyrox",
+        "group"
+      ]
     },
     {
       "id": "458dc8cc67053e320133a1fc490253bf",
       "name": "野兽健身",
       "address": "海淀区中关村大街19号",
-      "description": "野兽健身综合训练馆",
       "location": {
         "coordinates": [
           116.307374,
@@ -140,16 +164,19 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["hyrox"]
+      "types": [
+        "hyrox"
+      ],
+      "courses": [
+        "weightlifting",
+        "hyrox"
+      ]
     },
     {
       "id": "983e93c4671da64c0194e2ae5e080114",
       "name": "珈德CrossFit综合体能训练馆",
       "address": "东坝中路38号楼金隅嘉品mallB217",
-      "description": "珈德CrossFit综合体能训练馆(金隅嘉品Mall店)",
       "location": {
         "coordinates": [
           116.548017,
@@ -158,16 +185,18 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["crossfit"]
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "gymnastics"
+      ]
     },
     {
       "id": "af813b10671da6760194754b57d0034b",
       "name": "CrossFit Slash",
       "address": "工体北路13号院世茂工三(海隆石油)B1层",
-      "description": "CrossFit Slash",
       "location": {
         "coordinates": [
           116.449551,
@@ -176,16 +205,19 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["crossfit"]
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "group",
+        "morning"
+      ]
     },
     {
       "id": "af813b10671da6a40194760559a59874",
       "name": "CrossFit私塾",
       "address": "中粮祥云小镇北区4号楼(汉堡王对面)904",
-      "description": "CrossFit私塾",
       "location": {
         "coordinates": [
           116.535679,
@@ -194,16 +226,18 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["crossfit"]
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "weightlifting"
+      ]
     },
     {
       "id": "458dc8cc671da6e2019498b21ee4502c",
       "name": "CrossFit众",
       "address": "安祥大街12号院环普国际4号楼1层105室",
-      "description": "CrossFit众",
       "location": {
         "coordinates": [
           116.540613,
@@ -212,16 +246,19 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["crossfit"]
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "hyrox",
+        "gymnastics"
+      ]
     },
     {
       "id": "060407c0671da7240193f9143397da1c",
       "name": "CrossFit 1987(泰禾新天地)",
       "address": "鲁谷街道泰禾新天地B2层北侧36号",
-      "description": "CrossFit 1987综合体能训练馆(泰禾新天地)",
       "location": {
         "coordinates": [
           116.220961,
@@ -230,16 +267,19 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["crossfit"]
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "morning",
+        "group"
+      ]
     },
     {
       "id": "af813b10671da7a401947a041e5020af",
       "name": "Crossfit DAA运动社区",
       "address": "博雅国际中心A座B1-5",
-      "description": "Crossfit DAA运动社区",
       "location": {
         "coordinates": [
           116.469376,
@@ -248,16 +288,19 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["crossfit"]
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "weightlifting",
+        "gymnastics"
+      ]
     },
     {
       "id": "af813b10671da7cd01947a9030913710",
       "name": "CrossFit 1987(丽泽店)",
       "address": "丰台区台湾街丰管路全季酒店1层",
-      "description": "CrossFit 1987综合体能训练馆(丽泽店)",
       "location": {
         "coordinates": [
           116.308691,
@@ -266,16 +309,18 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["crossfit"]
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "group"
+      ]
     },
     {
       "id": "060407c0671da7f20193fc3f69245425",
       "name": "CrossFit魔杰综合体能训练",
       "address": "BDA国际广场N座下沉花园",
-      "description": "CrossFit魔杰综合体能训练",
       "location": {
         "coordinates": [
           116.499888,
@@ -284,16 +329,19 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["crossfit"]
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "hyrox",
+        "weightlifting"
+      ]
     },
     {
       "id": "af813b10671da82601947bc877e5d0a4",
       "name": "MoovOn Fitness 魔昂体能健身",
       "address": "和平里东街11号创新楼A座地下一层B1-D3",
-      "description": "MoovOn Fitness 魔昂体能健身",
       "location": {
         "coordinates": [
           116.419511,
@@ -302,16 +350,18 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["crossfit"]
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "morning"
+      ]
     },
     {
       "id": "686e8c6b671e572101980f04108de7d4",
       "name": "INGFIT综合体能训练馆",
       "address": "京洲体育园OD篮球公园对面",
-      "description": "INGFIT综合体能训练馆",
       "location": {
         "coordinates": [
           116.622557,
@@ -320,16 +370,19 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["crossfit"]
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "gymnastics",
+        "group"
+      ]
     },
     {
       "id": "686e8c6b671e574801980f8a1e2e516a",
       "name": "86综合体能训练馆",
       "address": "孙河52号院甲1号",
-      "description": "86综合体能训练馆",
       "location": {
         "coordinates": [
           116.539436,
@@ -338,16 +391,18 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": false,
-      "images": [],
       "logo": "",
-      "types": ["crossfit"]
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "weightlifting"
+      ]
     },
     {
       "id": "1b30f213671e57770196fd7c03594715",
       "name": "義FAMILY(石园店)",
       "address": "和镇石园大街9号院1区4号楼B13-1",
-      "description": "義FAMILY综合体能训练馆(石园店)",
       "location": {
         "coordinates": [
           116.680018,
@@ -356,16 +411,19 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["crossfit"]
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "hyrox",
+        "morning"
+      ]
     },
     {
       "id": "1b30f213671e57a80196fe397410e3f8",
       "name": "義FAMILY(西门店)",
       "address": "双丰街西门外大街1号",
-      "description": "義FAMILY综和体能训练馆(西门店)",
       "location": {
         "coordinates": [
           116.644385,
@@ -374,16 +432,18 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["crossfit"]
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "group"
+      ]
     },
     {
       "id": "686e8c6b671e5a4301981ab66ac5f324",
       "name": "義FAMILY(理想店)",
       "address": "顺义区文良街11号",
-      "description": "義FAMILY综和体能训练馆(理想店)",
       "location": {
         "coordinates": [
           116.580397,
@@ -392,16 +452,19 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["crossfit"]
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "gymnastics",
+        "weightlifting"
+      ]
     },
     {
       "id": "458dc8cc671e5a7c01981755517c168e",
       "name": "義FAMILY(唐自头店)",
       "address": "和平街与顺于路交叉口西北350米唐自头影视基地",
-      "description": "義FAMILY综和体能训练馆(唐自头店)",
       "location": {
         "coordinates": [
           116.48778,
@@ -410,16 +473,18 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["crossfit"]
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "morning"
+      ]
     },
     {
       "id": "983e93c4671e5aa2019872b142a932e0",
       "name": "Rock Fit体能训练中心",
       "address": "海淀区迈克枫体育文化中心",
-      "description": "生命影响生命，品格传递品格，冠军团队，专业课程",
       "location": {
         "coordinates": [
           116.336251,
@@ -428,16 +493,19 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["crossfit"]
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "hyrox",
+        "group"
+      ]
     },
     {
       "id": "060407c0671e5ad301977b99530f05b3",
       "name": "荷尔蒙综合体能训练馆(万柳店)",
       "address": "万柳中路6号院迪佳广场F1层",
-      "description": "荷尔蒙综合体能训练馆(万柳店)",
       "location": {
         "coordinates": [
           116.298045,
@@ -446,16 +514,19 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["crossfit"]
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "weightlifting",
+        "gymnastics"
+      ]
     },
     {
       "id": "b8cb29906731c979001c89eb58abeeb4",
       "name": "CrossFit武肆",
       "address": "海淀区中关村E世界财富中心下沉广场",
-      "description": "一家对新手友好的CF馆",
       "location": {
         "coordinates": [
           116.314611,
@@ -464,16 +535,19 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["crossfit"]
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "gymnastics",
+        "morning"
+      ]
     },
     {
       "id": "02ea3e3d6734c5eb002bbc141f48586b",
       "name": "赤行综合体能健身",
       "address": "亚运村慧忠北里307号邮政银行下楼B1",
-      "description": "一家以综合体能团课为主题的综合体能训练馆",
       "location": {
         "coordinates": [
           116.405531,
@@ -482,16 +556,19 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["crossfit"]
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "group",
+        "hyrox"
+      ]
     },
     {
       "id": "9badd3ff67370d9f00082ea0480c9772",
       "name": "东苑健身",
       "address": "朝阳公园路与亮马河国际风情水岸绿道交叉口南80米",
-      "description": "Dong Yuan Fitness东苑健身",
       "location": {
         "coordinates": [
           116.472334,
@@ -500,10 +577,14 @@
         "type": "Point"
       },
       "city": "beijing",
-      "checked": true,
-      "images": [],
       "logo": "",
-      "types": ["crossfit"]
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "weightlifting",
+        "morning"
+      ]
     }
   ],
   "total": 25

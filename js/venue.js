@@ -104,6 +104,9 @@ class VenueDetail {
             // 渲染场馆特色
             this.renderVenueFeatures();
 
+            // 渲染课程标签
+            this.renderVenueCourses();
+
             // 显示详情区域
             const detailEl = document.getElementById('venueDetail');
             if (detailEl) detailEl.classList.remove('hidden');
@@ -139,6 +142,39 @@ class VenueDetail {
             `;
             featuresContainer.appendChild(featureEl);
         });
+    }
+
+    renderVenueCourses() {
+        const coursesContainer = document.getElementById('venueCourses');
+        
+        // 课程类型配置
+        const courseTypes = {
+            'gymnastics': '体操',
+            'weightlifting': '举重', 
+            'hyrox': 'Hyrox',
+            'group': '团课',
+            'morning': '早课'
+        };
+
+        // 获取场馆课程数据，如果没有则使用默认示例
+        const venueCourses = this.venue.courses || ['gymnastics', 'weightlifting']; // 默认显示体操和举重
+
+        coursesContainer.innerHTML = '';
+        
+        venueCourses.forEach(courseKey => {
+            const courseName = courseTypes[courseKey];
+            if (courseName) {
+                const courseEl = document.createElement('span');
+                courseEl.className = `course-tag course-tag-${courseKey}`;
+                courseEl.textContent = courseName;
+                coursesContainer.appendChild(courseEl);
+            }
+        });
+
+        // 如果没有课程数据，显示提示
+        if (venueCourses.length === 0) {
+            coursesContainer.innerHTML = '<span class="text-gray-500 text-sm">暂无课程信息</span>';
+        }
     }
 
     showMessage(message) {

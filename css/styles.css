@@ -385,6 +385,67 @@ footer {
     }
 }
 
+/* 课程标签样式 */
+.course-tag {
+    @apply inline-block px-3 py-1 text-sm font-medium rounded-full border-2 bg-white;
+    transition: all 0.2s ease;
+}
+
+.course-tag:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 体操标签 - 紫色 */
+.course-tag-gymnastics {
+    border-color: #8B5CF6;
+    color: #8B5CF6;
+}
+
+.course-tag-gymnastics:hover {
+    background-color: #F3F0FF;
+}
+
+/* 举重标签 - 红色 */
+.course-tag-weightlifting {
+    border-color: #EF4444;
+    color: #EF4444;
+}
+
+.course-tag-weightlifting:hover {
+    background-color: #FEF2F2;
+}
+
+/* Hyrox标签 - 橙色 */
+.course-tag-hyrox {
+    border-color: #F97316;
+    color: #F97316;
+}
+
+.course-tag-hyrox:hover {
+    background-color: #FFF7ED;
+}
+
+/* 团课标签 - 蓝色 */
+.course-tag-group {
+    border-color: #3B82F6;
+    color: #3B82F6;
+}
+
+.course-tag-group:hover {
+    background-color: #EFF6FF;
+}
+
+/* 早课标签 - 绿色 */
+.course-tag-morning {
+    border-color: #10B981;
+    color: #10B981;
+}
+
+.course-tag-morning:hover {
+    background-color: #F0FDF4;
+}
+
 /* 打印样式 */
 @media print {
     .no-print {

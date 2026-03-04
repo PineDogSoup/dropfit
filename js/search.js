@@ -156,9 +156,46 @@ class SearchPage {
 
         // 填充数据
         clone.querySelector('.venue-name').textContent = venue.name;
-        clone.querySelector('.venue-description').textContent = venue.description || '暂无描述';
+        // 移除 description 展示
+        const descEl = clone.querySelector('.venue-description');
+        if (descEl) descEl.style.display = 'none';
+        
+        // 填充联系信息
         clone.querySelector('.venue-address').textContent = venue.address;
-        clone.querySelector('.venue-phone').textContent = '暂无电话';
+        
+        // 电话
+        const phoneRow = clone.querySelector('.venue-phone-row');
+        const phoneEl = clone.querySelector('.venue-phone');
+        if (venue.phone) {
+            phoneEl.textContent = venue.phone;
+            phoneRow.classList.remove('hidden');
+        } else {
+            phoneRow.classList.add('hidden');
+        }
+        
+        // 微信 - 隐藏不展示
+        const wechatRow = clone.querySelector('.venue-wechat-row');
+        if (wechatRow) wechatRow.style.display = 'none';
+        
+        // 公众号
+        const officialAccountRow = clone.querySelector('.venue-official-account-row');
+        const officialAccountEl = clone.querySelector('.venue-official-account');
+        if (venue.official_account) {
+            officialAccountEl.textContent = venue.official_account;
+            officialAccountRow.classList.remove('hidden');
+        } else {
+            officialAccountRow.classList.add('hidden');
+        }
+        
+        // 小红书
+        const xiaohongshuRow = clone.querySelector('.venue-xiaohongshu-row');
+        const xiaohongshuEl = clone.querySelector('.venue-xiaohongshu');
+        if (venue.xiaohongshu) {
+            xiaohongshuEl.textContent = venue.xiaohongshu;
+            xiaohongshuRow.classList.remove('hidden');
+        } else {
+            xiaohongshuRow.classList.add('hidden');
+        }
 
         // 设置LOGO图片 - 使用barbell.png作为mock
         const imageEl = clone.querySelector('.venue-image');
@@ -169,30 +206,15 @@ class SearchPage {
         const tagsContainer = clone.querySelector('.venue-type-tags');
         this.generateTypeTags(tagsContainer, venue);
 
-        // 渲染场馆特色
+        // 生成课程标签
+        const coursesContainer = document.createElement('div');
+        coursesContainer.className = 'flex flex-wrap gap-1 mt-3 venue-course-tags';
+        this.generateCourseTags(coursesContainer, venue);
+
+        // 将课程标签插入到场馆特色之前，并隐藏场馆特色
         const featuresContainer = clone.querySelector('.venue-features');
-        const defaultFeatures = [
-            { name: '咖啡', icon: 'icons/coffee.png' },
-            { name: '毛巾', icon: 'icons/towel.png' },
-            { name: '停车场', icon: 'icons/parking.png' },
-            { name: 'WiFi', icon: 'icons/wan_map.png' },
-            { name: '淋浴', icon: 'icons/shower.png' },
-            { name: '储物柜', icon: 'icons/cabinet.png' }
-        ];
-
-        // 如果场馆有自定义特色，使用自定义的
-        const features = venue.features || defaultFeatures;
-
-        featuresContainer.innerHTML = '';
-        features.forEach(feature => {
-            const featureEl = document.createElement('div');
-            featureEl.className = 'flex items-center space-x-1 px-2 py-1 bg-gray-100 rounded text-xs';
-            featureEl.innerHTML = `
-                <img src="data/images/${feature.icon}" alt="${feature.name}" class="w-3 h-3">
-                <span class="text-gray-700">${feature.name}</span>
-            `;
-            featuresContainer.appendChild(featureEl);
-        });
+        featuresContainer.parentNode.insertBefore(coursesContainer, featuresContainer);
+        featuresContainer.style.display = 'none';
 
         return clone;
     }
@@ -231,6 +253,42 @@ class SearchPage {
             container.appendChild(hyroxTag);
         } else {
         }
+    }
+
+    // 生成课程标签
+    generateCourseTags(container, venue) {
+        const courses = venue.courses || [];
+        
+        container.innerHTML = '';
+        
+        if (courses.length === 0) {
+            container.style.display = 'none';
+            return;
+        }
+
+        const courseLabels = {
+            'gymnastics': '体操',
+            'group': '团课',
+            'weightlifting': '举重',
+            'morning': '早课',
+            'hyrox': 'Hyrox'
+        };
+
+        const courseStyles = {
+            'gymnastics': 'border-purple-500 text-purple-600',
+            'group': 'border-blue-500 text-blue-600',
+            'weightlifting': 'border-red-500 text-red-600',
+            'morning': 'border-amber-500 text-amber-600',
+            'hyrox': 'border-emerald-500 text-emerald-600'
+        };
+
+        courses.forEach(course => {
+            const tag = document.createElement('span');
+            const styleClass = courseStyles[course] || 'border-gray-400 text-gray-600';
+            tag.className = `px-2 py-0.5 text-xs bg-white border ${styleClass} rounded-full`;
+            tag.textContent = courseLabels[course] || course;
+            container.appendChild(tag);
+        });
     }
 
     // 渲染地图视图
