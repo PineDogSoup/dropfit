@@ -56,7 +56,7 @@
 
         <!-- 城市列表（按首字母排序） -->
         <section>
-            <h2 class="text-sm font-medium text-gray-500 mb-4">全部城市</h2>
+            <h2 class="text-sm font-medium text-gray-500 mb-4">全部城市 <span id="cityCount" class="text-gray-400">(0)</span></h2>
             <div id="allCities">
                 <!-- 城市列表将通过JS动态生成 -->
             </div>
@@ -142,6 +142,8 @@
         // 初始化
         async function init() {
             const cities = await loadCities();
+            // 更新城市总数
+            document.getElementById('cityCount').textContent = '(' + cities.length + ')';
             renderHotCities(cities);
             renderAllCities(cities);
         }
