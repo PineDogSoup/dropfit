@@ -141,7 +141,8 @@ class DropFitMain {
 
     // 执行搜索
     performSearch() {
-        const keyword = this.currentKeyword.trim();
+        const searchInput = document.getElementById('searchInput');
+        const keyword = searchInput ? searchInput.value.trim() : '';
         const params = new URLSearchParams({
             city: this.currentCity,
             keyword: keyword
