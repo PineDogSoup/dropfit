@@ -107,9 +107,7 @@ class SearchPage {
         } else {
             const keyword = this.currentKeyword.toLowerCase();
             this.filteredVenues = this.venues.filter(venue => 
-                venue.name.toLowerCase().includes(keyword) ||
-                venue.address.toLowerCase().includes(keyword) ||
-                (venue.description && venue.description.toLowerCase().includes(keyword))
+                venue.name.toLowerCase().includes(keyword)
             );
         }
         
