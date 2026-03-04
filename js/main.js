@@ -13,6 +13,7 @@ class DropFitMain {
         this.loadCityData();
         this.updateCityName(this.currentCity); // 初始化城市名称
         this.loadVenues();
+        this.loadSearchHistory(); // 加载搜索历史
     }
 
     bindEvents() {
@@ -143,6 +144,12 @@ class DropFitMain {
     performSearch() {
         const searchInput = document.getElementById('searchInput');
         const keyword = searchInput ? searchInput.value.trim() : '';
+        
+        // 保存搜索历史
+        if (keyword) {
+            this.saveSearchHistory(keyword);
+        }
+        
         const params = new URLSearchParams({
             city: this.currentCity,
             keyword: keyword
@@ -150,6 +157,30 @@ class DropFitMain {
         
         // 跳转到搜索页面
         window.location.href = `search.html?${params.toString()}`;
+    }
+
+    // 加载搜索历史
+    loadSearchHistory() {
+        const searchHistory = Utils.getLocalStorage('searchHistory', []);
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput && searchHistory.length > 0) {
+            // 可以在这里设置placeholder或显示最近的搜索
+            searchInput.placeholder = `搜索场馆 (最近搜索: ${searchHistory[0]})`;
+        }
+    }
+
+    // 保存搜索历史
+    saveSearchHistory(keyword) {
+        const searchHistory = Utils.getLocalStorage('searchHistory', []);
+        
+        // 移除重复项并添加到开头
+        const filteredHistory = searchHistory.filter(item => item !== keyword);
+        filteredHistory.unshift(keyword);
+        
+        // 只保留最近10个搜索
+        const newHistory = filteredHistory.slice(0, 10);
+        
+        Utils.setLocalStorage('searchHistory', newHistory);
     }
 
     // 加载场馆数据
