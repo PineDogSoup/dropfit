@@ -11,20 +11,40 @@
         .city-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-        }
-        @media (max-width: 640px) {
-            .city-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            gap: 0.75rem;
         }
         .letter-section {
-            border-bottom: 1px solid #e5e7eb;
             padding-bottom: 1rem;
             margin-bottom: 1rem;
         }
         .letter-section:last-child {
             border-bottom: none;
+        }
+        .letter-nav {
+            position: fixed;
+            right: 4px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            background: rgba(255,255,255,0.95);
+            padding: 4px 2px;
+            border-radius: 10px;
+            font-size: 10px;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .letter-nav a {
+            color: #3b82f6;
+            text-decoration: none;
+            padding: 1px 3px;
+            text-align: center;
+            font-weight: normal;
+        }
+        .letter-nav a:hover, .letter-nav a.active {
+            color: #1d4ed8;
+            font-weight: 500;
         }
     </style>
 </head>
@@ -38,7 +58,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                     </svg>
                 </button>
-                <h1 class="text-lg font-semibold text-gray-900">选择城市</h1>
+                <h1 class="text-lg font-semibold text-gray-900">城市列表</h1>
                 <div class="w-6"></div>
             </div>
         </nav>
@@ -70,8 +90,10 @@
         // 获取城市数据
         async function loadCities() {
             try {
-                const response = await fetch('data/cities.json');
+                const response = await fetch('data/cities.json?t=' + Date.now());
                 const data = await response.json();
+                console.log('加载城市数据:', data.cities.length, '个城市');
+                console.log('城市列表:', data.cities.map(c => c.id));
                 return data.cities;
             } catch (error) {
                 console.error('加载城市数据失败:', error);
@@ -79,11 +101,12 @@
             }
         }
 
-        // 按首字母分组排序
+        // 按首字母分组排序（使用城市数据中的拼音首字母）
         function groupCitiesByLetter(cities) {
             const grouped = {};
             cities.forEach(city => {
-                const firstLetter = city.name.charAt(0).toUpperCase();
+                // 从城市数据中获取拼音首字母，如果没有则使用ID首字母
+                const firstLetter = city.pinyinFirstLetter || city.id.charAt(0).toUpperCase();
                 if (!grouped[firstLetter]) {
                     grouped[firstLetter] = [];
                 }
@@ -103,32 +126,52 @@
             
             container.innerHTML = hotCities.map(city => `
                 <div onclick="selectCity('${city.id}')" 
-                     class="bg-white rounded-lg p-4 text-center cursor-pointer hover:shadow-md transition-shadow border border-gray-200">
-                    <div class="text-2xl mb-2">${city.emoji}</div>
-                    <div class="font-medium text-gray-900">${city.name}</div>
+                     class="bg-gray-100 rounded p-2 text-center cursor-pointer hover:bg-gray-200 transition-colors flex items-center justify-center h-10">
+                    <div class="text-gray-900 text-sm">${city.name}</div>
                 </div>
             `).join('');
         }
 
-        // 渲染所有城市（按首字母分组）
+        // 渲染所有城市（按首字母分组，单列竖向排列）
         function renderAllCities(cities) {
             const container = document.getElementById('allCities');
             const grouped = groupCitiesByLetter(cities);
             
+            // 获取所有字母用于导航
+            const letters = Object.keys(grouped).sort();
+            renderLetterNav(letters);
+            
             container.innerHTML = Object.entries(grouped).map(([letter, cities]) => `
-                <div class="letter-section">
-                    <div class="text-lg font-bold text-gray-400 mb-3">${letter}</div>
-                    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3">
+                <div class="letter-section" id="section-${letter}">
+                    <div class="text-sm font-medium text-gray-500 mb-2 px-1">${letter}</div>
+                    <div class="flex flex-col">
                         ${cities.map(city => `
                             <div onclick="selectCity('${city.id}')" 
-                                 class="bg-white rounded-lg p-3 text-center cursor-pointer hover:bg-gray-50 transition-colors border border-gray-200">
-                                <div class="text-xl mb-1">${city.emoji}</div>
-                                <div class="text-sm text-gray-900">${city.name}</div>
+                                 class="px-3 py-2 cursor-pointer hover:bg-gray-100 transition-colors flex items-center border-b border-gray-100 last:border-b-0">
+                                <div class="text-gray-900 text-sm">${city.name}</div>
                             </div>
                         `).join('')}
                     </div>
                 </div>
             `).join('');
+        }
+
+        // 渲染右侧字母导航
+        function renderLetterNav(letters) {
+            const nav = document.createElement('div');
+            nav.className = 'letter-nav';
+            nav.innerHTML = letters.map(letter => 
+                `<a href="#section-${letter}" onclick="scrollToSection('${letter}'); return false;">${letter}</a>`
+            ).join('');
+            document.body.appendChild(nav);
+        }
+
+        // 滚动到指定字母区域
+        function scrollToSection(letter) {
+            const section = document.getElementById(`section-${letter}`);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
         }
 
         // 选择城市

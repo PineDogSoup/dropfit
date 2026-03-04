@@ -9,6 +9,14 @@ class DropFitMain {
     }
 
     init() {
+        // 检查是否有从城市选择页面保存的城市
+        const savedCity = localStorage.getItem('selectedCity');
+        if (savedCity) {
+            this.currentCity = savedCity;
+            // 清除保存的城市，避免刷新后仍然使用
+            localStorage.removeItem('selectedCity');
+        }
+        
         this.bindEvents();
         this.loadCityData();
         this.updateCityName(this.currentCity); // 初始化城市名称
@@ -16,10 +24,10 @@ class DropFitMain {
     }
 
     bindEvents() {
-        // 城市按钮
+        // 城市按钮 - 直接跳转到城市选择页面
         const cityBtn = document.getElementById('cityBtn');
         cityBtn.addEventListener('click', () => {
-            this.showCitySelector();
+            window.location.href = 'city-selector.html';
         });
 
         // 搜索输入框 - 首页不需要实时搜索，只用于跳转到搜索页面
@@ -195,7 +203,7 @@ class DropFitMain {
         }).addTo(this.map);
 
         // 检测瓦片加载错误，尝试备用服务
-        tileLayer.on('tileerror', function(e) {
+        tileLayer.on('tileerror', (e) => {
             console.warn('OpenStreetMap瓦片加载失败，尝试备用服务');
             // 备用地图服务
             L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
