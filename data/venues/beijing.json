@@ -12,10 +12,9 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
-        "crossfit"
+        "crossfit",
+        "rhino"
       ],
       "courses": [
         "gymnastics",
@@ -36,8 +35,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "crossfit"
       ],
@@ -57,8 +54,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "crossfit",
         "hyrox"
@@ -79,8 +74,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "hyrox"
       ],
@@ -99,8 +92,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "crossfit"
       ],
@@ -120,8 +111,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "crossfit"
       ],
@@ -141,8 +130,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "crossfit",
         "hyrox"
@@ -163,8 +150,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "hyrox"
       ],
@@ -184,8 +169,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "crossfit"
       ],
@@ -204,8 +187,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "crossfit"
       ],
@@ -225,8 +206,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "crossfit"
       ],
@@ -245,8 +224,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "crossfit"
       ],
@@ -266,8 +243,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "crossfit"
       ],
@@ -287,8 +262,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "crossfit"
       ],
@@ -308,8 +281,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "crossfit"
       ],
@@ -328,8 +299,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "crossfit"
       ],
@@ -349,8 +318,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "crossfit"
       ],
@@ -369,8 +336,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "crossfit"
       ],
@@ -390,8 +355,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "crossfit"
       ],
@@ -410,8 +373,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "crossfit"
       ],
@@ -431,8 +392,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "crossfit"
       ],
@@ -451,8 +410,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "crossfit"
       ],
@@ -472,8 +429,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "crossfit"
       ],
@@ -492,8 +447,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "crossfit"
       ],
@@ -513,8 +466,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "crossfit"
       ],
@@ -534,8 +485,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "crossfit"
       ],
@@ -555,8 +504,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "crossfit"
       ],
@@ -576,8 +523,6 @@
         ],
         "type": "Point"
       },
-      "city": "beijing",
-      "logo": "",
       "types": [
         "crossfit"
       ],
@@ -586,6 +531,5 @@
         "morning"
       ]
     }
-  ],
-  "total": 25
+  ]
 }

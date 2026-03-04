@@ -11,9 +11,7 @@
           30.183928
         ],
         "type": "Point"
-      },
-      "city": "hangzhou",
-      "logo": ""
+      }
     },
     {
       "id": "1b30f213671e542d0196f09e031d268c",
@@ -25,9 +23,7 @@
           30.268822
         ],
         "type": "Point"
-      },
-      "city": "hangzhou",
-      "logo": ""
+      }
     },
     {
       "id": "686e8c6b671e561c01980b18035a6191",
@@ -39,9 +35,7 @@
           30.322779
         ],
         "type": "Point"
-      },
-      "city": "hangzhou",
-      "logo": ""
+      }
     },
     {
       "id": "1b30f213671e56540196f8d113ec0645",
@@ -53,9 +47,7 @@
           30.280267
         ],
         "type": "Point"
-      },
-      "city": "hangzhou",
-      "logo": ""
+      }
     },
     {
       "id": "1b30f213671e56840196f9767b90ce81",
@@ -67,9 +59,7 @@
           30.188963
         ],
         "type": "Point"
-      },
-      "city": "hangzhou",
-      "logo": ""
+      }
     },
     {
       "id": "ebf7a7f66736ac450005e2c063141ee1",
@@ -81,9 +71,7 @@
           30.220289
         ],
         "type": "Point"
-      },
-      "city": "hangzhou",
-      "logo": ""
+      }
     },
     {
       "id": "ebf7a7f66736b76a000618353489b4b2",
@@ -95,9 +83,7 @@
           30.145869
         ],
         "type": "Point"
-      },
-      "city": "hangzhou",
-      "logo": ""
+      }
     },
     {
       "id": "ebe773e16746b503001e3bfa26dcfdf5",
@@ -109,9 +95,7 @@
           30.322813
         ],
         "type": "Point"
-      },
-      "city": "hangzhou",
-      "logo": ""
+      }
     },
     {
       "id": "710be24d6746b866001e3da37daaeb9c",
@@ -123,9 +107,7 @@
           30.22964
         ],
         "type": "Point"
-      },
-      "city": "hangzhou",
-      "logo": ""
+      }
     },
     {
       "id": "ebe773e16746d68a001f21cc1699e91d",
@@ -137,9 +119,7 @@
           30.276756
         ],
         "type": "Point"
-      },
-      "city": "hangzhou",
-      "logo": ""
+      }
     },
     {
       "id": "ebe773e16746d78e001f27d5651bc555",
@@ -151,9 +131,7 @@
           30.264729
         ],
         "type": "Point"
-      },
-      "city": "hangzhou",
-      "logo": ""
+      }
     },
     {
       "id": "af4c72fe6746d8a6001f3fef6ebe8025",
@@ -165,9 +143,7 @@
           30.242944
         ],
         "type": "Point"
-      },
-      "city": "hangzhou",
-      "logo": ""
+      }
     },
     {
       "id": "af4c72fe6746d96a001f44202853846b",
@@ -179,9 +155,7 @@
           30.314494
         ],
         "type": "Point"
-      },
-      "city": "hangzhou",
-      "logo": ""
+      }
     },
     {
       "id": "5222d8c86746da1d001efb2b3e712161",
@@ -193,10 +167,7 @@
           30.182185
         ],
         "type": "Point"
-      },
-      "city": "hangzhou",
-      "logo": ""
+      }
     }
-  ],
-  "total": 14
+  ]
 }

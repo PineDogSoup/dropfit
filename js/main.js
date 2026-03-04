@@ -5,6 +5,7 @@ class DropFitMain {
         this.currentKeyword = '';
         this.map = null;
         this.venues = [];
+        this.venueCacheTTL = 30 * 60 * 1000; // 30分钟
         this.init();
     }
 
@@ -143,6 +144,7 @@ class DropFitMain {
             const city = cities.find(c => c.id === cityId);
             if (city) {
                 document.getElementById('currentCityName').textContent = city.name;
+                this.updateMapVenueCountBadge();
             }
         } catch (error) {
             console.error('更新城市名称失败:', error);
@@ -165,17 +167,78 @@ class DropFitMain {
     // 加载场馆数据
     async loadVenues() {
         try {
-            const response = await fetch(`./data/venues/${this.currentCity}.json`);
-            if (!response.ok) {
-                throw new Error('Failed to fetch venues data');
+            const cachedData = this.getCachedVenues(this.currentCity);
+            const data = cachedData || await this.fetchVenueData(this.currentCity);
+
+            if (!cachedData) {
+                this.setCachedVenues(this.currentCity, data);
             }
-            const data = await response.json();
+
             this.venues = data.venues || data; // 兼容不同的数据格式
+            this.updateMapVenueCountBadge();
             this.initMap();
             // 首页不需要显示场馆列表，只显示地图
         } catch (error) {
             console.error('加载场馆数据失败:', error);
             this.showMessage('加载场馆数据失败');
+        }
+    }
+
+    // 更新地图顶部场馆统计文案
+    updateMapVenueCountBadge() {
+        const badge = document.getElementById('mapVenueCountBadge');
+        if (!badge) return;
+
+        const cityNameEl = document.getElementById('currentCityName');
+        const cityName = cityNameEl ? cityNameEl.textContent.trim() : this.currentCity;
+        const venueCount = Array.isArray(this.venues) ? this.venues.length : 0;
+
+        badge.textContent = `${cityName}已收录 ${venueCount} 家场馆`;
+    }
+
+    // 获取场馆数据（网络）
+    async fetchVenueData(cityId) {
+        const response = await fetch(`./data/venues/${cityId}.json`);
+        if (!response.ok) {
+            throw new Error('Failed to fetch venues data');
+        }
+        return response.json();
+    }
+
+    // 读取缓存场馆数据
+    getCachedVenues(cityId) {
+        try {
+            const cacheKey = `dropfit:venues:${cityId}`;
+            const cached = localStorage.getItem(cacheKey);
+            if (!cached) return null;
+
+            const parsed = JSON.parse(cached);
+            if (!parsed || !parsed.timestamp || !parsed.data) return null;
+
+            const isExpired = Date.now() - parsed.timestamp > this.venueCacheTTL;
+            if (isExpired) {
+                localStorage.removeItem(cacheKey);
+                return null;
+            }
+
+            return parsed.data;
+        } catch (error) {
+            console.warn('读取场馆缓存失败，回退网络请求:', error);
+            return null;
+        }
+    }
+
+    // 写入缓存场馆数据
+    setCachedVenues(cityId, data) {
+        try {
+            const cacheKey = `dropfit:venues:${cityId}`;
+            const payload = {
+                timestamp: Date.now(),
+                data: data
+            };
+            localStorage.setItem(cacheKey, JSON.stringify(payload));
+        } catch (error) {
+            console.warn('写入场馆缓存失败:', error);
         }
     }
 

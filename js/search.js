@@ -197,11 +197,6 @@ class SearchPage {
             xiaohongshuRow.classList.add('hidden');
         }
 
-        // 设置LOGO图片 - 使用barbell.png作为mock
-        const imageEl = clone.querySelector('.venue-image');
-        imageEl.src = 'data/images/barbell.png';
-        imageEl.alt = venue.name;
-
         // 生成场馆类型标签
         const tagsContainer = clone.querySelector('.venue-type-tags');
         this.generateTypeTags(tagsContainer, venue);
@@ -225,34 +220,34 @@ class SearchPage {
         
         container.innerHTML = '';
 
-        const isCrossFit = types.includes('crossfit');
-        const isHyrox = types.includes('hyrox');
+        const typeConfigs = {
+            crossfit: {
+                label: 'CrossFit',
+                className: 'px-2 py-1 text-xs font-medium bg-black text-white rounded text-center min-w-[60px]'
+            },
+            hyrox: {
+                label: 'Hyrox',
+                className: 'px-2 py-1 text-xs font-medium bg-white text-black border border-gray-300 rounded text-center min-w-[60px]'
+            },
+            rhino: {
+                label: 'RHINO',
+                className: 'px-2 py-1 text-xs font-medium rounded text-center min-w-[60px]',
+                style: 'background:#E9D386;color:#24A17B;'
+            }
+        };
 
-        if (isCrossFit && isHyrox) {
-            // 同时支持两种，CrossFit在上，Hyrox在下
-            const crossfitTag = document.createElement('div');
-            crossfitTag.className = 'px-2 py-1 text-xs font-medium bg-black text-white rounded text-center min-w-[60px]';
-            crossfitTag.textContent = 'CrossFit';
-            container.appendChild(crossfitTag);
+        ['crossfit', 'hyrox', 'rhino'].forEach((type) => {
+            if (!types.includes(type)) return;
 
-            const hyroxTag = document.createElement('div');
-            hyroxTag.className = 'px-2 py-1 text-xs font-medium bg-white text-black border border-gray-300 rounded text-center min-w-[60px]';
-            hyroxTag.textContent = 'Hyrox';
-            container.appendChild(hyroxTag);
-        } else if (isCrossFit) {
-            // 只有CrossFit
-            const crossfitTag = document.createElement('div');
-            crossfitTag.className = 'px-2 py-1 text-xs font-medium bg-black text-white rounded text-center min-w-[60px]';
-            crossfitTag.textContent = 'CrossFit';
-            container.appendChild(crossfitTag);
-        } else if (isHyrox) {
-            // 只有Hyrox
-            const hyroxTag = document.createElement('div');
-            hyroxTag.className = 'px-2 py-1 text-xs font-medium bg-white text-black border border-gray-300 rounded text-center min-w-[60px]';
-            hyroxTag.textContent = 'Hyrox';
-            container.appendChild(hyroxTag);
-        } else {
-        }
+            const tag = document.createElement('div');
+            const config = typeConfigs[type];
+            tag.className = config.className;
+            if (config.style) {
+                tag.style.cssText = config.style;
+            }
+            tag.textContent = config.label;
+            container.appendChild(tag);
+        });
     }
 
     // 生成课程标签

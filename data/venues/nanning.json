@@ -11,9 +11,7 @@
           22.818195
         ],
         "type": "Point"
-      },
-      "city": "nanning",
-      "logo": ""
+      }
     },
     {
       "id": "ebe773e1674588720019b71b518c7165",
@@ -25,10 +23,7 @@
           22.815935
         ],
         "type": "Point"
-      },
-      "city": "nanning",
-      "logo": ""
+      }
     }
-  ],
-  "total": 2
+  ]
 }

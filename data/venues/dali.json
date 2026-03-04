@@ -11,9 +11,7 @@
           25.65128
         ],
         "type": "Point"
-      },
-      "city": "dali",
-      "logo": ""
+      }
     },
     {
       "id": "e4dd7c226731afd1001b9d4a33429e66",
@@ -25,10 +23,7 @@
           25.582029
         ],
         "type": "Point"
-      },
-      "city": "dali",
-      "logo": ""
+      }
     }
-  ],
-  "total": 2
+  ]
 }

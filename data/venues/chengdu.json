@@ -11,9 +11,7 @@
           30.685013
         ],
         "type": "Point"
-      },
-      "city": "chengdu",
-      "logo": ""
+      }
     },
     {
       "id": "983e93c46713a516016f7f227b41bc93",
@@ -25,9 +23,7 @@
           30.644816
         ],
         "type": "Point"
-      },
-      "city": "chengdu",
-      "logo": ""
+      }
     },
     {
       "id": "060407c06713a61b016e59e0610f309a",
@@ -39,9 +35,7 @@
           30.6136
         ],
         "type": "Point"
-      },
-      "city": "chengdu",
-      "logo": ""
+      }
     },
     {
       "id": "686e8c6b671da880019491823b3489c2",
@@ -53,9 +47,7 @@
           30.683891
         ],
         "type": "Point"
-      },
-      "city": "chengdu",
-      "logo": ""
+      }
     },
     {
       "id": "af4c72fe674b14be002fd12d128af6c3",
@@ -67,9 +59,7 @@
           30.612377
         ],
         "type": "Point"
-      },
-      "city": "chengdu",
-      "logo": ""
+      }
     },
     {
       "id": "5222d8c8674bd22d0031261a44cdb7b7",
@@ -81,10 +71,7 @@
           30.5877742767334
         ],
         "type": "Point"
-      },
-      "city": "chengdu",
-      "logo": ""
+      }
     }
-  ],
-  "total": 6
+  ]
 }

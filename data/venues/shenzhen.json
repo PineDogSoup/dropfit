@@ -11,9 +11,7 @@
           22.541136
         ],
         "type": "Point"
-      },
-      "city": "shenzhen",
-      "logo": ""
+      }
     },
     {
       "id": "458dc8cc671333cc016cf996269daf0b",
@@ -25,9 +23,7 @@
           22.657113
         ],
         "type": "Point"
-      },
-      "city": "shenzhen",
-      "logo": ""
+      }
     },
     {
       "id": "060407c06713a354016e4b0b675f185a",
@@ -39,9 +35,7 @@
           22.575465
         ],
         "type": "Point"
-      },
-      "city": "shenzhen",
-      "logo": ""
+      }
     },
     {
       "id": "af813b10671e56c90197ea9b5ee900af",
@@ -53,9 +47,7 @@
           22.545739
         ],
         "type": "Point"
-      },
-      "city": "shenzhen",
-      "logo": ""
+      }
     },
     {
       "id": "983e93c4671e56f101986527637e0c0c",
@@ -67,9 +59,7 @@
           22.622775
         ],
         "type": "Point"
-      },
-      "city": "shenzhen",
-      "logo": ""
+      }
     },
     {
       "id": "1b30f213671e5b5001970ad94dbc8bab",
@@ -81,9 +71,7 @@
           22.505111
         ],
         "type": "Point"
-      },
-      "city": "shenzhen",
-      "logo": ""
+      }
     },
     {
       "id": "686e8c6b671e5b7f01981ea2393f953e",
@@ -95,9 +83,7 @@
           22.585243
         ],
         "type": "Point"
-      },
-      "city": "shenzhen",
-      "logo": ""
+      }
     },
     {
       "id": "07bd6b956737f444000b6d040d5b8276",
@@ -109,9 +95,7 @@
           22.543839
         ],
         "type": "Point"
-      },
-      "city": "shenzhen",
-      "logo": ""
+      }
     },
     {
       "id": "4e8eee546737f650000b22ef2f384fe8",
@@ -123,9 +107,7 @@
           22.537814
         ],
         "type": "Point"
-      },
-      "city": "shenzhen",
-      "logo": ""
+      }
     },
     {
       "id": "ebf7a7f66737f7b0000b711b01c148b7",
@@ -137,9 +119,7 @@
           22.52467
         ],
         "type": "Point"
-      },
-      "city": "shenzhen",
-      "logo": ""
+      }
     },
     {
       "id": "ebe773e1674516f60017743268cc5c6c",
@@ -151,10 +131,7 @@
           22.527783
         ],
         "type": "Point"
-      },
-      "city": "shenzhen",
-      "logo": ""
+      }
     }
-  ],
-  "total": 11
+  ]
 }

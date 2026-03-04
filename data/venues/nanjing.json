@@ -11,9 +11,7 @@
           32.010738
         ],
         "type": "Point"
-      },
-      "city": "nanjing",
-      "logo": ""
+      }
     },
     {
       "id": "1b30f21367135a22016c96f455da330c",
@@ -25,10 +23,7 @@
           32.046443
         ],
         "type": "Point"
-      },
-      "city": "nanjing",
-      "logo": ""
+      }
     }
-  ],
-  "total": 2
+  ]
 }
