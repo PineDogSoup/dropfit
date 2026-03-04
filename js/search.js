@@ -18,8 +18,8 @@ class SearchPage {
         this.parseUrlParams();
         this.bindEvents();
         await this.loadVenueData();
-        this.updateSearchInfo();
         this.performSearch();
+        this.updateSearchInfo();
         this.renderResults();
     }
 
@@ -29,6 +29,14 @@ class SearchPage {
         this.currentCity = params.city || '';
         this.currentKeyword = params.keyword || '';
         this.currentView = params.view || 'list';
+        
+        // 调试信息
+        console.log('URL参数解析:', {
+            city: this.currentCity,
+            keyword: this.currentKeyword,
+            view: this.currentView,
+            fullParams: params
+        });
     }
 
     // 绑定事件
@@ -102,8 +110,14 @@ class SearchPage {
 
     // 执行搜索
     performSearch() {
+        console.log('开始搜索:', {
+            keyword: this.currentKeyword,
+            totalVenues: this.venues.length
+        });
+        
         if (!this.currentKeyword) {
             this.filteredVenues = [...this.venues];
+            console.log('无关键词，显示所有场馆:', this.filteredVenues.length);
         } else {
             const keyword = this.currentKeyword.toLowerCase();
             this.filteredVenues = this.venues.filter(venue => 
@@ -111,9 +125,13 @@ class SearchPage {
                 venue.address.toLowerCase().includes(keyword) ||
                 (venue.description && venue.description.toLowerCase().includes(keyword))
             );
+            console.log('关键词搜索结果:', {
+                keyword: keyword,
+                results: this.filteredVenues.length,
+                matchedVenues: this.filteredVenues.map(v => v.name)
+            });
         }
         
-
         this.updateSearchInfo();
         this.currentPage = 1;
     }
