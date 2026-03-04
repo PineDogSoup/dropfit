@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择城市 - DropFit</title>
+    <meta name="description" content="选择您所在的城市，查找附近的CrossFit场馆">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .city-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+        @media (max-width: 640px) {
+            .city-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .letter-section {
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+        .letter-section:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- 导航栏 -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <button onclick="history.back()" class="text-gray-600 hover:text-gray-900">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                <h1 class="text-lg font-semibold text-gray-900">选择城市</h1>
+                <div class="w-6"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-4 py-6">
+        <!-- 热门城市 -->
+        <section class="mb-8">
+            <h2 class="text-sm font-medium text-gray-500 mb-4">热门城市</h2>
+            <div id="hotCities" class="city-grid">
+                <!-- 热门城市将通过JS动态生成 -->
+            </div>
+        </section>
+
+        <!-- 城市列表（按首字母排序） -->
+        <section>
+            <h2 class="text-sm font-medium text-gray-500 mb-4">全部城市</h2>
+            <div id="allCities">
+                <!-- 城市列表将通过JS动态生成 -->
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // 8个热门城市
+        const hotCityIds = ['beijing', 'shanghai', 'guangzhou', 'shenzhen', 'chengdu', 'hangzhou', 'nanjing', 'wuhan'];
+
+        // 获取城市数据
+        async function loadCities() {
+            try {
+                const response = await fetch('data/cities.json');
+                const data = await response.json();
+                return data.cities;
+            } catch (error) {
+                console.error('加载城市数据失败:', error);
+                return [];
+            }
+        }
+
+        // 按首字母分组排序
+        function groupCitiesByLetter(cities) {
+            const grouped = {};
+            cities.forEach(city => {
+                const firstLetter = city.name.charAt(0).toUpperCase();
+                if (!grouped[firstLetter]) {
+                    grouped[firstLetter] = [];
+                }
+                grouped[firstLetter].push(city);
+            });
+            // 按字母顺序排序
+            return Object.keys(grouped).sort().reduce((acc, letter) => {
+                acc[letter] = grouped[letter];
+                return acc;
+            }, {});
+        }
+
+        // 渲染热门城市
+        function renderHotCities(cities) {
+            const container = document.getElementById('hotCities');
+            const hotCities = cities.filter(c => hotCityIds.includes(c.id));
+            
+            container.innerHTML = hotCities.map(city => `
+                <div onclick="selectCity('${city.id}')" 
+                     class="bg-white rounded-lg p-4 text-center cursor-pointer hover:shadow-md transition-shadow border border-gray-200">
+                    <div class="text-2xl mb-2">${city.emoji}</div>
+                    <div class="font-medium text-gray-900">${city.name}</div>
+                </div>
+            `).join('');
+        }
+
+        // 渲染所有城市（按首字母分组）
+        function renderAllCities(cities) {
+            const container = document.getElementById('allCities');
+            const grouped = groupCitiesByLetter(cities);
+            
+            container.innerHTML = Object.entries(grouped).map(([letter, cities]) => `
+                <div class="letter-section">
+                    <div class="text-lg font-bold text-gray-400 mb-3">${letter}</div>
+                    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3">
+                        ${cities.map(city => `
+                            <div onclick="selectCity('${city.id}')" 
+                                 class="bg-white rounded-lg p-3 text-center cursor-pointer hover:bg-gray-50 transition-colors border border-gray-200">
+                                <div class="text-xl mb-1">${city.emoji}</div>
+                                <div class="text-sm text-gray-900">${city.name}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // 选择城市
+        function selectCity(cityId) {
+            // 保存到 localStorage
+            localStorage.setItem('selectedCity', cityId);
+            // 跳转回首页
+            window.location.href = 'index.html';
+        }
+
+        // 初始化
+        async function init() {
+            const cities = await loadCities();
+            renderHotCities(cities);
+            renderAllCities(cities);
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>

@@ -1,1 +1,400 @@
-{"cities": [{"id": "beijing", "name": "北京", "code": "BJ", "center": [116.4074, 39.9042], "venueCount": 18, "emoji": "🏛️"}, {"id": "shanghai", "name": "上海", "code": "SH", "center": [121.4737, 31.2304], "venueCount": 12, "emoji": "🌃"}, {"id": "guangzhou", "name": "广州", "code": "GZ", "center": [113.2644, 23.1291], "venueCount": 4, "emoji": "🌺"}, {"id": "shenzhen", "name": "深圳", "code": "SZ", "center": [114.0579, 22.5431], "venueCount": 3, "emoji": "🏙️"}, {"id": "changsha", "name": "长沙", "code": "CS", "center": [112.9388, 28.2282], "venueCount": 3, "emoji": "🌶️"}, {"id": "kunming", "name": "昆明", "code": "KM", "center": [102.8329, 24.8801], "venueCount": 2, "emoji": "🌸"}, {"id": "chengdu", "name": "成都", "code": "CD", "center": [104.0665, 30.5723], "venueCount": 3, "emoji": "🐼"}, {"id": "hangzhou", "name": "杭州", "code": "HZ", "center": [120.1758, 30.1839], "venueCount": 1, "emoji": "🏞️"}, {"id": "suzhou", "name": "苏州", "code": "SZ", "center": [120.6741, 31.3329], "venueCount": 1, "emoji": "🏛️"}, {"id": "wuhan", "name": "武汉", "code": "WH", "center": [114.2734, 30.5852], "venueCount": 1, "emoji": "🌊"}, {"id": "nanjing", "name": "南京", "code": "NJ", "center": [118.7969, 32.0603], "venueCount": 2, "emoji": "🏯"}]}
+{
+  "cities": [
+    {
+      "id": "beijing",
+      "name": "北京",
+      "code": "BJ",
+      "center": [
+        116.4074,
+        39.9042
+      ],
+      "venueCount": 18,
+      "emoji": "🏛️"
+    },
+    {
+      "id": "shanghai",
+      "name": "上海",
+      "code": "SH",
+      "center": [
+        121.4737,
+        31.2304
+      ],
+      "venueCount": 12,
+      "emoji": "🌃"
+    },
+    {
+      "id": "guangzhou",
+      "name": "广州",
+      "code": "GZ",
+      "center": [
+        113.2644,
+        23.1291
+      ],
+      "venueCount": 4,
+      "emoji": "🌺"
+    },
+    {
+      "id": "shenzhen",
+      "name": "深圳",
+      "code": "SZ",
+      "center": [
+        114.0579,
+        22.5431
+      ],
+      "venueCount": 3,
+      "emoji": "🏙️"
+    },
+    {
+      "id": "changsha",
+      "name": "长沙",
+      "code": "CS",
+      "center": [
+        112.9388,
+        28.2282
+      ],
+      "venueCount": 3,
+      "emoji": "🌶️"
+    },
+    {
+      "id": "kunming",
+      "name": "昆明",
+      "code": "KM",
+      "center": [
+        102.8329,
+        24.8801
+      ],
+      "venueCount": 2,
+      "emoji": "🌸"
+    },
+    {
+      "id": "chengdu",
+      "name": "成都",
+      "code": "CD",
+      "center": [
+        104.0665,
+        30.5723
+      ],
+      "venueCount": 3,
+      "emoji": "🐼"
+    },
+    {
+      "id": "hangzhou",
+      "name": "杭州",
+      "code": "HZ",
+      "center": [
+        120.1758,
+        30.1839
+      ],
+      "venueCount": 1,
+      "emoji": "🏞️"
+    },
+    {
+      "id": "suzhou",
+      "name": "苏州",
+      "code": "SZ",
+      "center": [
+        120.6741,
+        31.3329
+      ],
+      "venueCount": 1,
+      "emoji": "🏛️"
+    },
+    {
+      "id": "wuhan",
+      "name": "武汉",
+      "code": "WH",
+      "center": [
+        114.2734,
+        30.5852
+      ],
+      "venueCount": 1,
+      "emoji": "🌊"
+    },
+    {
+      "id": "nanjing",
+      "name": "南京",
+      "code": "NJ",
+      "center": [
+        118.7969,
+        32.0603
+      ],
+      "venueCount": 2,
+      "emoji": "🏯"
+    },
+    {
+      "id": "meishan",
+      "name": "眉山",
+      "code": "MS",
+      "center": [
+        103.8468,
+        30.0756
+      ],
+      "venueCount": 0,
+      "emoji": "🏔️"
+    },
+    {
+      "id": "leshan",
+      "name": "乐山",
+      "code": "LS",
+      "center": [
+        103.7614,
+        29.5822
+      ],
+      "venueCount": 0,
+      "emoji": "🗿"
+    },
+    {
+      "id": "neijiang",
+      "name": "内江",
+      "code": "NJ",
+      "center": [
+        105.0584,
+        29.5802
+      ],
+      "venueCount": 0,
+      "emoji": "🌊"
+    },
+    {
+      "id": "yibin",
+      "name": "宜宾",
+      "code": "YB",
+      "center": [
+        104.6417,
+        28.7513
+      ],
+      "venueCount": 0,
+      "emoji": "🍶"
+    },
+    {
+      "id": "luzhou",
+      "name": "泸州",
+      "code": "LZ",
+      "center": [
+        105.4426,
+        28.8706
+      ],
+      "venueCount": 0,
+      "emoji": "🍶"
+    },
+    {
+      "id": "bazhong",
+      "name": "巴中",
+      "code": "BZ",
+      "center": [
+        106.7475,
+        31.8679
+      ],
+      "venueCount": 0,
+      "emoji": "🏔️"
+    },
+    {
+      "id": "fuzhou",
+      "name": "福州",
+      "code": "FZ",
+      "center": [
+        119.2965,
+        26.0745
+      ],
+      "venueCount": 0,
+      "emoji": "🌊"
+    },
+    {
+      "id": "quanzhou",
+      "name": "泉州",
+      "code": "QZ",
+      "center": [
+        118.6757,
+        24.8744
+      ],
+      "venueCount": 0,
+      "emoji": "🏛️"
+    },
+    {
+      "id": "xiamen",
+      "name": "厦门",
+      "code": "XM",
+      "center": [
+        118.0894,
+        24.4798
+      ],
+      "venueCount": 0,
+      "emoji": "🏖️"
+    },
+    {
+      "id": "zhangzhou",
+      "name": "漳州",
+      "code": "ZZ",
+      "center": [
+        117.6618,
+        24.5109
+      ],
+      "venueCount": 0,
+      "emoji": "🌺"
+    },
+    {
+      "id": "longyan",
+      "name": "龙岩",
+      "code": "LY",
+      "center": [
+        117.0297,
+        25.0751
+      ],
+      "venueCount": 0,
+      "emoji": "🏔️"
+    },
+    {
+      "id": "hongkong",
+      "name": "香港",
+      "code": "HK",
+      "center": [
+        114.1694,
+        22.3193
+      ],
+      "venueCount": 0,
+      "emoji": "🌃"
+    },
+    {
+      "id": "macau",
+      "name": "澳门",
+      "code": "MO",
+      "center": [
+        113.5491,
+        22.1987
+      ],
+      "venueCount": 0,
+      "emoji": "🎰"
+    },
+    {
+      "id": "foshan",
+      "name": "佛山",
+      "code": "FS",
+      "center": [
+        113.1214,
+        23.0215
+      ],
+      "venueCount": 0,
+      "emoji": "🦁"
+    },
+    {
+      "id": "zhanjiang",
+      "name": "湛江",
+      "code": "ZJ",
+      "center": [
+        110.3594,
+        21.2707
+      ],
+      "venueCount": 0,
+      "emoji": "🌊"
+    },
+    {
+      "id": "maoming",
+      "name": "茂名",
+      "code": "MM",
+      "center": [
+        110.9255,
+        21.6633
+      ],
+      "venueCount": 0,
+      "emoji": "🌴"
+    },
+    {
+      "id": "zhaoqing",
+      "name": "肇庆",
+      "code": "ZQ",
+      "center": [
+        112.4659,
+        23.0472
+      ],
+      "venueCount": 0,
+      "emoji": "🏞️"
+    },
+    {
+      "id": "qingyuan",
+      "name": "清远",
+      "code": "QY",
+      "center": [
+        113.0561,
+        23.682
+      ],
+      "venueCount": 0,
+      "emoji": "🏔️"
+    },
+    {
+      "id": "dongguan",
+      "name": "东莞",
+      "code": "DG",
+      "center": [
+        113.7518,
+        23.0207
+      ],
+      "venueCount": 0,
+      "emoji": "🏭"
+    },
+    {
+      "id": "huizhou",
+      "name": "惠州",
+      "code": "HZ",
+      "center": [
+        114.4168,
+        23.1108
+      ],
+      "venueCount": 0,
+      "emoji": "🌊"
+    },
+    {
+      "id": "zhongshan",
+      "name": "中山",
+      "code": "ZS",
+      "center": [
+        113.3927,
+        22.5153
+      ],
+      "venueCount": 0,
+      "emoji": "🏙️"
+    },
+    {
+      "id": "zhuhai",
+      "name": "珠海",
+      "code": "ZH",
+      "center": [
+        113.5767,
+        22.2707
+      ],
+      "venueCount": 0,
+      "emoji": "🏖️"
+    },
+    {
+      "id": "jiangmen",
+      "name": "江门",
+      "code": "JM",
+      "center": [
+        113.0845,
+        22.5952
+      ],
+      "venueCount": 0,
+      "emoji": "🏛️"
+    },
+    {
+      "id": "shantou",
+      "name": "汕头",
+      "code": "ST",
+      "center": [
+        116.7286,
+        23.3839
+      ],
+      "venueCount": 0,
+      "emoji": "🌊"
+    },
+    {
+      "id": "shaoguan",
+      "name": "韶关",
+      "code": "SG",
+      "center": [
+        113.597,
+        24.8104
+      ],
+      "venueCount": 0,
+      "emoji": "🏔️"
+    }
+  ]
+}
