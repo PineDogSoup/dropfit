@@ -134,7 +134,9 @@ footer {
 /* Leaflet 地图样式 */
 #mapContainer {
     @apply w-full rounded-lg overflow-hidden;
-    height: 1000px;
+    height: calc(100vh - 550px);
+    min-height: 450px;
+    max-height: 700px;
 }
 
 .leaflet-container {
@@ -307,7 +309,9 @@ footer {
     
     /* 移动端地图高度优化 */
     #mapContainer {
-        height: 500px;
+        height: calc(100vh - 450px);
+        min-height: 300px;
+        max-height: 500px;
     }
 }
 
@@ -349,11 +353,6 @@ footer {
     /* 桌面端地图容器 */
     .map-container {
         @apply h-[500px];
-    }
-    
-    /* 桌面端地图高度优化 */
-    #mapContainer {
-        height: 1200px;
     }
 }
 

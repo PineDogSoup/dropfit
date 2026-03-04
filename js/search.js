@@ -48,6 +48,8 @@ class SearchPage {
             if (this.currentPage > 1) {
                 this.currentPage--;
                 this.renderResults();
+                // 翻页后滚动到顶部
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         });
 
@@ -56,6 +58,8 @@ class SearchPage {
             if (this.currentPage < totalPages) {
                 this.currentPage++;
                 this.renderResults();
+                // 翻页后滚动到顶部
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         });
     }
@@ -64,12 +68,13 @@ class SearchPage {
     async loadVenueData() {
         try {
             this.showLoading(true);
-            const response = await fetch(`data/venues/${this.currentCity}.json`);
+            const url = `data/venues/${this.currentCity}.json?t=${Date.now()}`; // 添加时间戳防止缓存
+            const response = await fetch(url);
             if (!response.ok) {
                 throw new Error('加载场馆数据失败');
             }
             const data = await response.json();
-            this.venues = data.venues || data; // 兼容两种数据格式
+            this.venues = data.venues || []; // 确保使用venues数组
             this.showLoading(false);
         } catch (error) {
             console.error('加载场馆数据失败:', error);
@@ -104,10 +109,10 @@ class SearchPage {
             this.filteredVenues = this.venues.filter(venue => 
                 venue.name.toLowerCase().includes(keyword) ||
                 venue.address.toLowerCase().includes(keyword) ||
-                venue.description.toLowerCase().includes(keyword) ||
-                venue.category.toLowerCase().includes(keyword)
+                (venue.description && venue.description.toLowerCase().includes(keyword))
             );
         }
+        
 
         this.updateSearchInfo();
         this.currentPage = 1;
@@ -154,14 +159,18 @@ class SearchPage {
 
         // 填充数据
         clone.querySelector('.venue-name').textContent = venue.name;
-        clone.querySelector('.venue-description').textContent = venue.description || '';
+        clone.querySelector('.venue-description').textContent = venue.description || '暂无描述';
         clone.querySelector('.venue-address').textContent = venue.address;
-        clone.querySelector('.venue-phone').textContent = venue.phone || '暂无电话';
+        clone.querySelector('.venue-phone').textContent = '暂无电话';
 
         // 设置LOGO图片 - 使用barbell.png作为mock
         const imageEl = clone.querySelector('.venue-image');
         imageEl.src = 'data/images/barbell.png';
         imageEl.alt = venue.name;
+
+        // 生成场馆类型标签
+        const tagsContainer = clone.querySelector('.venue-type-tags');
+        this.generateTypeTags(tagsContainer, venue);
 
         // 渲染场馆特色
         const featuresContainer = clone.querySelector('.venue-features');
@@ -189,6 +198,42 @@ class SearchPage {
         });
 
         return clone;
+    }
+
+    // 生成场馆类型标签
+    generateTypeTags(container, venue) {
+        const types = venue.types || [];
+        
+        container.innerHTML = '';
+
+        const isCrossFit = types.includes('crossfit');
+        const isHyrox = types.includes('hyrox');
+
+        if (isCrossFit && isHyrox) {
+            // 同时支持两种，CrossFit在上，Hyrox在下
+            const crossfitTag = document.createElement('div');
+            crossfitTag.className = 'px-2 py-1 text-xs font-medium bg-black text-white rounded text-center min-w-[60px]';
+            crossfitTag.textContent = 'CrossFit';
+            container.appendChild(crossfitTag);
+
+            const hyroxTag = document.createElement('div');
+            hyroxTag.className = 'px-2 py-1 text-xs font-medium bg-white text-black border border-gray-300 rounded text-center min-w-[60px]';
+            hyroxTag.textContent = 'Hyrox';
+            container.appendChild(hyroxTag);
+        } else if (isCrossFit) {
+            // 只有CrossFit
+            const crossfitTag = document.createElement('div');
+            crossfitTag.className = 'px-2 py-1 text-xs font-medium bg-black text-white rounded text-center min-w-[60px]';
+            crossfitTag.textContent = 'CrossFit';
+            container.appendChild(crossfitTag);
+        } else if (isHyrox) {
+            // 只有Hyrox
+            const hyroxTag = document.createElement('div');
+            hyroxTag.className = 'px-2 py-1 text-xs font-medium bg-white text-black border border-gray-300 rounded text-center min-w-[60px]';
+            hyroxTag.textContent = 'Hyrox';
+            container.appendChild(hyroxTag);
+        } else {
+        }
     }
 
     // 渲染地图视图
@@ -325,6 +370,8 @@ class SearchPage {
                 pageBtn.addEventListener('click', () => {
                     this.currentPage = i;
                     this.renderResults();
+                    // 翻页后滚动到顶部
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
                 pageNumbers.appendChild(pageBtn);
             } else if (i === this.currentPage - 3 || i === this.currentPage + 3) {
@@ -342,17 +389,7 @@ class SearchPage {
 
     // 联系场馆
     contactVenue(phone) {
-        if (!phone) {
-            this.showMessage('该场馆暂无联系电话');
-            return;
-        }
-        
-        // 移动端拨号，桌面端显示电话
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            window.location.href = `tel:${phone}`;
-        } else {
-            this.showMessage(`联系电话: ${phone}`);
-        }
+        this.showMessage('该场馆暂无联系电话，请通过其他方式联系');
     }
 
     // 在地图上显示场馆

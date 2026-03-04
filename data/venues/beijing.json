@@ -16,7 +16,8 @@
       "city": "beijing",
       "checked": true,
       "images": [],
-      "logo": ""
+      "logo": "",
+      "types": ["crossfit"]
     },
     {
       "id": "458dc8cc67053e320133a1fc490253bf",
@@ -33,7 +34,8 @@
       "city": "beijing",
       "checked": true,
       "images": [],
-      "logo": ""
+      "logo": "",
+      "types": ["crossfit"]
     },
     {
       "id": "983e93c46705467f01343a3866f9d8c4",
@@ -50,7 +52,26 @@
       "city": "beijing",
       "checked": true,
       "images": [],
-      "logo": ""
+      "logo": "",
+      "types": ["crossfit", "hyrox"]
+    },
+    {
+      "id": "test-hydrox-only",
+      "name": "Hyrox Training Center",
+      "address": "朝阳区测试地址",
+      "description": "专业的Hyrox训练中心",
+      "location": {
+        "coordinates": [
+          116.4074,
+          39.9042
+        ],
+        "type": "Point"
+      },
+      "city": "beijing",
+      "checked": true,
+      "images": [],
+      "logo": "",
+      "types": ["hyrox"]
     },
     {
       "id": "1b30f21367135cf1016ca24915b2a683",
@@ -67,7 +88,8 @@
       "city": "beijing",
       "checked": true,
       "images": [],
-      "logo": ""
+      "logo": "",
+      "types": ["crossfit"]
     },
     {
       "id": "1b30f2136713603d016caf652971c160",
@@ -76,15 +98,52 @@
       "description": "ShiFu综合体能训练馆",
       "location": {
         "coordinates": [
-          116.471598,
-          39.910431
+          116.459374,
+          39.908139
         ],
         "type": "Point"
       },
       "city": "beijing",
       "checked": true,
       "images": [],
-      "logo": ""
+      "logo": "",
+      "types": ["crossfit"]
+    },
+    {
+      "id": "af813b1067060b39013291cc40fa9ae7",
+      "name": "UPPER LIMIT综合体能训练",
+      "address": "朝阳区三里屯太古里南区S4-32",
+      "description": "UPPER LIMIT综合体能训练",
+      "location": {
+        "coordinates": [
+          116.447374,
+          39.937139
+        ],
+        "type": "Point"
+      },
+      "city": "beijing",
+      "checked": true,
+      "images": [],
+      "logo": "",
+      "types": ["crossfit", "hyrox"]
+    },
+    {
+      "id": "458dc8cc67053e320133a1fc490253bf",
+      "name": "野兽健身",
+      "address": "海淀区中关村大街19号",
+      "description": "野兽健身综合训练馆",
+      "location": {
+        "coordinates": [
+          116.307374,
+          39.992139
+        ],
+        "type": "Point"
+      },
+      "city": "beijing",
+      "checked": true,
+      "images": [],
+      "logo": "",
+      "types": ["hyrox"]
     },
     {
       "id": "983e93c4671da64c0194e2ae5e080114",
@@ -101,7 +160,8 @@
       "city": "beijing",
       "checked": true,
       "images": [],
-      "logo": ""
+      "logo": "",
+      "types": ["crossfit"]
     },
     {
       "id": "af813b10671da6760194754b57d0034b",
@@ -118,7 +178,8 @@
       "city": "beijing",
       "checked": true,
       "images": [],
-      "logo": ""
+      "logo": "",
+      "types": ["crossfit"]
     },
     {
       "id": "af813b10671da6a40194760559a59874",
@@ -135,7 +196,8 @@
       "city": "beijing",
       "checked": true,
       "images": [],
-      "logo": ""
+      "logo": "",
+      "types": ["crossfit"]
     },
     {
       "id": "458dc8cc671da6e2019498b21ee4502c",
@@ -152,7 +214,8 @@
       "city": "beijing",
       "checked": true,
       "images": [],
-      "logo": ""
+      "logo": "",
+      "types": ["crossfit"]
     },
     {
       "id": "060407c0671da7240193f9143397da1c",
@@ -169,7 +232,8 @@
       "city": "beijing",
       "checked": true,
       "images": [],
-      "logo": ""
+      "logo": "",
+      "types": ["crossfit"]
     },
     {
       "id": "af813b10671da7a401947a041e5020af",
@@ -186,7 +250,8 @@
       "city": "beijing",
       "checked": true,
       "images": [],
-      "logo": ""
+      "logo": "",
+      "types": ["crossfit"]
     },
     {
       "id": "af813b10671da7cd01947a9030913710",
@@ -203,7 +268,8 @@
       "city": "beijing",
       "checked": true,
       "images": [],
-      "logo": ""
+      "logo": "",
+      "types": ["crossfit"]
     },
     {
       "id": "060407c0671da7f20193fc3f69245425",
@@ -220,7 +286,8 @@
       "city": "beijing",
       "checked": true,
       "images": [],
-      "logo": ""
+      "logo": "",
+      "types": ["crossfit"]
     },
     {
       "id": "af813b10671da82601947bc877e5d0a4",
@@ -237,7 +304,8 @@
       "city": "beijing",
       "checked": true,
       "images": [],
-      "logo": ""
+      "logo": "",
+      "types": ["crossfit"]
     },
     {
       "id": "686e8c6b671e572101980f04108de7d4",
@@ -254,7 +322,8 @@
       "city": "beijing",
       "checked": true,
       "images": [],
-      "logo": ""
+      "logo": "",
+      "types": ["crossfit"]
     },
     {
       "id": "686e8c6b671e574801980f8a1e2e516a",
@@ -271,7 +340,8 @@
       "city": "beijing",
       "checked": false,
       "images": [],
-      "logo": ""
+      "logo": "",
+      "types": ["crossfit"]
     },
     {
       "id": "1b30f213671e57770196fd7c03594715",
@@ -288,7 +358,8 @@
       "city": "beijing",
       "checked": true,
       "images": [],
-      "logo": ""
+      "logo": "",
+      "types": ["crossfit"]
     },
     {
       "id": "1b30f213671e57a80196fe397410e3f8",
@@ -305,7 +376,8 @@
       "city": "beijing",
       "checked": true,
       "images": [],
-      "logo": ""
+      "logo": "",
+      "types": ["crossfit"]
     },
     {
       "id": "686e8c6b671e5a4301981ab66ac5f324",
@@ -322,7 +394,8 @@
       "city": "beijing",
       "checked": true,
       "images": [],
-      "logo": ""
+      "logo": "",
+      "types": ["crossfit"]
     },
     {
       "id": "458dc8cc671e5a7c01981755517c168e",
@@ -339,7 +412,8 @@
       "city": "beijing",
       "checked": true,
       "images": [],
-      "logo": ""
+      "logo": "",
+      "types": ["crossfit"]
     },
     {
       "id": "983e93c4671e5aa2019872b142a932e0",
@@ -356,7 +430,8 @@
       "city": "beijing",
       "checked": true,
       "images": [],
-      "logo": ""
+      "logo": "",
+      "types": ["crossfit"]
     },
     {
       "id": "060407c0671e5ad301977b99530f05b3",
@@ -373,7 +448,8 @@
       "city": "beijing",
       "checked": true,
       "images": [],
-      "logo": ""
+      "logo": "",
+      "types": ["crossfit"]
     },
     {
       "id": "b8cb29906731c979001c89eb58abeeb4",
@@ -390,7 +466,8 @@
       "city": "beijing",
       "checked": true,
       "images": [],
-      "logo": ""
+      "logo": "",
+      "types": ["crossfit"]
     },
     {
       "id": "02ea3e3d6734c5eb002bbc141f48586b",
@@ -407,7 +484,8 @@
       "city": "beijing",
       "checked": true,
       "images": [],
-      "logo": ""
+      "logo": "",
+      "types": ["crossfit"]
     },
     {
       "id": "9badd3ff67370d9f00082ea0480c9772",
@@ -424,7 +502,8 @@
       "city": "beijing",
       "checked": true,
       "images": [],
-      "logo": ""
+      "logo": "",
+      "types": ["crossfit"]
     }
   ],
   "total": 25

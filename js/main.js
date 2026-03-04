@@ -22,12 +22,9 @@ class DropFitMain {
             this.showCitySelector();
         });
 
-        // 搜索输入框
+        // 搜索输入框 - 首页不需要实时搜索，只用于跳转到搜索页面
         const searchInput = document.getElementById('searchInput');
-        searchInput.addEventListener('input', this.debounce((e) => {
-            this.currentKeyword = e.target.value.trim();
-            this.filterVenues();
-        }, 300));
+        // 移除实时搜索监听器，保留回车键搜索
 
         // 搜索按钮
         const searchBtn = document.getElementById('searchBtn');
@@ -144,7 +141,14 @@ class DropFitMain {
 
     // 执行搜索
     performSearch() {
-        this.filterVenues();
+        const keyword = this.currentKeyword.trim();
+        const params = new URLSearchParams({
+            city: this.currentCity,
+            keyword: keyword
+        });
+        
+        // 跳转到搜索页面
+        window.location.href = `search.html?${params.toString()}`;
     }
 
     // 加载场馆数据
@@ -157,7 +161,7 @@ class DropFitMain {
             const data = await response.json();
             this.venues = data.venues || data; // 兼容不同的数据格式
             this.initMap();
-            this.displayVenues();
+            // 首页不需要显示场馆列表，只显示地图
         } catch (error) {
             console.error('加载场馆数据失败:', error);
             this.showMessage('加载场馆数据失败');
@@ -226,15 +230,21 @@ class DropFitMain {
         if (!this.map || !this.venues) return;
         
         let markerCount = 0;
+        const markers = []; // 收集所有标记用于后续处理
+        
         this.venues.forEach(venue => {
             let coordinates;
-            if (venue.location && venue.location.coordinates) {
+            if (venue.location && venue.location.coordinates && 
+                Array.isArray(venue.location.coordinates) && 
+                venue.location.coordinates.length >= 2) {
                 coordinates = [venue.location.coordinates[1], venue.location.coordinates[0]]; // Leaflet 使用 [lat, lng] 格式
-            } else if (venue.coordinates) {
+            } else if (venue.coordinates && 
+                       Array.isArray(venue.coordinates) && 
+                       venue.coordinates.length >= 2) {
                 coordinates = [venue.coordinates[1], venue.coordinates[0]];
             }
             
-            if (coordinates) {
+            if (coordinates && coordinates[0] && coordinates[1]) {
                 markerCount++;
                 const marker = L.marker(coordinates).addTo(this.map);
                 marker.bindPopup(`
@@ -242,15 +252,25 @@ class DropFitMain {
                         <h4 class="font-bold text-lg">${venue.name}</h4>
                     </div>
                 `);
+                markers.push(marker); // 添加到标记数组
+            } else {
+                console.warn('场馆坐标数据不完整:', venue.name, venue);
             }
         });
         
         console.log(`添加了 ${markerCount} 个场馆标记`);
         
         // 如果有场馆，自动调整地图视野以包含所有标记
-        if (markerCount > 0) {
-            const group = new L.featureGroup(this.map._layers);
-            this.map.fitBounds(group.getBounds().pad(0.1));
+        if (markerCount > 0 && markers.length > 0) {
+            try {
+                const group = new L.featureGroup(markers);
+                this.map.fitBounds(group.getBounds().pad(0.1));
+            } catch (error) {
+                console.warn('自动调整地图视野失败:', error);
+                // 如果自动调整失败，使用默认视野
+                const cityCenter = this.getCityCenter(this.currentCity);
+                this.map.setView(cityCenter, 12);
+            }
         }
     }
 
@@ -324,7 +344,7 @@ class DropFitMain {
 
     // 过滤场馆
     filterVenues() {
-        this.displayVenues();
+        // 首页不需要过滤场馆，搜索功能已移至搜索页面
     }
 
     // 显示消息

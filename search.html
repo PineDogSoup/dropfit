@@ -20,32 +20,25 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                         </svg>
                     </button>
-                    <h1 class="text-xl font-bold text-gray-900">搜索结果</h1>
+                    <div class="flex flex-wrap items-center gap-4">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-sm text-gray-600">城市:</span>
+                            <span id="currentCity" class="font-medium text-gray-900">-</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-sm text-gray-600">关键词:</span>
+                            <span id="currentKeyword" class="font-medium text-gray-900">-</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-sm text-gray-600">结果:</span>
+                            <span id="resultCount" class="font-medium text-blue-600">0</span>
+                            <span class="text-sm text-gray-600">个场馆</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
-
-    <!-- 搜索条件显示 -->
-    <section class="bg-white border-b">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex flex-wrap items-center gap-4">
-                <div class="flex items-center space-x-2">
-                    <span class="text-sm text-gray-600">城市:</span>
-                    <span id="currentCity" class="font-medium text-gray-900">-</span>
-                </div>
-                <div class="flex items-center space-x-2">
-                    <span class="text-sm text-gray-600">关键词:</span>
-                    <span id="currentKeyword" class="font-medium text-gray-900">-</span>
-                </div>
-                <div class="flex items-center space-x-2">
-                    <span class="text-sm text-gray-600">结果:</span>
-                    <span id="resultCount" class="font-medium text-blue-600">0</span>
-                    <span class="text-sm text-gray-600">个场馆</span>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- 主要内容 -->
     <main class="container mx-auto px-4 py-8">
@@ -99,11 +92,18 @@
         <div class="venue-card bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200 overflow-hidden">
             <div class="flex flex-col">
                 <!-- 场馆信息头部 -->
-                <div class="flex items-center p-4 pb-2">
-                    <!-- 场馆LOGO -->
-                    <img class="w-6 h-6 object-contain venue-image mr-3" src="" alt="" onerror="this.style.display='none'">
-                    <!-- 场馆名称 -->
-                    <h3 class="text-lg font-semibold text-gray-900 venue-name"></h3>
+                <div class="flex items-center justify-between p-4 pb-2">
+                    <div class="flex items-center">
+                        <!-- 场馆LOGO -->
+                        <img class="w-6 h-6 object-contain venue-image mr-3" src="" alt="" onerror="this.style.display='none'">
+                        <!-- 场馆名称 -->
+                        <h3 class="text-lg font-semibold text-gray-900 venue-name"></h3>
+                    </div>
+                    
+                    <!-- 场馆类型标签 -->
+                    <div class="flex flex-col gap-1 venue-type-tags">
+                        <!-- 标签将通过JavaScript动态生成 -->
+                    </div>
                 </div>
                 
                 <!-- 场馆详细信息 -->
