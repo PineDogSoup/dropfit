@@ -5,7 +5,6 @@
       "id": "07bd6b956739ee5b0013593b27505a7d",
       "name": "Monk Jump佛跳墙(宝龙店)",
       "address": "台江区工业路193号宝龙广场",
-      "description": "Monk Jump佛跳墙(宝龙店)",
       "location": {
         "coordinates": [
           119.292901,
@@ -14,15 +13,12 @@
         "type": "Point"
       },
       "city": "fuzhou",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "07bd6b956739f70f00138dbf03e0b1e8",
       "name": "Monk Jump佛跳墙(五四北店)",
       "address": "晋安区坂中路与篁村路交叉口南80米",
-      "description": "Monk Jump佛跳墙(五四北店)",
       "location": {
         "coordinates": [
           119.32301,
@@ -31,15 +27,12 @@
         "type": "Point"
       },
       "city": "fuzhou",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "4e8eee54673a8173001401d611870028",
       "name": "拾柒综合训练馆",
       "address": "台江区鳌峰广场负一层F101(永辉超市旁)",
-      "description": "拾柒综合训练馆成立于2019年,目前设有CrossFit、Bootcamp、举重专项及青少年综合体能训练4种团体课程",
       "location": {
         "coordinates": [
           119.337954,
@@ -48,15 +41,12 @@
         "type": "Point"
       },
       "city": "fuzhou",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "ebf7a7f6673a85800014668019cf6246",
       "name": "CrossFit 闽州综合健身",
       "address": "仓山区闽江大道236-3号金山文体中心综合楼一层",
-      "description": "一家专注CrossFit的摄影馆",
       "location": {
         "coordinates": [
           119.27299,
@@ -65,8 +55,6 @@
         "type": "Point"
       },
       "city": "fuzhou",
-      "checked": true,
-      "images": [],
       "logo": ""
     }
   ],

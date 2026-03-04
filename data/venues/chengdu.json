@@ -5,7 +5,6 @@
       "id": "458dc8cc671217db0168f8ba1bcb7457",
       "name": "CrossFit YuanLiu 源流运动",
       "address": "青羊区金沙遗址路88号西贵金沙4栋负一楼",
-      "description": "全面强健，动态修行，功能康复，饮乐士多。从此刻开始，让我们同源共流",
       "location": {
         "coordinates": [
           104.003231,
@@ -14,15 +13,12 @@
         "type": "Point"
       },
       "city": "chengdu",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "983e93c46713a516016f7f227b41bc93",
       "name": "CrossFit Fancy",
       "address": "成都市成华区双成三路15号附315-317",
-      "description": "CrossFit Fancy",
       "location": {
         "coordinates": [
           104.116647,
@@ -31,15 +27,12 @@
         "type": "Point"
       },
       "city": "chengdu",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "060407c06713a61b016e59e0610f309a",
       "name": "CrossFit Tianfu",
       "address": "武侯区高攀路26号1906创意园区A2",
-      "description": "CrossFit Tianfu",
       "location": {
         "coordinates": [
           104.084276,
@@ -48,15 +41,12 @@
         "type": "Point"
       },
       "city": "chengdu",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "686e8c6b671da880019491823b3489c2",
       "name": "Crossfit N plus(新熙门财富中心店)",
       "address": "一环路北一段88号新熙门3号楼1单元",
-      "description": "Crossfit N plus(新熙门财富中心店)",
       "location": {
         "coordinates": [
           104.045654,
@@ -65,15 +55,12 @@
         "type": "Point"
       },
       "city": "chengdu",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "af4c72fe674b14be002fd12d128af6c3",
       "name": "Next Fitness综合训练馆",
       "address": "武侯区科园南二路6号C2馆",
-      "description": "NEXT CrossFit是Next Fitness旗下的运动场馆品牌,也是CrossFit官方的认证场馆.这里有充满活力的CrossFit团课,专业的私教课,营养师和长期服务于国家队运动队的运动",
       "location": {
         "coordinates": [
           104.031714,
@@ -82,15 +69,12 @@
         "type": "Point"
       },
       "city": "chengdu",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "5222d8c8674bd22d0031261a44cdb7b7",
       "name": "FF综合体能馆",
       "address": "武侯区仁和新城购物中心4层462号",
-      "description": "FF综合体能馆",
       "location": {
         "coordinates": [
           104.05393981933594,
@@ -99,8 +83,6 @@
         "type": "Point"
       },
       "city": "chengdu",
-      "checked": true,
-      "images": [],
       "logo": ""
     }
   ],

@@ -1,364 +1,242 @@
 {
   "cities": [
     {
-      "id": "beijing",
-      "name": "北京",
-      "code": "BJ",
-      "center": [
-        116.4074,
-        39.9042
-      ],
+      "id": "baoding",
+      "name": "保定",
+      "code": "BD",
+      "center": [115.472137, 38.893672],
       "pinyinFirstLetter": "B"
     },
     {
-      "id": "shanghai",
-      "name": "上海",
-      "code": "SH",
-      "center": [
-        121.4737,
-        31.2304
-      ],
-      "pinyinFirstLetter": "S"
-    },
-    {
-      "id": "guangzhou",
-      "name": "广州",
-      "code": "GZ",
-      "center": [
-        113.2644,
-        23.1291
-      ],
-      "pinyinFirstLetter": "G"
-    },
-    {
-      "id": "shenzhen",
-      "name": "深圳",
-      "code": "SZ",
-      "center": [
-        114.0579,
-        22.5431
-      ],
-      "pinyinFirstLetter": "S"
+      "id": "beijing",
+      "name": "北京",
+      "code": "BJ",
+      "center": [116.4074, 39.9042],
+      "pinyinFirstLetter": "B"
     },
     {
       "id": "changsha",
       "name": "长沙",
       "code": "CS",
-      "center": [
-        112.9388,
-        28.2282
-      ],
+      "center": [112.9388, 28.2282],
       "pinyinFirstLetter": "C"
-    },
-    {
-      "id": "kunming",
-      "name": "昆明",
-      "code": "KM",
-      "center": [
-        102.8329,
-        24.8801
-      ],
-      "pinyinFirstLetter": "K"
     },
     {
       "id": "chengdu",
       "name": "成都",
       "code": "CD",
-      "center": [
-        104.0665,
-        30.5723
-      ],
+      "center": [104.0665, 30.5723],
       "pinyinFirstLetter": "C"
     },
     {
-      "id": "hangzhou",
-      "name": "杭州",
-      "code": "HZ",
-      "center": [
-        120.1758,
-        30.1839
-      ],
-      "pinyinFirstLetter": "H"
+      "id": "chongqing",
+      "name": "重庆",
+      "code": "CQ",
+      "center": [106.5516, 29.563],
+      "pinyinFirstLetter": "C"
     },
     {
-      "id": "suzhou",
-      "name": "苏州",
-      "code": "SZ",
-      "center": [
-        120.6741,
-        31.3329
-      ],
-      "pinyinFirstLetter": "S"
-    },
-    {
-      "id": "wuhan",
-      "name": "武汉",
-      "code": "WH",
-      "center": [
-        114.2734,
-        30.5852
-      ],
-      "pinyinFirstLetter": "W"
-    },
-    {
-      "id": "nanjing",
-      "name": "南京",
-      "code": "NJ",
-      "center": [
-        118.7969,
-        32.0603
-      ],
-      "pinyinFirstLetter": "N"
-    },
-    {
-      "id": "meishan",
-      "name": "眉山",
-      "code": "MS",
-      "center": [
-        103.8468,
-        30.0756
-      ],
-      "pinyinFirstLetter": "M"
-    },
-    {
-      "id": "leshan",
-      "name": "乐山",
-      "code": "LS",
-      "center": [
-        103.7614,
-        29.5822
-      ],
-      "pinyinFirstLetter": "L"
-    },
-    {
-      "id": "neijiang",
-      "name": "内江",
-      "code": "NJ",
-      "center": [
-        105.0584,
-        29.5802
-      ],
-      "pinyinFirstLetter": "N"
-    },
-    {
-      "id": "yibin",
-      "name": "宜宾",
-      "code": "YB",
-      "center": [
-        104.6417,
-        28.7513
-      ],
-      "pinyinFirstLetter": "Y"
-    },
-    {
-      "id": "luzhou",
-      "name": "泸州",
-      "code": "LZ",
-      "center": [
-        105.4426,
-        28.8706
-      ],
-      "pinyinFirstLetter": "L"
-    },
-    {
-      "id": "bazhong",
-      "name": "巴中",
-      "code": "BZ",
-      "center": [
-        106.7475,
-        31.8679
-      ],
-      "pinyinFirstLetter": "B"
-    },
-    {
-      "id": "fuzhou",
-      "name": "福州",
-      "code": "FZ",
-      "center": [
-        119.2965,
-        26.0745
-      ],
-      "pinyinFirstLetter": "F"
-    },
-    {
-      "id": "quanzhou",
-      "name": "泉州",
-      "code": "QZ",
-      "center": [
-        118.6757,
-        24.8744
-      ],
-      "pinyinFirstLetter": "Q"
-    },
-    {
-      "id": "xiamen",
-      "name": "厦门",
-      "code": "XM",
-      "center": [
-        118.0894,
-        24.4798
-      ],
-      "pinyinFirstLetter": "X"
-    },
-    {
-      "id": "zhangzhou",
-      "name": "漳州",
-      "code": "ZZ",
-      "center": [
-        117.6618,
-        24.5109
-      ],
-      "pinyinFirstLetter": "Z"
-    },
-    {
-      "id": "longyan",
-      "name": "龙岩",
-      "code": "LY",
-      "center": [
-        117.0297,
-        25.0751
-      ],
-      "pinyinFirstLetter": "L"
-    },
-    {
-      "id": "hongkong",
-      "name": "香港",
-      "code": "HK",
-      "center": [
-        114.1694,
-        22.3193
-      ],
-      "pinyinFirstLetter": "H"
-    },
-    {
-      "id": "macau",
-      "name": "澳门",
-      "code": "MO",
-      "center": [
-        113.5491,
-        22.1987
-      ],
-      "pinyinFirstLetter": "M"
+      "id": "dali",
+      "name": "大理",
+      "code": "DL",
+      "center": [100.2248, 25.6065],
+      "pinyinFirstLetter": "D"
     },
     {
       "id": "foshan",
       "name": "佛山",
       "code": "FS",
-      "center": [
-        113.1214,
-        23.0215
-      ],
+      "center": [113.1214, 23.0215],
       "pinyinFirstLetter": "F"
     },
     {
-      "id": "zhanjiang",
-      "name": "湛江",
-      "code": "ZJ",
-      "center": [
-        110.3594,
-        21.2707
-      ],
-      "pinyinFirstLetter": "Z"
+      "id": "fuzhou",
+      "name": "福州",
+      "code": "FZ",
+      "center": [119.2965, 26.0745],
+      "pinyinFirstLetter": "F"
     },
     {
-      "id": "maoming",
-      "name": "茂名",
-      "code": "MM",
-      "center": [
-        110.9255,
-        21.6633
-      ],
-      "pinyinFirstLetter": "M"
+      "id": "guangzhou",
+      "name": "广州",
+      "code": "GZ",
+      "center": [113.2644, 23.1291],
+      "pinyinFirstLetter": "G"
     },
     {
-      "id": "zhaoqing",
-      "name": "肇庆",
-      "code": "ZQ",
-      "center": [
-        112.4659,
-        23.0472
-      ],
-      "pinyinFirstLetter": "Z"
+      "id": "guiyang",
+      "name": "贵阳",
+      "code": "GY",
+      "center": [106.6302, 26.6477],
+      "pinyinFirstLetter": "G"
     },
     {
-      "id": "qingyuan",
-      "name": "清远",
-      "code": "QY",
-      "center": [
-        113.0561,
-        23.682
-      ],
-      "pinyinFirstLetter": "Q"
-    },
-    {
-      "id": "dongguan",
-      "name": "东莞",
-      "code": "DG",
-      "center": [
-        113.7518,
-        23.0207
-      ],
-      "pinyinFirstLetter": "D"
-    },
-    {
-      "id": "huizhou",
-      "name": "惠州",
-      "code": "HZ",
-      "center": [
-        114.4168,
-        23.1108
-      ],
+      "id": "haerbin",
+      "name": "哈尔滨",
+      "code": "HEB",
+      "center": [126.5349, 45.8038],
       "pinyinFirstLetter": "H"
     },
     {
-      "id": "zhongshan",
-      "name": "中山",
-      "code": "ZS",
-      "center": [
-        113.3927,
-        22.5153
-      ],
+      "id": "hangzhou",
+      "name": "杭州",
+      "code": "HZ",
+      "center": [120.1551, 30.2741],
+      "pinyinFirstLetter": "H"
+    },
+    {
+      "id": "hefei",
+      "name": "合肥",
+      "code": "HF",
+      "center": [117.2272, 31.8206],
+      "pinyinFirstLetter": "H"
+    },
+    {
+      "id": "huhehaote",
+      "name": "呼和浩特",
+      "code": "HHHT",
+      "center": [111.7492, 40.8426],
+      "pinyinFirstLetter": "H"
+    },
+    {
+      "id": "jinan",
+      "name": "济南",
+      "code": "JN",
+      "center": [117.1205, 36.651],
+      "pinyinFirstLetter": "J"
+    },
+    {
+      "id": "kunming",
+      "name": "昆明",
+      "code": "KM",
+      "center": [102.8329, 24.8801],
+      "pinyinFirstLetter": "K"
+    },
+    {
+      "id": "nanchang",
+      "name": "南昌",
+      "code": "NC",
+      "center": [115.8582, 28.682],
+      "pinyinFirstLetter": "N"
+    },
+    {
+      "id": "nanjing",
+      "name": "南京",
+      "code": "NJ",
+      "center": [118.7969, 32.0603],
+      "pinyinFirstLetter": "N"
+    },
+    {
+      "id": "nanning",
+      "name": "南宁",
+      "code": "NN",
+      "center": [108.3661, 22.817],
+      "pinyinFirstLetter": "N"
+    },
+    {
+      "id": "ningbo",
+      "name": "宁波",
+      "code": "NB",
+      "center": [121.5507, 29.875],
+      "pinyinFirstLetter": "N"
+    },
+    {
+      "id": "qingdao",
+      "name": "青岛",
+      "code": "QD",
+      "center": [120.3827, 36.0671],
+      "pinyinFirstLetter": "Q"
+    },
+    {
+      "id": "quanzhou",
+      "name": "泉州",
+      "code": "QZ",
+      "center": [118.6757, 24.8744],
+      "pinyinFirstLetter": "Q"
+    },
+    {
+      "id": "shanghai",
+      "name": "上海",
+      "code": "SH",
+      "center": [121.4737, 31.2304],
+      "pinyinFirstLetter": "S"
+    },
+    {
+      "id": "shantou",
+      "name": "汕头",
+      "code": "ST",
+      "center": [116.7286, 23.3839],
+      "pinyinFirstLetter": "S"
+    },
+    {
+      "id": "shenzhen",
+      "name": "深圳",
+      "code": "SZ",
+      "center": [114.0579, 22.5431],
+      "pinyinFirstLetter": "S"
+    },
+    {
+      "id": "suzhou",
+      "name": "苏州",
+      "code": "SZ",
+      "center": [120.5853, 31.2989],
+      "pinyinFirstLetter": "S"
+    },
+    {
+      "id": "tianjin",
+      "name": "天津",
+      "code": "TJ",
+      "center": [117.2009, 39.0842],
+      "pinyinFirstLetter": "T"
+    },
+    {
+      "id": "wuhan",
+      "name": "武汉",
+      "code": "WH",
+      "center": [114.3054, 30.5928],
+      "pinyinFirstLetter": "W"
+    },
+    {
+      "id": "xiamen",
+      "name": "厦门",
+      "code": "XM",
+      "center": [118.0894, 24.4798],
+      "pinyinFirstLetter": "X"
+    },
+    {
+      "id": "xian",
+      "name": "西安",
+      "code": "XA",
+      "center": [108.9398, 34.3416],
+      "pinyinFirstLetter": "X"
+    },
+    {
+      "id": "xining",
+      "name": "西宁",
+      "code": "XN",
+      "center": [101.7782, 36.6171],
+      "pinyinFirstLetter": "X"
+    },
+    {
+      "id": "yantai",
+      "name": "烟台",
+      "code": "YT",
+      "center": [121.4479, 37.4638],
+      "pinyinFirstLetter": "Y"
+    },
+    {
+      "id": "zhengzhou",
+      "name": "郑州",
+      "code": "ZZ",
+      "center": [113.6254, 34.7466],
       "pinyinFirstLetter": "Z"
     },
     {
       "id": "zhuhai",
       "name": "珠海",
       "code": "ZH",
-      "center": [
-        113.5767,
-        22.2707
-      ],
+      "center": [113.5767, 22.2707],
       "pinyinFirstLetter": "Z"
-    },
-    {
-      "id": "jiangmen",
-      "name": "江门",
-      "code": "JM",
-      "center": [
-        113.0845,
-        22.5952
-      ],
-      "pinyinFirstLetter": "J"
-    },
-    {
-      "id": "shantou",
-      "name": "汕头",
-      "code": "ST",
-      "center": [
-        116.7286,
-        23.3839
-      ],
-      "pinyinFirstLetter": "S"
-    },
-    {
-      "id": "shaoguan",
-      "name": "韶关",
-      "code": "SG",
-      "center": [
-        113.597,
-        24.8104
-      ],
-      "pinyinFirstLetter": "S"
     }
   ]
 }

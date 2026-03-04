@@ -5,7 +5,6 @@
       "id": "710be24d67441c000012d4d95786f109",
       "name": "ICE BREAK",
       "address": "青云谱区王府井正街皇后广场负一层",
-      "description": "破冰综合运动训练馆,做一个有温度的box,欢迎回到你第二个家",
       "location": {
         "coordinates": [
           115.904587,
@@ -14,8 +13,6 @@
         "type": "Point"
       },
       "city": "nanchang",
-      "checked": true,
-      "images": [],
       "logo": ""
     }
   ],

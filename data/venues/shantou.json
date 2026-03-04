@@ -5,7 +5,6 @@
       "id": "a1cd30be673c4760000475782253e0e4",
       "name": "益力健汕头",
       "address": "龙湖区嵩山南路98号海纳天地商场3层",
-      "description": "益力健健身CrossFit馆",
       "location": {
         "coordinates": [
           116.732263,
@@ -14,15 +13,12 @@
         "type": "Point"
       },
       "city": "shantou",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "10a9536f673c4b970004c1bb00cb5d73",
       "name": "RIC综合体能训练馆",
       "address": "潮阳区棉北街道城北北四路维也纳酒店隔壁巷子",
-      "description": "RIC综合体能训练馆",
       "location": {
         "coordinates": [
           116.609398,
@@ -31,8 +27,6 @@
         "type": "Point"
       },
       "city": "shantou",
-      "checked": true,
-      "images": [],
       "logo": ""
     }
   ],

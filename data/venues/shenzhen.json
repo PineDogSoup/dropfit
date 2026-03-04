@@ -5,7 +5,6 @@
       "id": "983e93c4671224e80169a4147c8abf14",
       "name": "CrossFit Sai Lei",
       "address": "南山区科文路一号",
-      "description": "把CrossFit当做一种生活方式 #TrainForLife",
       "location": {
         "coordinates": [
           113.941495,
@@ -14,15 +13,12 @@
         "type": "Point"
       },
       "city": "shenzhen",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "458dc8cc671333cc016cf996269daf0b",
       "name": "CrossFit 江湖综合体能训练馆",
       "address": "龙岗区坂田街道宝吉路18号(招商中心旁)",
-      "description": "CrossFit江湖综合体能训练馆，是美国CrossFit官方认证授权场馆",
       "location": {
         "coordinates": [
           114.077112,
@@ -31,15 +27,12 @@
         "type": "Point"
       },
       "city": "shenzhen",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "060407c06713a354016e4b0b675f185a",
       "name": "山海综合体能训练中心",
       "address": "南山区打石二路",
-      "description": "欢迎来到山海运动健身社区！无论你是一个健身爱好者、运动员、教练还是创业者，我们都欢迎你的加入",
       "location": {
         "coordinates": [
           113.945028,
@@ -48,15 +41,12 @@
         "type": "Point"
       },
       "city": "shenzhen",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "af813b10671e56c90197ea9b5ee900af",
       "name": "CrossFit雷电综合体能训练馆",
       "address": "振兴路华康大厦2栋1楼(华匀停车场内)",
-      "description": "CrossFit雷电综合体能训练馆",
       "location": {
         "coordinates": [
           114.08203,
@@ -65,15 +55,12 @@
         "type": "Point"
       },
       "city": "shenzhen",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "983e93c4671e56f101986527637e0c0c",
       "name": "CrossFit Hooking",
       "address": "长顺路旁龙光玖钻商务中心北乙期2B31-35",
-      "description": "CrossFit Hooking",
       "location": {
         "coordinates": [
           114.020687,
@@ -82,15 +69,12 @@
         "type": "Point"
       },
       "city": "shenzhen",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "1b30f213671e5b5001970ad94dbc8bab",
       "name": "创综合体能训练馆(新亚美大厦店)",
       "address": "福保街道紫荆道6号新亚美大厦1层101",
-      "description": "创·造强健",
       "location": {
         "coordinates": [
           114.059775,
@@ -99,15 +83,12 @@
         "type": "Point"
       },
       "city": "shenzhen",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "686e8c6b671e5b7f01981ea2393f953e",
       "name": "KayGym综合体能训练馆",
       "address": "高新视层艺创客公园(大学城地铁站C口步行490米)",
-      "description": "KayGym综合体能训练馆",
       "location": {
         "coordinates": [
           113.962779,
@@ -116,15 +97,12 @@
         "type": "Point"
       },
       "city": "shenzhen",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "07bd6b956737f444000b6d040d5b8276",
       "name": "CrossFit 荣超MOO",
       "address": "益田路6003号荣超商务中心B栋0105a-2",
-      "description": "CrossFit 荣超MOO",
       "location": {
         "coordinates": [
           114.055215,
@@ -133,15 +111,12 @@
         "type": "Point"
       },
       "city": "shenzhen",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "4e8eee546737f650000b22ef2f384fe8",
       "name": "CrossFit 新华MOO",
       "address": "新华保险大厦(兴融二路北)",
-      "description": "CrossFit 新华MOO",
       "location": {
         "coordinates": [
           114.05238,
@@ -150,15 +125,12 @@
         "type": "Point"
       },
       "city": "shenzhen",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "ebf7a7f66737f7b0000b711b01c148b7",
       "name": "CrossFit 百度MOO",
       "address": "南山区滨海大道百度国际大厦西塔1层",
-      "description": "CrossFit 百度MOO",
       "location": {
         "coordinates": [
           113.94216,
@@ -167,15 +139,12 @@
         "type": "Point"
       },
       "city": "shenzhen",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "ebe773e1674516f60017743268cc5c6c",
       "name": "Attitude Fitness",
       "address": "福田区滨河大道9283号中洲湾CFutureCityB1层",
-      "description": "我们是Atttiude Space态度综合体能运动空间，向大家宣扬一种健康的生活方式和积极的人生态度。",
       "location": {
         "coordinates": [
           114.028313,
@@ -184,8 +153,6 @@
         "type": "Point"
       },
       "city": "shenzhen",
-      "checked": true,
-      "images": [],
       "logo": ""
     }
   ],

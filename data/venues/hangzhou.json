@@ -5,7 +5,6 @@
       "id": "af813b1067132fc5016d12921d1033d5",
       "name": "麒麟综合训练",
       "address": "滨江区怀德街怀诚体育中心内",
-      "description": " 综合体能训练馆，CrossFit 官方认证场馆，CrossFit Kylin爱生活爱运动爱麒麟！",
       "location": {
         "coordinates": [
           120.175838,
@@ -14,15 +13,12 @@
         "type": "Point"
       },
       "city": "hangzhou",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "1b30f213671e542d0196f09e031d268c",
       "name": "CrossFit Hertz (江河汇馆)",
       "address": "杭海路601号江和美海洋生活广场2F",
-      "description": "CrossFit Hertz 运动社区(江河汇馆)",
       "location": {
         "coordinates": [
           120.22832,
@@ -31,15 +27,12 @@
         "type": "Point"
       },
       "city": "hangzhou",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "686e8c6b671e561c01980b18035a6191",
       "name": "绿壁虎综合体能训练馆",
       "address": "拱墅区景宁巷与蔡马东路交叉口南300米",
-      "description": "绿壁虎综合体能训练馆",
       "location": {
         "coordinates": [
           120.161931,
@@ -48,15 +41,12 @@
         "type": "Point"
       },
       "city": "hangzhou",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "1b30f213671e56540196f8d113ec0645",
       "name": "i.Box 健身工作室",
       "address": "拱墅区上塘路97号大院内进院后到丽声教育后左转到底到达",
-      "description": "i.Box 健身工作室",
       "location": {
         "coordinates": [
           120.167998,
@@ -65,15 +55,12 @@
         "type": "Point"
       },
       "city": "hangzhou",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "1b30f213671e56840196f9767b90ce81",
       "name": "Fitplant 综合训练馆",
       "address": "滨江区越达巷82号房天下大厦",
-      "description": "Fitplant 综合训练馆",
       "location": {
         "coordinates": [
           120.186503,
@@ -82,15 +69,12 @@
         "type": "Point"
       },
       "city": "hangzhou",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "ebf7a7f66736ac450005e2c063141ee1",
       "name": "MTS.BOX",
       "address": "上城区凤凰山脚路7号1138文创园2幢102",
-      "description": "MTS.BOX位于凤凰御园1138园区,拥有丰富的课程设置和专业的执教水平",
       "location": {
         "coordinates": [
           120.165802,
@@ -99,15 +83,12 @@
         "type": "Point"
       },
       "city": "hangzhou",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "ebf7a7f66736b76a000618353489b4b2",
       "name": "TROUBLEMAKER综合体能训练",
       "address": "富阳区九龙大道富春硅谷一号楼1411室",
-      "description": "TROUBLEMAKER综合体能训练",
       "location": {
         "coordinates": [
           119.985187,
@@ -116,15 +97,12 @@
         "type": "Point"
       },
       "city": "hangzhou",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "ebe773e16746b503001e3bfa26dcfdf5",
       "name": "2159综合体能训练馆",
       "address": "拱墅区长浜路718号新天地购物中心F5层",
-      "description": "欢迎你来2159!准备好收获快乐了吗",
       "location": {
         "coordinates": [
           120.18002,
@@ -133,15 +111,12 @@
         "type": "Point"
       },
       "city": "hangzhou",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "710be24d6746b866001e3da37daaeb9c",
       "name": "2159|全力游戏",
       "address": "滨江区莲荷里B1-A区05号",
-      "description": "欢迎你来2159|全力游戏!轻松快乐,收获更好的自己",
       "location": {
         "coordinates": [
           120.227091,
@@ -150,15 +125,12 @@
         "type": "Point"
       },
       "city": "hangzhou",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "ebe773e16746d68a001f21cc1699e91d",
       "name": "FitTribe飞踹运动(西湖文化广场)",
       "address": "中山北路西湖文化广场F区B2层1号101室",
-      "description": "在这里,你会收获美好的肉体,有趣的灵魂,志同道合的伙伴,抵抗庸常的热血和勇气,欢迎加入FitTribe大家庭",
       "location": {
         "coordinates": [
           120.163094,
@@ -167,15 +139,12 @@
         "type": "Point"
       },
       "city": "hangzhou",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "ebe773e16746d78e001f27d5651bc555",
       "name": "FitTribe飞踹运动(景芳店)",
       "address": "景芳地铁站d2口麦田里商业街c15",
-      "description": "在这里,你会收获美好的肉体,有趣的灵魂,志同道合的伙伴,抵抗庸常的热血和勇气,欢迎加入FitTribe大家庭",
       "location": {
         "coordinates": [
           120.208148,
@@ -184,15 +153,12 @@
         "type": "Point"
       },
       "city": "hangzhou",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "af4c72fe6746d8a6001f3fef6ebe8025",
       "name": "FitTribe飞踹运动(西湖银泰店)",
       "address": "西湖银泰a区2楼(麦当劳旁上楼梯)",
-      "description": "在这里,你会收获美好的肉体,有趣的灵魂,志同道合的伙伴,抵抗庸常的热血和勇气,欢迎加入FitTribe大家庭",
       "location": {
         "coordinates": [
           120.165756,
@@ -201,15 +167,12 @@
         "type": "Point"
       },
       "city": "hangzhou",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "af4c72fe6746d96a001f44202853846b",
       "name": "FitTribe飞踹运动(天阳D32店)",
       "address": "天阳D32时尚购物中心C座2楼",
-      "description": "在这里,你会收获美好的肉体,有趣的灵魂,志同道合的伙伴,抵抗庸常的热血和勇气,欢迎加入FitTribe大家庭",
       "location": {
         "coordinates": [
           120.137847,
@@ -218,15 +181,12 @@
         "type": "Point"
       },
       "city": "hangzhou",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "5222d8c86746da1d001efb2b3e712161",
       "name": "FitTribe飞踹运动(聚才大厦店)",
       "address": "JWK聚才大厦2楼飞踹运动",
-      "description": "在这里,你会收获美好的肉体,有趣的灵魂,志同道合的伙伴,抵抗庸常的热血和勇气,欢迎加入FitTribe大家庭",
       "location": {
         "coordinates": [
           120.201004,
@@ -235,8 +195,6 @@
         "type": "Point"
       },
       "city": "hangzhou",
-      "checked": true,
-      "images": [],
       "logo": ""
     }
   ],

@@ -5,7 +5,6 @@
       "id": "b8cb29906731ada2001bb0a81419f60d",
       "name": "DFly综合体能训练馆",
       "address": "大理镇上末村委会十四组83号隔壁",
-      "description": "DFly综合体能训练馆",
       "location": {
         "coordinates": [
           100.1818,
@@ -14,15 +13,12 @@
         "type": "Point"
       },
       "city": "dali",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "e4dd7c226731afd1001b9d4a33429e66",
       "name": "DLCC综合体能训练馆",
       "address": "龙溪路108号商铺奈斯青训馆内",
-      "description": "DLCC综合体能训练馆",
       "location": {
         "coordinates": [
           100.224783,
@@ -31,8 +27,6 @@
         "type": "Point"
       },
       "city": "dali",
-      "checked": true,
-      "images": [],
       "logo": ""
     }
   ],

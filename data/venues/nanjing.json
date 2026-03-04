@@ -5,7 +5,6 @@
       "id": "af813b1067134596016d681737a82464",
       "name": "CrossFit六朝综合训练馆(应天)",
       "address": "南苑街道怡康街18号2A-125（南师附中初中怡康分校正对面）",
-      "description": "CrossFit六朝拥有一流的教练，包括CrossFit level1, level2, kidS，还包括冠军级别举重、体操专项教练。任职教练均为CrossFit体系认证的精英运动员（教员）。",
       "location": {
         "coordinates": [
           118.755565,
@@ -14,15 +13,12 @@
         "type": "Point"
       },
       "city": "nanjing",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "1b30f21367135a22016c96f455da330c",
       "name": "CrossFit Happy综合训练馆",
       "address": "栖霞区禾素时代科创园12-2幢1楼",
-      "description": "i人天堂，e人舞台，在这里收获健康和快乐",
       "location": {
         "coordinates": [
           118.890082,
@@ -31,8 +27,6 @@
         "type": "Point"
       },
       "city": "nanjing",
-      "checked": true,
-      "images": [],
       "logo": ""
     }
   ],

@@ -5,7 +5,6 @@
       "id": "710be24d674579bf0019556a0b9584be",
       "name": "IronHiLL铁山CrossFit(远洋店)",
       "address": "市南区远洋广场-阳光大厦A座负一层",
-      "description": "在这里,大家获得的不仅是健硕的身体,更难得是一帮志趣相投的朋友,从城市的每一个角落相聚于此,从陌生到熟悉,只有一个铁山的距离",
       "location": {
         "coordinates": [
           120.398625,
@@ -14,15 +13,12 @@
         "type": "Point"
       },
       "city": "qingdao",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "0b732e7f6745800d00194e6b0d228e88",
       "name": "IronHiLL铁山CrossFit(大剧院)",
       "address": "崂山区梅岭东路50号(包饭天国东)",
-      "description": "在这里,大家获得的不仅是健硕的身体,更难得是一帮志趣相投的朋友,从城市的每一个角落相聚于此,从陌生到熟悉,只有一个铁山的距离",
       "location": {
         "coordinates": [
           120.476456,
@@ -31,8 +27,6 @@
         "type": "Point"
       },
       "city": "qingdao",
-      "checked": true,
-      "images": [],
       "logo": ""
     }
   ],

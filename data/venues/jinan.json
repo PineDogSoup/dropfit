@@ -5,7 +5,6 @@
       "id": "4e8eee54673692d1000561e34a122195",
       "name": "平头哥CrossFit训练馆",
       "address": "历城区东八区企业公馆B29号楼",
-      "description": "济南最大的CrossFit中国官方授权场馆",
       "location": {
         "coordinates": [
           117.222773,
@@ -14,8 +13,6 @@
         "type": "Point"
       },
       "city": "jinan",
-      "checked": true,
-      "images": [],
       "logo": ""
     }
   ],

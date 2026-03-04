@@ -5,7 +5,6 @@
       "id": "710be24d67453fa40017ed567bdc4c4d",
       "name": "Freesoul Fitness逍遥综训",
       "address": "经开区习友路4301号森隆工业园20幢一楼",
-      "description": "场馆的名称源自合肥著名地标「逍遥津」中的「逍遥」二字，英文叫 Freesoul Fitness",
       "location": {
         "coordinates": [
           117.252911,
@@ -14,8 +13,6 @@
         "type": "Point"
       },
       "city": "hefei",
-      "checked": true,
-      "images": [],
       "logo": ""
     }
   ],

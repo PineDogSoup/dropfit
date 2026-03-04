@@ -5,7 +5,6 @@
       "id": "a00247e9674586080019d4194c979135",
       "name": "CrossFit LaoYou(金湖店)",
       "address": "金湖路63号金源CBD一楼L1-005商铺",
-      "description": "CrossFit LaoYou综合体能健身馆(金湖店)",
       "location": {
         "coordinates": [
           108.369177,
@@ -14,15 +13,12 @@
         "type": "Point"
       },
       "city": "nanning",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "ebe773e1674588720019b71b518c7165",
       "name": "CrossFit LaoYou(新竹店)",
       "address": "中苑公寓南门旁(麻村地铁站D口步行450米)",
-      "description": "CrossFit LaoYou综合体能健身馆(新竹店)",
       "location": {
         "coordinates": [
           108.348695,
@@ -31,8 +27,6 @@
         "type": "Point"
       },
       "city": "nanning",
-      "checked": true,
-      "images": [],
       "logo": ""
     }
   ],

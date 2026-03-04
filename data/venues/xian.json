@@ -5,7 +5,6 @@
       "id": "710be24d674427b600132fc818325866",
       "name": "俑士体能(省体店)",
       "address": "碑林区省体育场内朱雀网球中心二层",
-      "description": "做难而正确的事",
       "location": {
         "coordinates": [
           108.944409,
@@ -14,15 +13,12 @@
         "type": "Point"
       },
       "city": "xian",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "5222d8c867442d4200134a1c36028907",
       "name": "俑士体能(南门店)",
       "address": "碑林区合生汇珠江时代广场店F3层",
-      "description": "因为今天不想联,所以今天必须练!",
       "location": {
         "coordinates": [
           108.948812,
@@ -31,15 +27,12 @@
         "type": "Point"
       },
       "city": "xian",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "af4c72fe6744301c001355533474c036",
       "name": "俑士体能(momopark店)",
       "address": "雁塔区MOMOPARKB2层58号商铺",
-      "description": "俑士体能旗下首个主题馆,让运动回归生活,做自己的俑士~",
       "location": {
         "coordinates": [
           108.933751,
@@ -48,15 +41,12 @@
         "type": "Point"
       },
       "city": "xian",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "a00247e967443432001406602f416e54",
       "name": "FlyingTiger综合健身馆",
       "address": "碑林区咸宁中路313号院",
-      "description": "我们一直致力于为健身爱好者提供专业、具挑战性和最富有成效的健身体验",
       "location": {
         "coordinates": [
           108.998219,
@@ -65,8 +55,6 @@
         "type": "Point"
       },
       "city": "xian",
-      "checked": true,
-      "images": [],
       "logo": ""
     }
   ],

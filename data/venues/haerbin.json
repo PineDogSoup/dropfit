@@ -5,7 +5,6 @@
       "id": "ebe773e16748764f0026c13829b15ca2",
       "name": "FIRE 综合训练馆",
       "address": "市南岗区七政街60-4号",
-      "description": "普及CF知识,传达CF这项运动的魅力",
       "location": {
         "coordinates": [
           126.623966,
@@ -14,8 +13,6 @@
         "type": "Point"
       },
       "city": "haerbin",
-      "checked": true,
-      "images": [],
       "logo": ""
     }
   ],

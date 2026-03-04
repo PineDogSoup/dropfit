@@ -5,7 +5,6 @@
       "id": "983e93c4671228080169b60928bfb7dc",
       "name": "第4竞区CrossFit综合体能健身",
       "address": "岳麓区枫林三路408号园区北面",
-      "description": "第4竞区CrossFit综合体能健身(麓谷馆)是中南地区唯一一家集CrossFit和CrossFit Kids少儿体适能认证于一体的场馆",
       "location": {
         "coordinates": [
           112.892416,
@@ -14,15 +13,12 @@
         "type": "Point"
       },
       "city": "changsha",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "060407c06713a753016e6062229a73fc",
       "name": "CrossFit0731运动生活馆",
       "address": "天心区劳动西路215号佳程酒店5楼",
-      "description": "CrossFit0731运动生活馆",
       "location": {
         "coordinates": [
           112.978782,
@@ -31,15 +27,12 @@
         "type": "Point"
       },
       "city": "changsha",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "983e93c46713a980016f9b106e8aa212",
       "name": "冲击波综合体能健身馆",
       "address": "天心区劳动西路贺龙体育场西侧一层(田径场旁)",
-      "description": "AFTERSHOCK冲击波综合体能健身馆",
       "location": {
         "coordinates": [
           112.981687,
@@ -48,15 +41,12 @@
         "type": "Point"
       },
       "city": "changsha",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "1b30f213671da854019389893ffc8b3a",
       "name": "LinkBox领客CrossFit",
       "address": "潇湘中路与湘岳路交叉口北60米",
-      "description": "LinkBox领客CrossFit瑜伽普拉提中心",
       "location": {
         "coordinates": [
           112.959994,
@@ -65,15 +55,12 @@
         "type": "Point"
       },
       "city": "changsha",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "af4c72fe6742986d000d95a10e3ee184",
       "name": "3x3综合体能馆",
       "address": "岳麓区望城坡街道重阳路115号",
-      "description": "认真锻炼的运动社区",
       "location": {
         "coordinates": [
           112.911209,
@@ -82,8 +69,6 @@
         "type": "Point"
       },
       "city": "changsha",
-      "checked": true,
-      "images": [],
       "logo": ""
     }
   ],

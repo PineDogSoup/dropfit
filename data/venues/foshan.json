@@ -5,7 +5,6 @@
       "id": "af4c72fe67480e7f002492280e62fbc2",
       "name": "CrossFitSSCC(南海)",
       "address": "南海区南平西路民间金融街B3凯捷大厦108号铺",
-      "description": "CrossFitSSCC是佛山城区内成立最早的、社群规模最大的CrossFit官方认证场馆,在SSCC,我们为所有年龄段、不同运动基础的学员提供高包容性的训练课程",
       "location": {
         "coordinates": [
           113.16123,
@@ -14,15 +13,12 @@
         "type": "Point"
       },
       "city": "foshan",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "a00247e9674812100024c2d137f70219",
       "name": "CrossFitSSCC(禅城)",
       "address": "禅城区影荫路21号华园里园区内蓝色仓库",
-      "description": "场馆配备专业教练及训练器材,课程以团课为主,倡导互相促进,共同进步的精神,配合有氧、心肺功能、耐力、力量、灵活性等10个身体要素为训练目标,倡导健康生活方式",
       "location": {
         "coordinates": [
           113.113849,
@@ -31,8 +27,6 @@
         "type": "Point"
       },
       "city": "foshan",
-      "checked": true,
-      "images": [],
       "logo": ""
     }
   ],

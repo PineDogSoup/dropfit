@@ -5,7 +5,6 @@
       "id": "060407c06712232d01686bff018763cb",
       "name": "Arouse综合体能训练馆",
       "address": "天河区棠下涌东路306号(怡祥·大地公园产业社区)B栋101",
-      "description": "专业教练团队、独立系统训练计划、课堂氛围佳、停车方便、宠物友好",
       "location": {
         "coordinates": [
           113.377743,
@@ -14,15 +13,12 @@
         "type": "Point"
       },
       "city": "guangzhou",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "1b30f213671363c9016cbce13e1e045f",
       "name": "Crossfit wang综合体能训练馆",
       "address": "海珠区新港西路82号广州中大门城市之丘西1002房",
-      "description": "Crossfit wang综合体能训练馆",
       "location": {
         "coordinates": [
           113.290334,
@@ -31,15 +27,12 @@
         "type": "Point"
       },
       "city": "guangzhou",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "af813b1067139baa016f17bd1e5ffa1f",
       "name": "岭南Lichee综合训练馆(地王店)",
       "address": "越秀区较场西路26号地王广场B3层",
-      "description": "岭南Lichee综合训练馆",
       "location": {
         "coordinates": [
           113.283548,
@@ -48,15 +41,12 @@
         "type": "Point"
       },
       "city": "guangzhou",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "1b30f21367139fe9016dfd214f832b9e",
       "name": "岭南Lichee综合训练馆(289店)",
       "address": "越秀区广州大道中289艺术园区印报楼317",
-      "description": "岭南Lichee综合训练馆",
       "location": {
         "coordinates": [
           113.31419,
@@ -65,15 +55,12 @@
         "type": "Point"
       },
       "city": "guangzhou",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "686e8c6b671da8af019492620cd9ded9",
       "name": "Catcher CrossFit(体育中心)",
       "address": "天河路177号",
-      "description": "Catcher CrossFit(体育中心)",
       "location": {
         "coordinates": [
           113.32408,
@@ -82,15 +69,12 @@
         "type": "Point"
       },
       "city": "guangzhou",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "af813b10671da8e301947ec1756648c7",
       "name": "CrossFit Rouse",
       "address": "广州大道北544号悦跑圈内",
-      "description": "CrossFit Rouse",
       "location": {
         "coordinates": [
           113.317734,
@@ -99,15 +83,12 @@
         "type": "Point"
       },
       "city": "guangzhou",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "458dc8cc671e537f0197fdee3f1ce3ca",
       "name": "Catcher CrossFit(客村)",
       "address": "艺苑南路13号大院7栋101室",
-      "description": "Catcher CrossFit(客村)",
       "location": {
         "coordinates": [
           113.32366,
@@ -116,15 +97,12 @@
         "type": "Point"
       },
       "city": "guangzhou",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "af813b10671e54000197e0062fc449b8",
       "name": "竞自由运动馆",
       "address": "番禺大道北383号海印又一城奥特莱斯广场B1层",
-      "description": "竞自由运动馆",
       "location": {
         "coordinates": [
           113.348551,
@@ -133,8 +111,6 @@
         "type": "Point"
       },
       "city": "guangzhou",
-      "checked": true,
-      "images": [],
       "logo": ""
     }
   ],

@@ -5,7 +5,6 @@
       "id": "a00247e967433d610011548401cad54a",
       "name": "六边形综合体能训练馆",
       "address": "南开区保泽道中南广场西区底商10号铺",
-      "description": "六边形综合体能训练馆",
       "location": {
         "coordinates": [
           117.146291,
@@ -14,15 +13,12 @@
         "type": "Point"
       },
       "city": "tianjin",
-      "checked": true,
-      "images": [],
       "logo": ""
     },
     {
       "id": "5222d8c8674340670010e83f4408a38c",
       "name": "CROSSFIT·哪吒",
       "address": "和平区南市街道荣业大街天津新汇市场内C7-C11区",
-      "description": "CrossFit哪吒体能健身",
       "location": {
         "coordinates": [
           117.186362,
@@ -31,8 +27,6 @@
         "type": "Point"
       },
       "city": "tianjin",
-      "checked": true,
-      "images": [],
       "logo": ""
     }
   ],

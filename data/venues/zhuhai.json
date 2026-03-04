@@ -5,7 +5,6 @@
       "id": "ebe773e167458e090019dc8c474afc61",
       "name": "BUDDY FITNESS",
       "address": "香洲区海滨南路9号LOFT文创园A座1012",
-      "description": "BUDDY FITNESS老友综合体能训练馆是一家集合中式举重,美国综合体能训练,青少儿体适能训练,球类运动功能性专项训练等课程为主的综合体能训练馆",
       "location": {
         "coordinates": [
           113.583959,
@@ -14,8 +13,6 @@
         "type": "Point"
       },
       "city": "zhuhai",
-      "checked": true,
-      "images": [],
       "logo": ""
     }
   ],
