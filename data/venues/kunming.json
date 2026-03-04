@@ -11,7 +11,13 @@
           25.068388
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "group"
+      ]
     },
     {
       "id": "686e8c6b670cc8fa0151c3bf1e6bae77",
@@ -23,7 +29,13 @@
           25.064653
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "group"
+      ]
     }
   ]
 }

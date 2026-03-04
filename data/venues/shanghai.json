@@ -11,7 +11,15 @@
           31.24142
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit",
+        "hyrox"
+      ],
+      "courses": [
+        "hyrox",
+        "group"
+      ]
     },
     {
       "id": "af813b1067133a1c016d3c224f1fc165",
@@ -23,7 +31,13 @@
           31.273508
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "group"
+      ]
     },
     {
       "id": "1b30f213671361db016cb519410c8628",
@@ -35,7 +49,13 @@
           31.184768
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "group"
+      ]
     },
     {
       "id": "af813b10671da49c01946db714479625",
@@ -47,7 +67,13 @@
           31.250263
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "group"
+      ]
     },
     {
       "id": "060407c0671da5240193f1263a1d6025",
@@ -59,7 +85,15 @@
           31.299919
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit",
+        "hyrox"
+      ],
+      "courses": [
+        "hyrox",
+        "group"
+      ]
     },
     {
       "id": "686e8c6b671da580019485f968e80c3e",
@@ -71,7 +105,13 @@
           31.293806
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "group"
+      ]
     },
     {
       "id": "1b30f213671da5b001937ee824586561",
@@ -83,7 +123,13 @@
           31.225951
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "group"
+      ]
     },
     {
       "id": "af813b10671da5e80194730f3cdb6ded",
@@ -95,7 +141,13 @@
           31.306389
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "group"
+      ]
     },
     {
       "id": "983e93c4671e5b05019873e8569c5332",
@@ -107,7 +159,13 @@
           31.221953
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "group"
+      ]
     },
     {
       "id": "af813b10671e5b290197fa58191b451b",
@@ -119,7 +177,13 @@
           31.013556
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "group"
+      ]
     },
     {
       "id": "96663e296731a7f7001b855e4821d9ef",
@@ -131,7 +195,13 @@
           31.305128
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "group"
+      ]
     },
     {
       "id": "07bd6b95673a95190014990d5f15cd9f",
@@ -143,7 +213,15 @@
           31.216567
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit",
+        "hyrox"
+      ],
+      "courses": [
+        "hyrox",
+        "group"
+      ]
     },
     {
       "id": "710be24d6743fed400125f64403184de",
@@ -155,7 +233,13 @@
           31.168649
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "group"
+      ]
     },
     {
       "id": "710be24d6748223b0024d1294e498200",
@@ -167,7 +251,13 @@
           31.243423
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "group"
+      ]
     }
   ]
 }

@@ -11,7 +11,15 @@
           23.131685
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit",
+        "hyrox"
+      ],
+      "courses": [
+        "hyrox",
+        "group"
+      ]
     },
     {
       "id": "1b30f213671363c9016cbce13e1e045f",
@@ -23,7 +31,15 @@
           23.091817
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit",
+        "hyrox"
+      ],
+      "courses": [
+        "hyrox",
+        "group"
+      ]
     },
     {
       "id": "af813b1067139baa016f17bd1e5ffa1f",
@@ -35,7 +51,13 @@
           23.125693
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "group"
+      ]
     },
     {
       "id": "1b30f21367139fe9016dfd214f832b9e",
@@ -47,7 +69,13 @@
           23.123684
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "group"
+      ]
     },
     {
       "id": "686e8c6b671da8af019492620cd9ded9",
@@ -59,7 +87,15 @@
           23.137055
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit",
+        "hyrox"
+      ],
+      "courses": [
+        "hyrox",
+        "group"
+      ]
     },
     {
       "id": "af813b10671da8e301947ec1756648c7",
@@ -71,7 +107,15 @@
           23.16361
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit",
+        "hyrox"
+      ],
+      "courses": [
+        "hyrox",
+        "group"
+      ]
     },
     {
       "id": "458dc8cc671e537f0197fdee3f1ce3ca",
@@ -83,7 +127,15 @@
           23.093814
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit",
+        "hyrox"
+      ],
+      "courses": [
+        "hyrox",
+        "group"
+      ]
     },
     {
       "id": "af813b10671e54000197e0062fc449b8",
@@ -95,7 +147,13 @@
           22.999609
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "group"
+      ]
     }
   ]
 }

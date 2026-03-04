@@ -11,7 +11,14 @@
           26.590779
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit",
+        "hyrox"
+      ],
+      "courses": [
+        "group"
+      ]
     }
   ]
 }

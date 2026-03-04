@@ -11,7 +11,13 @@
           26.062374
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "group"
+      ]
     },
     {
       "id": "07bd6b956739f70f00138dbf03e0b1e8",
@@ -23,7 +29,13 @@
           26.138849
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "group"
+      ]
     },
     {
       "id": "4e8eee54673a8173001401d611870028",
@@ -35,7 +47,13 @@
           26.05618
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "group"
+      ]
     },
     {
       "id": "ebf7a7f6673a85800014668019cf6246",
@@ -47,7 +65,13 @@
           26.045688
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "group"
+      ]
     }
   ]
 }

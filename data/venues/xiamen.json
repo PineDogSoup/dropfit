@@ -11,7 +11,13 @@
           24.465953826904297
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit"
+      ],
+      "courses": [
+        "group"
+      ]
     },
     {
       "id": "710be24d674874190026a19d1f8fcf86",
@@ -23,7 +29,15 @@
           24.462211
         ],
         "type": "Point"
-      }
+      },
+      "types": [
+        "crossfit",
+        "hyrox"
+      ],
+      "courses": [
+        "hyrox",
+        "group"
+      ]
     }
   ]
 }
