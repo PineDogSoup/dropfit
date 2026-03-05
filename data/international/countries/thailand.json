@@ -1,0 +1,65 @@
+{
+  "country": "thailand",
+  "countryName": "泰国",
+  "cities": {
+    "bangkok": {
+      "name": "曼谷",
+      "venues": [
+        {
+          "id": "th-bangkok-east-west",
+          "name": "East West CrossFit",
+          "address": "36/2 Soi Sukhumvit 69",
+          "coordinates": [100.597103, 13.705173],
+          "tags": ["CrossFit", "Open Gym"]
+        },
+        {
+          "id": "th-bangkok-peak-365",
+          "name": "CrossFit Peak 365",
+          "address": "169 Soi Sukhumvit 93, Bang Chak",
+          "coordinates": [100.607074, 13.699788],
+          "tags": ["CrossFit"]
+        },
+        {
+          "id": "th-bangkok-thonglor",
+          "name": "Thonglor CrossFit",
+          "address": "74 Sukhumvit 51 Alley Khwaeng Khlong Tan Nuea, Khet",
+          "coordinates": [100.577216, 13.730281],
+          "tags": ["CrossFit"]
+        },
+        {
+          "id": "th-bangkok-naga",
+          "name": "CrossFit Naga",
+          "address": "19 Torsak 1 Alley",
+          "coordinates": [100.578404, 13.735946],
+          "tags": ["CrossFit"]
+        }
+      ]
+    },
+    "chiangmai": {
+      "name": "清迈",
+      "venues": [
+        {
+          "id": "th-chiangmai-cfcnx",
+          "name": "CrossFit Chiang Mai / CFCNX",
+          "address": "Chiang Mai, Thailand (from CrossFit map URL)",
+          "coordinates": [98.980694, 18.816112],
+          "tags": ["CrossFit"]
+        },
+        {
+          "id": "th-chiangmai-pulmo",
+          "name": "CrossFit Pulmo",
+          "address": "452 Middle Ring Road, Mae Hia District",
+          "coordinates": [98.966236, 18.741682],
+          "tags": ["CrossFit"]
+        },
+        {
+          "id": "th-chiangmai-tnb",
+          "name": "TNB CrossFit",
+          "address": "sankampang",
+          "coordinates": [99.030725, 18.781852],
+          "tags": ["CrossFit"]
+        }
+      ]
+    }
+  }
+}

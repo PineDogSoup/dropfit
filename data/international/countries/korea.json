@@ -1,0 +1,44 @@
+{
+  "country": "korea",
+  "countryName": "韩国",
+  "cities": {
+    "seoul": {
+      "name": "首尔",
+      "venues": [
+        {
+          "id": "kr-seoul-heyday",
+          "name": "Heyday Cultures CrossFit",
+          "address": "55 Mullae-ro, Yeongdeungpo-gu",
+          "coordinates": [126.888, 37.520555],
+          "tags": ["CrossFit", "English Friendly"]
+        },
+        {
+          "id": "kr-seoul-pnbt",
+          "name": "CrossFit Peanut Butter",
+          "address": "96, Yangsan-ro, Yeongdeungpo-gu",
+          "coordinates": [126.893805, 37.524303],
+          "tags": ["CrossFit", "English Friendly"]
+        },
+        {
+          "id": "kr-seoul-limelight",
+          "name": "CrossFit Limelight",
+          "address": "223-14, Hosu-ro, Deogyang-gu,",
+          "coordinates": [126.777374, 37.644425],
+          "tags": ["CrossFit", "English Friendly"]
+        }
+      ]
+    },
+    "jeju": {
+      "name": "济州岛",
+      "venues": [
+        {
+          "id": "kr-jeju-basalt",
+          "name": "BASALT CrossFit",
+          "address": "168, Teuhaean-ro",
+          "coordinates": [126.447567, 33.498045],
+          "tags": ["CrossFit", "English Friendly", "Seaside"]
+        }
+      ]
+    }
+  }
+}

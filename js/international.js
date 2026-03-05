@@ -2,10 +2,15 @@ class InternationalPage {
     constructor() {
         this.venues = [];
         this.filteredVenues = [];
+        this.countryIndex = [];
+        this.countryFileMap = new Map();
+        this.countryMetaMap = new Map();
+        this.countryVenueCache = new Map();
         this.map = null;
         this.markerLayer = null;
         this.defaultCountry = 'thailand';
         this.defaultCity = 'bangkok';
+        this.hasAppliedDefaultCity = false;
 
         this.countrySelect = document.getElementById('countrySelect');
         this.citySelect = document.getElementById('citySelect');
@@ -19,10 +24,11 @@ class InternationalPage {
 
     async init() {
         this.bindEvents();
-        await this.loadVenueData();
-        this.initMap();
+        await this.loadCountryIndex();
         this.populateCountryOptions();
+        await this.loadVenuesByCountry(this.countrySelect?.value || 'all');
         this.populateCityOptions();
+        this.initMap();
         this.performSearch();
     }
 
@@ -32,7 +38,8 @@ class InternationalPage {
             window.location.href = 'index.html';
         });
 
-        this.countrySelect?.addEventListener('change', () => {
+        this.countrySelect?.addEventListener('change', async () => {
+            await this.loadVenuesByCountry(this.countrySelect?.value || 'all');
             this.populateCityOptions();
             this.performSearch();
         });
@@ -52,19 +59,81 @@ class InternationalPage {
         });
     }
 
-    async loadVenueData() {
+    async loadCountryIndex() {
         try {
-            const response = await fetch('./data/international/venues.json');
+            const response = await fetch('./data/international/index.json');
             if (!response.ok) {
                 throw new Error('加载国际场馆数据失败');
             }
 
             const data = await response.json();
-            this.venues = data.venues || [];
+            this.countryIndex = data.countries || [];
+            this.countryIndex.forEach((country) => {
+                this.countryFileMap.set(country.id, country.file);
+                this.countryMetaMap.set(country.id, country);
+            });
         } catch (error) {
             console.error(error);
             this.showInlineMessage('国际版数据加载失败，请稍后重试。');
         }
+    }
+
+    async loadVenuesByCountry(countryId) {
+        try {
+            if (countryId === 'all') {
+                const countryIds = this.countryIndex.map((country) => country.id);
+                const venueList = await Promise.all(countryIds.map((id) => this.loadCountryVenues(id)));
+                this.venues = venueList.flat();
+                return;
+            }
+
+            this.venues = await this.loadCountryVenues(countryId);
+        } catch (error) {
+            console.error(error);
+            this.venues = [];
+            this.showInlineMessage('国家数据加载失败，请稍后重试。');
+        }
+    }
+
+    async loadCountryVenues(countryId) {
+        if (!countryId) return [];
+        if (this.countryVenueCache.has(countryId)) {
+            return this.countryVenueCache.get(countryId);
+        }
+
+        const countryFile = this.countryFileMap.get(countryId);
+        if (!countryFile) return [];
+
+        const response = await fetch(countryFile);
+        if (!response.ok) {
+            throw new Error(`加载国家场馆数据失败: ${countryId}`);
+        }
+
+        const countryData = await response.json();
+        const flattened = this.flattenCountryData(countryData);
+        this.countryVenueCache.set(countryId, flattened);
+        return flattened;
+    }
+
+    flattenCountryData(countryData) {
+        const cityEntries = Object.entries(countryData.cities || {});
+        const venues = [];
+
+        cityEntries.forEach(([cityId, cityData]) => {
+            const cityName = cityData?.name || cityId;
+            const cityVenues = Array.isArray(cityData?.venues) ? cityData.venues : [];
+            cityVenues.forEach((venue) => {
+                venues.push({
+                    ...venue,
+                    country: countryData.country,
+                    countryName: countryData.countryName,
+                    city: cityId,
+                    cityName
+                });
+            });
+        });
+
+        return venues;
     }
 
     initMap() {
@@ -84,19 +153,14 @@ class InternationalPage {
     populateCountryOptions() {
         if (!this.countrySelect) return;
 
-        const countryMap = new Map();
-        this.venues.forEach((venue) => {
-            countryMap.set(venue.country, venue.countryName);
-        });
-
         const options = ['<option value="all">全部国家</option>'];
-        countryMap.forEach((countryName, countryId) => {
-            options.push(`<option value="${countryId}">${countryName}</option>`);
+        this.countryIndex.forEach((country) => {
+            options.push(`<option value="${country.id}">${country.name}</option>`);
         });
 
         this.countrySelect.innerHTML = options.join('');
 
-        const hasDefaultCountry = this.venues.some((venue) => venue.country === this.defaultCountry);
+        const hasDefaultCountry = this.countryMetaMap.has(this.defaultCountry);
         this.countrySelect.value = hasDefaultCountry ? this.defaultCountry : 'all';
     }
 
@@ -104,27 +168,36 @@ class InternationalPage {
         if (!this.citySelect || !this.countrySelect) return;
 
         const selectedCountry = this.countrySelect.value || 'all';
-        const cityMap = new Map();
-
-        this.venues.forEach((venue) => {
-            if (selectedCountry === 'all' || venue.country === selectedCountry) {
-                cityMap.set(venue.city, venue.cityName);
-            }
-        });
-
         const options = ['<option value="all">全部城市</option>'];
-        cityMap.forEach((cityName, cityId) => {
-            options.push(`<option value="${cityId}">${cityName}</option>`);
-        });
+        if (selectedCountry === 'all') {
+            const cityMap = new Map();
+            this.countryIndex.forEach((country) => {
+                (country.cities || []).forEach((city) => {
+                    if (!cityMap.has(city.id)) {
+                        cityMap.set(city.id, city.name);
+                    }
+                });
+            });
+            cityMap.forEach((cityName, cityId) => {
+                options.push(`<option value="${cityId}">${cityName}</option>`);
+            });
+        } else {
+            const countryMeta = this.countryMetaMap.get(selectedCountry);
+            (countryMeta?.cities || []).forEach((city) => {
+                options.push(`<option value="${city.id}">${city.name}</option>`);
+            });
+        }
 
         this.citySelect.innerHTML = options.join('');
 
-        const shouldUseDefaultCity = selectedCountry === this.defaultCountry;
-        const hasDefaultCity = this.venues.some(
-            (venue) => venue.country === selectedCountry && venue.city === this.defaultCity
-        );
+        if (!this.hasAppliedDefaultCity && selectedCountry === this.defaultCountry) {
+            const hasDefaultCity = options.some((option) => option.includes(`value="${this.defaultCity}"`));
+            this.citySelect.value = hasDefaultCity ? this.defaultCity : 'all';
+            this.hasAppliedDefaultCity = true;
+            return;
+        }
 
-        this.citySelect.value = shouldUseDefaultCity && hasDefaultCity ? this.defaultCity : 'all';
+        this.citySelect.value = 'all';
     }
 
     performSearch() {
