@@ -103,16 +103,25 @@ class SearchPage {
     // 执行搜索
     performSearch() {
         if (!this.currentKeyword) {
-            this.filteredVenues = [...this.venues];
+            this.filteredVenues = this.sortVenuesByName(this.venues);
         } else {
             const keyword = this.currentKeyword.toLowerCase();
-            this.filteredVenues = this.venues.filter(venue => 
+            this.filteredVenues = this.sortVenuesByName(this.venues.filter(venue => 
                 venue.name.toLowerCase().includes(keyword)
-            );
+            ));
         }
         
         this.updateSearchInfo();
         this.currentPage = 1;
+    }
+
+    // 按场馆名排序（字母顺序）
+    sortVenuesByName(venues) {
+        return [...venues].sort((a, b) => {
+            const nameA = a?.name || '';
+            const nameB = b?.name || '';
+            return nameA.localeCompare(nameB, 'en', { sensitivity: 'base' });
+        });
     }
 
     // 渲染结果

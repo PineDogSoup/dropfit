@@ -10,46 +10,68 @@
     <script src="https://map.qq.com/api/gljs?v=1.exp&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77"></script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-gray-50 min-h-screen">
+<body class="bg-gray-100 min-h-screen">
     <!-- 顶部横幅 -->
     <div class="w-full overflow-hidden">
         <img src="./data/images/slogan.jpg" alt="DropFit Slogan" class="w-full h-auto object-cover object-center" style="height: 200px; object-position: 0 85%;">
     </div>
 
     <!-- 主要内容 -->
-    <main class="container mx-auto px-4 py-8">
+    <main class="container mx-auto px-4 pt-8 pb-1">
         <!-- 搜索区域 -->
-        <section class="search-section mb-8 -mt-12">
+        <section class="search-section relative z-20 mb-2 -mt-16">
             <!-- 搜索框 -->
-            <div class="mb-4">
-                <div class="relative">
-                    <button 
-                        id="cityBtn"
-                        onclick="window.location.href='city-selector.html'"
-                        class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-700 flex items-center gap-2 z-10 cursor-pointer"
+            <div class="mb-4 overflow-hidden rounded-2xl bg-white pb-3 pt-0 shadow-md md:pb-4">
+                <div class="relative h-12 overflow-hidden bg-[#cfd2d8]">
+                    <button
+                        id="domesticTag"
+                        class="absolute inset-y-0 left-0 z-10 w-1/2 bg-white text-base font-normal text-blue-600"
+                        type="button"
                     >
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                        </svg>
-                        <span id="currentCityName" class="text-base">北京</span>
+                        国内
                     </button>
-                    <div class="absolute left-20 top-1/2 transform -translate-y-1/2 text-gray-300 text-lg">|</div>
-                    <input 
-                        type="text" 
-                        id="searchInput" 
-                        placeholder="输入场馆名称"
-                        class="w-full pl-32 pr-20 py-3 border-0 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base bg-white"
-                        style="box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);"
+                    <button
+                        id="overseasTag"
+                        class="absolute inset-y-0 right-0 w-1/2 bg-[#eef1f5] px-4 text-base font-normal text-gray-700"
+                        type="button"
                     >
-                    <div class="absolute left-24 top-1/2 transform -translate-y-1/2 text-gray-600">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                        </svg>
+                        国际
+                    </button>
+                    <div
+                        aria-hidden="true"
+                        class="pointer-events-none absolute left-1/2 top-1/2 h-6 w-px -translate-x-1/2 -translate-y-1/2 bg-white/80"
+                    ></div>
+                </div>
+
+                <div class="mt-3 space-y-3 px-2 md:px-3">
+                    <div class="relative">
+                        <button
+                            id="cityBtn"
+                            class="absolute left-4 top-1/2 z-10 flex -translate-y-1/2 transform cursor-pointer items-center gap-2 text-gray-600 hover:text-gray-700"
+                        >
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span id="currentCityName" class="text-base font-semibold">北京</span>
+                        </button>
+                        <div class="absolute left-20 top-1/2 -translate-y-1/2 transform text-lg text-gray-300">|</div>
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="输入场馆名称"
+                            class="w-full rounded-xl border-0 bg-white py-3 pl-32 pr-4 text-base focus:border-transparent focus:ring-2 focus:ring-blue-500"
+                        >
+                        <div class="absolute left-24 top-1/2 -translate-y-1/2 transform text-gray-600">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
                     </div>
-                    <button 
+
+                    <button
                         id="searchBtn"
-                        class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors text-base"
+                        class="w-full rounded-xl bg-[#0076F6] px-6 py-2.5 text-base text-white transition-colors hover:bg-[#006add]"
                     >
                         搜索
                     </button>
@@ -57,7 +79,7 @@
             </div>
 
             <!-- 地图容器 -->
-            <div class="mb-4">
+            <div class="mb-2">
                     <div class="relative">
                         <div id="mapVenueCountBadge" class="absolute top-3 left-1/2 -translate-x-1/2 z-20 bg-white/95 text-gray-800 text-sm font-medium px-3 py-1.5 rounded-full shadow">
                             场馆收录：0
@@ -76,7 +98,7 @@
     </main>
 
     <!-- 页脚 -->
-    <footer class="bg-gray-800 text-white py-3 mt-2">
+    <footer class="relative z-30 bg-gray-800 text-white py-3 mt-0">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- 关于我们 -->
