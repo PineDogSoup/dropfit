@@ -1,0 +1,34 @@
+{
+  "countries": [
+    {
+      "id": "thailand",
+      "name": "泰国",
+      "file": "./data/international/countries/thailand.json",
+      "cities": [
+        {
+          "id": "bangkok",
+          "name": "曼谷"
+        },
+        {
+          "id": "chiangmai",
+          "name": "清迈"
+        }
+      ]
+    },
+    {
+      "id": "korea",
+      "name": "韩国",
+      "file": "./data/international/countries/korea.json",
+      "cities": [
+        {
+          "id": "seoul",
+          "name": "首尔"
+        },
+        {
+          "id": "jeju",
+          "name": "济州岛"
+        }
+      ]
+    }
+  ]
+}

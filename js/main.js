@@ -25,9 +25,16 @@ class DropFitMain {
     }
 
     bindEvents() {
+        // 首页标签
+        const overseasTag = document.getElementById('overseasTag');
+
+        overseasTag?.addEventListener('click', () => {
+            window.location.href = 'international.html';
+        });
+
         // 城市按钮 - 直接跳转到城市选择页面
         const cityBtn = document.getElementById('cityBtn');
-        cityBtn.addEventListener('click', () => {
+        cityBtn?.addEventListener('click', () => {
             window.location.href = 'city-selector.html';
         });
 
@@ -37,12 +44,12 @@ class DropFitMain {
 
         // 搜索按钮
         const searchBtn = document.getElementById('searchBtn');
-        searchBtn.addEventListener('click', () => {
+        searchBtn?.addEventListener('click', () => {
             this.performSearch();
         });
 
         // 回车键搜索
-        searchInput.addEventListener('keypress', (e) => {
+        searchInput?.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 this.performSearch();
             }
